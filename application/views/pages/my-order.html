@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cheap Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600,700,900" rel="stylesheet">
+
+  
+</head>
+<body>
+
+    <nav class="topBar" data-spy="affix" data-offset-top="162">
+    <div class="container">
+     <div class="row">
+      <ul class="list-inline pull-left hidden-sm hidden-xs">
+        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +120 558 7885 </a> </li>
+        <li><a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> info@fruitastic.com</a></li>
+      </ul>
+      <ul class="topBarNav">
+        <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-lock" aria-hidden="true"></i> Login /</a> </li>
+        <li class="rgst" data-toggle="modal" data-target="#registration"><a href="#">Register</a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="shopping-cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <strong>Cart</strong></a></li>
+        <li class="hidden-xs hidden-sm"><a href="javascript:void(0)" class="blank_li"></a></li>
+      </ul>
+       <span class="far" onclick="openNav()">
+        <div class="row">
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 hidden-xs"> 
+           <div class="right_top_menu_text">Menu</div> 
+         </div>
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+         </div>
+        </div>
+       </span>
+       ​<div id="myNav" class="overlayicon fadeIn animated">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlayicon-content">
+               <a href="index.html">Home</a>
+               <a href="about-us.html">About Us</a> 
+               <a href="how-it-works.html">How IT Works</a>
+               <a href="product.html">Shop Now</a>
+               <a href="bulk-order.html">Bulk Order</a>
+               <a href="my-info.html">My Account</a>
+          </div>
+       </div>
+     </div>
+    </div>
+  </nav>
+
+    <!-- Modal -->
+   <div class="modal fade" id="login">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Login</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                  <div class="form-group">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#">
+                  </div>
+                  <div class="form-group">
+                    <label for="#">Password:</label>
+                    <input type="password" class="form-control" id="#">
+                  </div>
+                  <div class="form-group">
+                    <a href="#" data-toggle="modal" data-target="#forgot_password" data-dismiss="modal">Forgot password</a>
+                  </div>
+                 
+                  <div class="row">
+                  <div class="col-sm-6 login_div"><input type="submit" value="Login" class="btn btn-success login_btn btn-block" data-dismiss="modal"/></div>
+                  <div class="col-sm-6 login_div2"><a data-toggle="modal" href="#registration" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Sign up</a></div>
+                  </div>
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgot_password">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Forgot Password</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                  <div class="form-group">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter your email id">
+                  </div>
+                 
+                  <div class="form-group">
+                    <a data-toggle="modal" href="#forgot_message" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Submit</a></div>
+                  
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgot_message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body login_form text-center">
+                <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                <h4>Please check your email id!</h4>
+            </div>
+            <div class="modal-footer">	
+            	<a href="#" data-dismiss="modal" class="btn btn-default login_btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="registration">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Register Now</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label for="#">First Name:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter first name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Last Name:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter last name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter email id">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Phone No:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter phone no">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Password:</label>
+                    <input type="password" class="form-control" id="#" placeholder="password">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Confirm Password:</label>
+                    <input type="password" class="form-control" id="#" placeholder="confirm password">
+                  </div>
+                  <div class="form-group col-sm-12"><hr class="signup_hr"></div>
+                  <div class="form-group col-sm-6"><a data-toggle="modal" href="#message" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Submit</a></div>
+                  <div class="col-sm-6 text-center"><p class="already_login_text">Already have an account? <a data-toggle="modal" href="#login" data-dismiss="modal">Sign in</a> Now.</p></div>
+                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Success</h3>
+            </div> 
+            <div class="modal-body login_form text-center">
+                <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                <h4>You have successfully registered.</h4>
+            </div>
+            <div class="modal-footer">	
+            	<a href="#" data-dismiss="modal" class="btn btn-default login_btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div class="middleBar">
+  <div class="container">
+   <div class="row display-table">
+    <div class="col-sm-3 col-xs-3 vertical-align text-left">
+      <a href="index.html"> <img src="image/logo.png" alt="" class="logo img-responsive"></a>
+    </div>
+    <!-- end col -->
+    <div class="col-sm-8  col-xs-9 vertical-align">
+      <form>
+        <div class="row grid-space-1 rgsone">
+         
+          <div class="col-sm-4 col-xs-12 col-sm-offset-8">
+            <div class="input-group top_post_code_textbox">
+              <input type="text" class="form-control" placeholder="Enter your postcode" aria-label="Enter your postcode " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your postcode '" >
+              <span class="input-group-btn">
+                <a href="javascript:void(0)" class="btn btn-danger" type="submit"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-1 col-xs-12 vertical-align header-items hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" onclick="openNavcart()"><img src="image/cart.png"> <span class="crtnmbr">7</span></a>
+          <div id="mycartSidenav" class="sidenavcart">
+              <a href="javascript:void(0)" class="closebtncart" onclick="closeNavcart()">Your Order <span class="pull-right">×</span></a>
+              <div class="row sidenav_header">
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Sub Total</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right carrtnav_h">$1011</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Delivery Charges</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right text-success carrtnav_h">Free</h5>
+
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Your total savings</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right text-danger carrtnav_h">$96 (8.67%)</h5>
+                </div>
+                <div class="col-sm-12">
+                  <hr class="hr_bold">
+                </div>
+              </div>
+              
+              
+              
+              <div class="nav_cart_scroll">
+  
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+             </div>
+             
+             <div class="fix_bottom_cart"> 
+               <hr class="hr_bold_footer">
+               <div class="row sidenav_row">	
+                <div class="col-sm-12 col-md-12">
+                 <a href="your-details.html" class="btn btn-primary btn-block right_cart_btn" onclick="closecartNav()">Proceed to Checkout</a>
+               </div>
+               </div>
+              </div>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+    
+   
+
+<div class="container btm-pd">
+<div class="row">	
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="image/banner-4.jpg" class="img-responsive">
+      <div class="carousel-caption hidden-xs">
+        <h1 class="sldrfnt animated fadeInLeft go">My Order</h1>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+</div>
+        
+
+<section class="my_account"> 
+  <div class="container">
+	<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bhoechie-tab-menu">
+			  <div href="#" class="list-group-item text-center my_account_profile_list">
+                 <p><i class="fa fa-user-circle fa-5x my-account-profile" aria-hidden="true"></i></p>
+              	 <h4>+61-136789</h4>
+              </div>
+              <ul class="list-group">
+                <a href="my-info.html" class="list-group-item left_link"><h4 class="left_link_h"><i class="fa fa-info my_account_info_icon" aria-hidden="true"></i>My Information</h4></a>
+                <a href="my-order.html" class="list-group-item left_link_active"><h4><i class="fa fa-shopping-basket my_account_basket_icon" aria-hidden="true"></i>My Orders</h4></a>
+                <a href="recurring-orders.html" class="list-group-item left_link"><h4><i class="fa fa-repeat  my_account_repeat_icon" aria-hidden="true"></i>Recurring Orders</h4></a>
+                <a href="delivery-locations.html" class="list-group-item left_link"><h4><i class="fa fa-map-marker  my_account_repeat_icon" aria-hidden="true"></i>Delivery Locations</h4></a>
+                <a href="change-password.html" class="list-group-item left_link"><h4><i class="fa fa-key  my_account_repeat_icon" aria-hidden="true"></i>Change Password</h4></a>
+              </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+                <div class="bhoechie-tab-content active">
+                   <h2 class="my-orders-h2">My Orders</h2>
+                   <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th class="th_font_weight">Order Date</th>
+                            <th class="th_font_weight text-center">Order ID</th>
+                            <th class="th_font_weight text-center">Delivery Date</th>
+                            <th class="th_font_weight text-center">Order Details</th>
+                            <th class="th_font_weight text-center">Status</th>
+                            <th class="th_font_weight text-center">Delivery Address</th>
+                            <th class="th_font_weight text-center">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                            <td>06/11/2017</td>
+                            <td class="text-center">ORDIDA49</td>
+                            <td class="text-center">Monday - 13/11/2017</td>
+                            <td class="text-center"><a href="my-order-view.html">View</a></td>
+                            <td class="text-center">Pending</td>
+                            <td class="text-center">20 Endeavour Way</td>
+                            <td  class="text-center"><a href="javascript:void(0)" class="#">Edit </a> / <a href="javascript:void(0)" class="#"> Delete</a></td>
+                           </tr>
+                           <!--<tr>
+                            <td>06/11/2017</td>
+                            <td class="text-center">ORDIDA49</td>
+                            <td class="text-center">Monday - 13/11/2017</td>
+                            <td class="text-center"><a href="javascript:void(0)" data-toggle="collapse" data-target="#view_order">View</a></td>
+                            <td class="text-center">Pending</td>
+                            <td class="text-center">20 Endeavour Way</td>
+                            <td  class="text-center"><a href="javascript:void(0)" target="_blank" class="btn btn-link">Invoice</a></td>
+                           </tr>-->
+                         </tbody>
+                      </table>
+                    </div>
+                    <!--<div class="row collapse" id="view_order">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel panel-info delivery_panel">
+                          <div class="panel-heading delivery_panel_heading">ORDER DETAILS</div>
+                          <div class="panel-body delivery_location_panel_body">
+                            <div class="row">
+                              <div class="col-sm-4">
+                                <p>Order ID</p>
+                          	  </div>
+                              <div class="col-sm-8">
+                                <p>OD607</p>
+                          	  </div>
+                              <div class="col-sm-4">
+                                <p>Order Date</p>
+                          	  </div>
+                              <div class="col-sm-8">
+                                <p>Wed, Nov 16th '16 12:12 PM</p>
+                          	  </div>
+                              <div class="col-sm-4">
+                                Total Amount
+                          	  </div>
+                              <div class="col-sm-8">
+                                <p>Rs.6,999through Cash on delivery</p>
+                          	  </div>
+                            </div>
+                          </div>
+                         </div>
+                      </div>
+                      
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="panel panel-info delivery_panel">
+                          <div class="panel-heading delivery_panel_heading">ADDRESS</div>
+                          <div class="panel-body delivery_location_panel_body">
+                            <p>Ankur Varma</p>
+                            <p> 14 Endeavour Way, Braeside, 3195, Victoria, Australia.</p>
+                            <p>Phone: +1800 378 482</p>
+                          </div>
+                         </div>
+                      </div>
+                      
+                      <div class="col-sm-12 col-md-12">
+                        
+                        <div class="table-responsive">
+                            <table class="table">
+                            <thead>
+                              <tr>
+                                <th class="th_font_weight">ITEM DESCRIPTION</th>
+                                <th class="th_font_weight text-center">UNIT PRICE</th>
+                                <th class="th_font_weight text-center">QUANTITY</th>
+                                <th class="th_font_weight">SUB TOTAL</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                 <p class="bold-font2">Apple Granny Smith Bag (2kg)</p>
+                                </td>
+                                <td class="text-center">$3.90</td>
+                                <td class="text-center">11</td>
+                                <td>$42.90</td>
+                              </tr>
+                             
+                              <tr>
+                                <th colspan="2" class="bg-white"></th>
+                                <th class="bg-white"><hr class="my_order_hr1">Sub Total</th>
+                                <th class="bg-white"><hr class="my_order_hr2">$42.90</th>
+                              </tr>
+                              <tr>
+                                <th colspan="2" class="bg-white2"></th>
+                                <th class="bg-white2">Delivery Charges</th>
+                                <th class="bg-white2">$0.00</th>
+                              </tr>
+                              <tr>
+                                <th colspan="2" class="bg-white"></th>
+                                <th class="bg-white3">Total</th>
+                                <th class="bg-white3">$42.90</th>
+                              </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                      </div>
+                      
+                    </div>-->
+                    
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+</section>
+   
+           
+            
+            
+ <footer class="container"> 
+ 	<div class="row">          
+            <div class="col-md-12 text-center">
+              <h3>Call us on 123-123456789</h3>
+              <p class="ftfntclr"><span>Monday - Friday: 8am - 8pm</span>  <span>AESTSaturday: 9:00am - 1:00pm AESTSunday: CLosed</span></p>
+              <p>
+               <a href="about-us.html" class="ftra">About Us </a>
+               <a href="contact-us.html" class="ftra">Contact Us </a>
+               <a href="privacy-policy.html" class="ftra">Privacy Policy </a>
+               <a href="terms-and-conditions.html" class="ftra">Terms & Conditions </a>
+               <a href="faqs.html" class="ftra2">FAQ</a>
+              </p>
+              <p class="socilp">
+              	<a href="#" class="sclicn1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              	<a href="#" class="sclicn2" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" class="sclicn3" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+              </p>
+            </div>
+		</div>
+        
+        <div class="row">
+         <div class="col-sm-4"><img src="image/bdrleft.png" class="img-responsive bdrleft" /></div>
+         <div class="col-sm-4">
+          <p class="ftfntclr2">
+           2017 <i class="fa fa-copyright" aria-hidden="true"></i> <a href="#"><span class="frts"> FRUITASTIC, </span></a> All Right Reserved
+          </p>
+         </div>
+         <div class="col-sm-4 hidden-xs"><img src="image/bdrleft.png" class="img-responsive bdrright" /></div>
+        </div>
+
+</footer>
+
+
+
+</body>
+
+
+<script>
+$(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+</script>
+
+  <script type="text/javascript">
+    ! function($, n, e) {
+      var o = $();
+      $.fn.dropdownHover = function(e) {
+        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+          function t(e) {
+            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+          }
+          var r = $(this),
+            i = r.parent(),
+            d = {
+              delay: 100,
+              instantlyCloseOthers: !0
+            },
+            s = {
+              delay: $(this).data("delay"),
+              instantlyCloseOthers: $(this).data("close-others")
+            },
+            a = "show.bs.dropdown",
+            u = "hide.bs.dropdown",
+            h = $.extend(!0, {}, d, e, s),
+            c;
+          i.hover(function(n) {
+            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+          }, function() {
+            c = n.setTimeout(function() {
+              i.removeClass("open"), r.trigger(u)
+            }, h.delay)
+          }), r.hover(function(n) {
+            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+          }), i.find(".dropdown-submenu").each(function() {
+            var e = $(this),
+              o;
+            e.hover(function() {
+              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+            }, function() {
+              var t = e.children(".dropdown-menu");
+              o = n.setTimeout(function() {
+                t.hide()
+              }, h.delay)
+            })
+          })
+        }))
+      }, $(document).ready(function() {
+        $('[data-hover="dropdown"]').dropdownHover()
+      })
+    }(jQuery, this);
+  </script>
+
+
+<script>
+
+/*Tooltip*/
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script>
+$(document).ready(function(){
+
+var quantitiy=0;
+   $('.quantity-right-plus').click(function(e){
+        
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+            
+            $('#quantity').val(quantity + 10);
+
+          
+            // Increment
+        
+    });
+
+     $('.quantity-left-minus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+      
+            // Increment
+            if(quantity>0){
+            $('#quantity').val(quantity - 10);
+            }
+    });
+    
+});
+</script>
+
+
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>  
+
+ <script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script> 
+
+<script>
+function openNavcart() {
+    document.getElementById("mycartSidenav").style.width = "438px";
+}
+
+function closeNavcart() {
+    document.getElementById("mycartSidenav").style.width = "0";
+}
+</script>
+
+
+</html>

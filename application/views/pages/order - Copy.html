@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cheap Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600,700,900">
+  
+
+</head>
+<body>
+
+  <nav class="topBar" data-spy="affix" data-offset-top="197">
+    <div class="container">
+     <div class="row">
+      <ul class="list-inline pull-left hidden-sm hidden-xs">
+        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +120 558 7885 </a> </li>
+        <li><a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> info@fruitastic.com</a></li>
+      </ul>
+      <ul class="topBarNav pull-right">
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="my-info.html">My Account </a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-lock" aria-hidden="true"></i> Login / Register</a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="shopping-cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <strong>Cart</strong></a></li>
+      </ul>
+     </div>
+    </div>
+  </nav>
+
+    <!-- Modal -->
+   <div class="modal fade" id="login">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Login</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                  <div class="form-group">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#">
+                  </div>
+                  <div class="form-group">
+                    <label for="#">Password:</label>
+                    <input type="password" class="form-control" id="#">
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                  </div>
+                  <hr>
+                  <div class="row">
+                  <div class="col-sm-6 login_div"><input type="submit" value="Login" class="btn btn-success login_btn btn-block" data-dismiss="modal"/></div>
+                  <div class="col-sm-6 login_div2"><a data-toggle="modal" href="#registration" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Sign up</a></div>
+                  </div>
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="registration">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Register Now</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label for="#">Name:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Phone No:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Password:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Confirm Password:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter name">
+                  </div>
+                  <div class="form-group col-sm-12"><hr></div>
+                  <div class="form-group col-sm-12"><a data-toggle="modal" href="#message" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Submit</a></div>
+                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Success</h3>
+            </div> 
+            <div class="modal-body login_form text-center">
+                <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                <h4>You have successfully registered.</h4>
+            </div>
+            <div class="modal-footer">	
+            	<a href="#" data-dismiss="modal" class="btn btn-default login_btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    
+<div class="middleBar">
+ <div class="container">
+  <div class="row display-table">
+    <div class="col-sm-3 vertical-align text-left">
+      <a href="index.html"> <img src="image/logo.png" alt="" class="logo"></a>
+    </div>
+    <div class="col-sm-8 vertical-align">
+      <form>
+        <div class="row grid-space-1 rgsone">
+         <div class="col-sm-2 hidden-xs">
+            <p class="grcrs"><a href="#" class="mdllink"><img src="image/t3.png" />Groceries</a></p>
+         </div>
+         <div class="col-sm-2 hidden-xs">
+            <p class="grcrs"><a href="#" class="mdllink ofrs"><img src="image/t1.png" />Offers </a></p>
+         </div>
+         <div class="col-sm-5 hidden-xs">
+            <p class="grcrs"><a href="#" class="mdllink"><img src="image/t2.png" />Summer Specials</a></p>
+         </div>
+         <div class="col-sm-3">
+			<div id="custom-search-input">
+                <div class="input-group ig">
+                    <input type="text" class="form-control fcil" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-link bbibl" type="button">
+                            <i class="fa fa-search ffc" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>            
+         </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-1 vertical-align header-items hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle dtcarticn" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"><img src="image/cart.png" /> <span class="crtnmbr">7</span></a>
+
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg"/>
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg"/>
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg"/>
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg"/>
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li class="divider"></li>
+              <li><a href="#" class="text-center">View Cart</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+    
+   
+<nav class="navbar navbar-main navbar-default" role="navigation">
+  <div class="container">
+   <div class="row">
+    <!-- Brand and toggle -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>             
+    </div>
+    <div class="collapse navbar-collapse navbar-1">            
+      <ul class="nav navbar-nav">
+        <li><a href="product.html">Fruits </a></li>
+        <li><a href="product.html" class="dropdown-toggle">Vegetables </a></li>
+        <li><a href="product.html">Seasonal Boxes </a></li>
+        <li><a href="product.html">Beverages </a></li>
+        <li><a href="product.html">Essentials Oils Other</a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Groceries</a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="#" class="mdllink">Offers </a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Summer Specials</a></li>
+        <li><a href="#">Other</a></li>
+      </ul>
+    </div>
+  </div>
+ </div>
+</nav>
+        
+   
+
+<div class="container btm-pd">
+ <div class="row">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="image/banner-product.jpg" class="img-responsive" />
+          <div class="carousel-caption hidden-xs">
+            <h1 class="sldrfnt animated fadeInLeft go">Heading for this page</h1>
+            <p class="animated fadeInRight go"><a href="#" class="btn btn-danger btn-lg shopnowbtn">Shop Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+  
+<div class="container">  
+    <div class="row checkout-section">
+     	<div class="col-sm-8">
+        
+         <div class="row bs-wizard">
+                
+                <div class="col-sm-2 col-sm-offset-2 bs-wizard-step complete">
+                  <div class="text-center bs-wizard-stepnum">Order</div>
+                  <div class="progress hidden-xs"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <!--<div class="bs-wizard-info text-center">Lorem ipsum  sit amet.</div>-->
+                </div>
+                
+                <div class="col-sm-2 bs-wizard-step complete"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Your Details</div>
+                  <div class="progress hidden-xs"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-sm-2 bs-wizard-step complete"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Delivery Day</div>
+                  <div class="progress hidden-xs"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                
+                <div class="col-sm-2 bs-wizard-step active"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Payment</div>
+                  <div class="progress hidden-xs"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                
+                <div class="col-sm-2 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">Complete</div>
+                  <div class="progress hidden-xs"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+            </div>
+            
+            <div class="row">
+             <h3>Your Details</h3>
+             <hr>
+              <div class="col-sm-12 col-md-12">
+              <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <input type="submit" class="btn btn-sm btn-success" value="Login">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">New Customer</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">Customer Type</label>
+                              <div class="col-md-5 col-sm-5">
+                                <select class="form-control">
+                                    <option selected>Customer Type</option>
+                                    <option>Corporate</option>
+                                    <option>Corporate1</option>
+                                    <option>Corporate1</option>
+                                    <option>Corporate1</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">Business Name</label>
+                              <div class="col-md-9 col-sm-9">
+                                <input type="text" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">First Name</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="text" class="form-control">
+                              </div>
+                              <label class="col-md-2 col-sm-2 col-sm-offset-1 control-label">Last Name</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="text" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">Address</label>
+                              <div class="col-md-9 col-sm-9">
+                                <textarea class="form-control" rows="3" id="address"></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-md-9 col-sm-9 col-sm-offset-3">
+                                  <label class="radio-inline">Same As Above: </label>
+                                  <label class="radio-inline" ><input type="radio" id="chkYes" name="deliveryaddress" />Yes</label>
+								  <label class="radio-inline"><input type="radio" id="chkNo" name="deliveryaddress" />No</label>
+                              </div>
+                            </div>
+                            <div class="form-group"  id="dvAddress" style="display: none">
+                              <label class="col-md-3 col-sm-3 control-label">Delivery Address</label>
+                              <div class="col-md-9 col-sm-9">
+                                <textarea class="form-control" rows="3" id="address" id="txtPassportNumber"></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">Phone Number</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="tel" class="form-control">
+                              </div>
+                              <label class="col-md-3 col-sm-3 control-label">Email</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="email" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-md-3 col-sm-3 control-label">New Password</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="password" class="form-control">
+                              </div>
+                              <label class="col-md-3 col-sm-3 control-label">Confirm Password</label>
+                              <div class="col-md-3 col-sm-3">
+                                <input type="password" class="form-control">
+                              </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <input type="submit" value="Continue Order >" class="btn btn-primary bbpss pull-right">
+                
+               
+                
+              </div>
+             
+            
+            </div>
+        
+         
+       
+       
+  
+
+  
+  
+		<!--<p class="pull-right"><input type="button" class="btn btn-danger btn-lg checkoutbtn" value="CHECKOUT"></p>-->
+ 	   </div>
+       
+       <div class="col-sm-4">
+          <div class="table-responsive innnerbdr">
+	        <h2 class="yourorder clrwhite">Your Order</h2>
+
+            <table class="table">
+            <thead>
+              <tr>
+                <td class="clrwhite">PRODUCT</td>
+                <td class="clrwhite">QTY</td>
+                <td class="clrwhite">TOTAL</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fsize">Product name one</td>
+                <td class="fsize">20</td>
+                <td class="fsize">$100.00</td>
+              </tr>
+              <tr>
+                <td class="tdbdrnine">Product name two</td>
+                <td class="tdbdrnine">20</td>
+                <td class="tdbdrnine">$100.00</td>
+              </tr>
+              <tr>
+                <td class="tdbdrnine">Product name three</td>
+                <td class="tdbdrnine">20</td>
+                <td class="tdbdrnine">$100.00</td>
+              </tr>
+              <tr>
+               <td colspan="2"><strong class="clrwhite">SUB TOTAL</strong></td>
+               <td><strong class="clrwhite">$300.00</strong></td>
+              </tr>
+              <tr>
+               <td colspan="2" class="clrwhite">Your Shipping</td>
+               <td class="clrwhite">Free</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="tdbdrnine clrwhite">Post code</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="tdbdrnine clrwhite">3150 - Glen Waverley <a href="#" class="fsizelink">(change)</a></td>
+              </tr>
+              <tr>
+                <td colspan="2"><strong class="clrwhite">TOTAL PRICE</strong></td>
+                <td><strong class="clrwhite">$300.00</strong></td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div class="row cart-bg">
+          <div class="col-sm-10 col-sm-offset-1">
+           <p class="evciyhheading">ENTER VOUCHER CODE IF YOU HAVE ONE. APPLY HERE</p>
+           <div class="input-group evciyh">
+              <input type="text" class="form-control evciyhtxt">
+              <span class="input-group-btn">
+                <a href="#" class="btn btn-secondary bbs" type="button"><strong>APPLY CODE</strong></a>
+              </span>
+            </div>
+          </div>
+          </div>
+       </div>
+       
+      </div>
+      
+      
+    
+   
+   </div>
+   
+           
+            
+            
+ <footer class="container"> 
+ 	<div class="row">          
+            <div class="col-md-12 text-center">
+              <h3>Call us on 123-123456789</h3>
+              <p class="ftfntclr"><span>Monday - Friday: 8am - 8pm</span>  <span>AESTSaturday: 9:00am - 1:00pm AESTSunday: CLosed</span></p>
+              <p>
+               <a href="#" class="ftra">About Us </a>
+               <a href="#" class="ftra">Contact Us </a>
+               <a href="#" class="ftra">Privacy Policy </a>
+               <a href="#" class="ftra">Terms & Conditions </a>
+               <a href="#" class="ftra2">FAQ</a>
+              </p>
+              <p class="socilp">
+              	<a href="#" class="sclicn1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              	<a href="#" class="sclicn2" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" class="sclicn3" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+              </p>
+            </div>
+		</div>
+        
+        <div class="row">
+         <div class="col-sm-4"><img src="image/bdrleft.png" class="img-responsive bdrleft" /></div>
+         <div class="col-sm-4">
+          <p class="ftfntclr2">
+           2017 <i class="fa fa-copyright" aria-hidden="true"></i> <a href="#"><span class="frts"> FRUITASTIC, </span></a> All Right Reserved
+            
+          </p>
+         </div>
+         <div class="col-sm-4 hidden-xs"><img src="image/bdrleft.png" class="img-responsive bdrright" /></div>
+        </div>
+
+</footer>
+
+
+
+</body>
+
+
+  <script type="text/javascript">
+    ! function($, n, e) {
+      var o = $();
+      $.fn.dropdownHover = function(e) {
+        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+          function t(e) {
+            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+          }
+          var r = $(this),
+            i = r.parent(),
+            d = {
+              delay: 100,
+              instantlyCloseOthers: !0
+            },
+            s = {
+              delay: $(this).data("delay"),
+              instantlyCloseOthers: $(this).data("close-others")
+            },
+            a = "show.bs.dropdown",
+            u = "hide.bs.dropdown",
+            h = $.extend(!0, {}, d, e, s),
+            c;
+          i.hover(function(n) {
+            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+          }, function() {
+            c = n.setTimeout(function() {
+              i.removeClass("open"), r.trigger(u)
+            }, h.delay)
+          }), r.hover(function(n) {
+            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+          }), i.find(".dropdown-submenu").each(function() {
+            var e = $(this),
+              o;
+            e.hover(function() {
+              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+            }, function() {
+              var t = e.children(".dropdown-menu");
+              o = n.setTimeout(function() {
+                t.hide()
+              }, h.delay)
+            })
+          })
+        }))
+      }, $(document).ready(function() {
+        $('[data-hover="dropdown"]').dropdownHover()
+      })
+    }(jQuery, this);
+  </script>
+
+
+<script>
+
+/*Tooltip*/
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script>
+$(document).ready(function(){
+
+var quantitiy=0;
+   $('.quantity-right-plus').click(function(e){
+        
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+            
+            $('#quantity').val(quantity + 10);
+
+          
+            // Increment
+        
+    });
+
+     $('.quantity-left-minus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+      
+            // Increment
+            if(quantity>0){
+            $('#quantity').val(quantity - 10);
+            }
+    });
+    
+});
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $("input[name='deliveryaddress']").click(function () {
+            if ($("#chkNo").is(":checked")) {
+                $("#dvAddress").show();
+            } else {
+                $("#dvAddress").hide();
+            }
+        });
+    });
+</script>
+
+</html>

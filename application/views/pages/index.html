@@ -1,0 +1,2853 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cheap Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Condensed:300,400,500,600,700,900">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,500,600,700" rel="stylesheet">
+
+  
+</head>
+<body>
+
+  <nav class="topBar" data-spy="affix" data-offset-top="162">
+    <div class="container">
+     <div class="row">
+      <ul class="list-inline pull-left hidden-sm hidden-xs">
+        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +120 558 7885 </a> </li>
+        <li><a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> info@fruitastic.com</a></li>
+      </ul>
+      <ul class="topBarNav">
+        <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-lock" aria-hidden="true"></i> Login /</a> </li>
+        <li class="rgst" data-toggle="modal" data-target="#registration"><a href="#">Register</a></li>
+        <li class="hidden-lg hidden-md hidden-sm"><a href="shopping-cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <strong>Cart</strong></a></li>
+        <li class="hidden-xs hidden-sm"><a href="javascript:void(0)" class="blank_li"></a></li>
+      </ul>
+       <!--<span class="far_text">
+         Menu
+       </span>-->
+       <span class="far" onclick="openNav()">
+        <div class="row">
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 hidden-xs"> 
+           <div class="right_top_menu_text">Menu</div> 
+         </div>
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+         </div>
+        </div>
+       </span>
+       ​<div id="myNav" class="overlayicon fadeIn animated">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlayicon-content">
+               <a href="index.html">Home</a>
+               <a href="about-us.html">About Us</a> 
+               <a href="how-it-works.html">How IT Works</a>
+               <a href="product.html">Shop Now</a>
+               <a href="bulk-order.html">Bulk Order</a>
+               <a href="my-info.html">My Account</a>
+          </div>
+       </div>
+     </div>
+    </div>
+  </nav>
+  
+    
+
+
+    
+    
+ <div class="middleBar">
+  <div class="container">
+   <div class="row display-table">
+    <div class="col-sm-3 col-xs-3 vertical-align text-left">
+      <a href="index.html"> <img src="image/logo.png" alt="" class="logo img-responsive"></a>
+    </div>
+    <!-- end col -->
+    <div class="col-sm-8  col-xs-9 vertical-align">
+      <form>
+        <div class="row grid-space-1 rgsone">
+         <!--<div class="col-sm-2 hidden-xs">
+            <p class="grcrs"><a href="product.html" class="mdllink"><img src="image/t3.png" />Groceries</a></p>
+         </div>
+         <div class="col-sm-2 hidden-xs">
+            <p class="grcrs"><a href="product.html" class="mdllink ofrs"><img src="image/t1.png" />Offers </a></p>
+         </div>
+         <div class="col-sm-5 hidden-xs">
+            <p class="grcrs"><a href="product.html" class="mdllink"><img src="image/t2.png" />Summer Specials</a></p>
+         </div>-->
+          <!--<div class="col-sm-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>-->
+          <div class="col-sm-4 col-xs-12 col-sm-offset-8">
+            <div class="input-group top_post_code_textbox">
+              <!--<input type="text" class="form-control" placeholder="Enter your postcode below to check your area" aria-label="Enter your postcode below to check your area" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your postcode below to check your area'" >-->
+              <input type="text" class="form-control" placeholder="Enter your postcode" aria-label="Enter your postcode " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your postcode '" >
+              <span class="input-group-btn">
+                <a href="javascript:void(0)" class="btn btn-danger" type="submit"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </span>
+            </div>
+                      
+          </div>
+          
+          <!--<div class="col-sm-4 col-xs-12 col-sm-offset-1 hidden-xs">
+			<div id="custom-search-input">
+                <div class="input-group ig">
+                    <input type="text" class="form-control fcil" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-link bbibl" type="button">
+                            <i class="fa fa-search ffc" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>            
+          </div>-->
+         
+        </div>
+      </form>
+    </div>
+    <!-- end col -->
+    <div class="col-sm-1 col-xs-12 vertical-align header-items hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <!--<a href="#" class="dropdown-toggle dtcarticn" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"><img src="image/cart.png"> <span class="crtnmbr">7</span></a>-->
+          
+          <a href="#" onclick="openNavcart()"><img src="image/cart.png"> <span class="crtnmbr">7</span></a>
+          
+         
+          <div id="mycartSidenav" class="sidenavcart">
+              <a href="javascript:void(0)" class="closebtncart" onclick="closeNavcart()">Your Order <span class="pull-right">×</span></a>
+              
+              <div class="row sidenav_header">
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Sub Total</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right carrtnav_h">$1011</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Delivery Charges</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right text-success carrtnav_h">Free</h5>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+                <div class="col-sm-6">
+                 <h5 class="carrtnav_h">Your total savings</h5>
+                </div>
+                <div class="col-sm-6">
+                 <h5 class="text-right text-danger carrtnav_h">$96 (8.67%)</h5>
+                </div>
+                <div class="col-sm-12">
+                  <hr class="hr_bold">
+                </div>
+              </div>
+              
+              
+              
+              <div class="nav_cart_scroll">
+  
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+            
+               
+               <div class="row nav_cart_row">
+                <div class="col-sm-3">
+                 <img src="image/how-it-work.png" class="img-responsive cartnav_product_img">
+                </div>
+                <div class="col-sm-9">
+                 <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                   <p class="cartnav_product_name">Red Capsicum if the product name bigger</p>
+                   <p>3x40 gm</p>
+                  </div>
+                  <div class="col-sm-5 col-md-5">
+                    <div class="input-group input-group-sm">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                              </button>
+                          </span>
+                          <input type="text" name="quant[1]" class="form-control input-number text-center quantity_txt" value="1" min="1" max="10" readonly>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-default btn-number booking_day_btn" data-type="plus" data-field="quant[1]">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 col-md-3">
+                     <p class="cartnav_price"> <span class="new-price">$75</span><span class="old-price">$80</span></p>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                   <p class="last_price">$12</p>
+                  </div>
+                 </div>
+                </div>
+                <div class="col-sm-12"><hr class="carrtnav_hr"></div>
+               </div>
+             
+             </div>
+             
+             
+             <div class="fix_bottom_cart"> 
+               <hr class="hr_bold_footer">
+               <div class="row sidenav_row">	
+                <div class="col-sm-12 col-md-12">
+                 <a href="your-details.html" class="btn btn-primary btn-block right_cart_btn" onclick="closecartNav()">Proceed to Checkout</a>
+               </div>
+               </div>
+              </div>
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+
+          <!--<ul class="dropdown-menu dropdown-cart" role="menu">
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg">
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>$23</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg">
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>$23</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg">
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>$23</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="image/intro.jpg" alt="" class="crtimg">
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>$23</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <a href="#"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                    </span>
+                </span>
+              </li>
+              <li class="divider"></li>
+              <li><a class="text-center" href="your-details.html">Checkout</a></li>
+          </ul>-->
+        </li>
+      </ul>
+    </div>
+    <!--<div class="col-sm-1 vertical-align header-items hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle dtcarticn" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"><img src="image/cart.png" /> <span class="crtnmbr">7</span></a>
+
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+           <div class="drop_down_scroll">
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[1]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[1]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[2]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[2]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[2]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[3]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[3]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[3]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[4]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[4]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[4]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[5]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[5]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[5]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[6]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[6]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[6]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[7]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[7]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[7]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[8]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[8]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[8]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[9]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[9]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[9]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[10]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[10]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[10]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+              <li>
+                 <div class="row dropdown_cart_inner_row">
+                      <div class="col-sm-2 col-md-2">
+                        <img src="image/how-it-work.png" alt="" class="img-responsive dropdown_cart_img">
+                      </div>
+                      <div class="col-sm-4 col-md-4">
+                            <p class="dropdown_cart_first_p">FRESHO</p>
+                            <a href="#"><span class="dropdown_cart_first_p2">Fresho Onion 1 kg (approx. 10 to 12 nos)</span></a>
+                            <p class="dropdown_cart_p">3x62</p>
+                      </div>
+                      <div class="col-sm-3 col-md-3">
+                         <div class="input-group input-group-sm dropdown_cart_input_group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_dec_btn" disabled="disabled" data-type="minus" data-field="quant[11]">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                  </button>
+                              </span>
+                              <input type="text" name="quant[11]" class="form-control input-number text-center dropdown_cart_txt" value="1" min="1" max="10" readonly>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-info btn-number dropdown_cart_inc_btn" data-type="plus" data-field="quant[11]">
+                                      <span class="glyphicon glyphicon-plus"></span>
+                                  </button>
+                              </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-2 col-md-2">
+                      	<p class="last_price">$62.00</p>
+                      </div>
+                      <div class="col-sm-1 col-md-1">
+                         <a href="javascript:void(0)"><i class="fa fa-times btn-danger" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                             <hr class="dropdown_cart_inner_product_hr">
+                       </div>
+                    </div>
+              </li>
+             </div> 
+              <li class="divider dropdown_cart_divider"></li>
+              <li class="dropdown_cart_btn_li">
+               <div class="row dropdown_cart_btn_row">
+                 <div class="col-sm-6 col-md-6">
+                  <div class="dropdown_cart_btn_div">
+                   <p class="dropdown_cart_btn_p">**Actual Delivery Charges computed at checkout <i class="fa fa-question-circle" aria-hidden="true"></i></p>
+                  </div>
+                 </div>
+                 <div class="col-sm-6 col-md-6">
+                  <div class="dropdown_cart_btn_div">
+                   <p class="dropdown_cart_btn_p2">Sub Total: <span class="pull-right">$1421.00</span></p>
+                   <p class="dropdown_cart_btn_p3">Delivery Charge : <span class="pull-right">...</span></p>
+                   <a class="btn btn-primary dropdown_cart_btn  btn-block" href="your-details.html">View Cart & Checkout</a>
+                  </div>
+                 </div>
+               </div>
+              </li>
+          </ul>
+          
+        </li>
+      </ul>
+    </div>-->
+    <!-- end col -->
+  </div>
+  <!-- end  row -->
+</div>
+</div>
+    
+   
+	<!--<nav class="navbar  navbar-main navbar-default" role="navigation" id="bottom_navbar">
+      <div class="container">
+       <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle  hidden-xs" data-toggle="collapse" data-target=".navbar-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>             
+        </div>
+        <div class="collapse navbar-collapse navbar-1">            
+          <ul class="nav navbar-nav">
+            <li><a href="product.html">Fruits </a></li>
+            <li><a href="product.html" class="dropdown-toggle">Vegetables </a></li>
+            <li><a href="product.html">Seasonal Boxes </a></li>
+            <li><a href="product.html">Beverages </a></li>
+            <li><a href="product.html">Essentials Oils Other</a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Groceries</a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Offers </a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Summer Specials</a></li>
+            <li><a href="product.html">Other</a></li>
+          </ul>
+        </div>
+       </div>
+      </div>
+     </nav>-->
+
+    <!--<div id="bottom_navbar">
+     <div class="container"> 
+      <div class="row">  
+       <nav class="navbar navbar-inverse" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav">
+            <li><a href="product.html">Fruits </a></li>
+            <li><a href="product.html" class="dropdown-toggle">Vegetables </a></li>
+            <li><a href="product.html">Seasonal Boxes </a></li>
+            <li><a href="product.html">Beverages </a></li>
+            <li><a href="product.html">Essentials Oils Other</a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Groceries</a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Offers </a></li>
+            <li class="hidden-lg hidden-md hidden-sm"><a href="product.html" class="mdllink">Summer Specials</a></li>
+            <li><a href="product.html">Other</a></li>
+          </ul>
+        </div>
+       </nav>
+      </div>
+     </div>
+    </div>-->
+            
+   
+
+<div class="container btm-pd">
+<div class="row">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+   <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="image/banner.jpg" alt="#" class="animated fadeIn">
+      <div class="carousel-caption hidden-xs">
+        <h1 class="sldrfnt animated fadeInDown go">Grab The Best Offers On Fresh Vegetables & Fruits</h1>
+        <p><a href="product.html" class="btn btn-danger btn-lg shopnowbtn animated fadeInUp go">Shop Now</a></p>
+      </div>
+    </div>
+
+    <div class="item">
+       <img src="image/banner.jpg" alt="#" class="animated fadeIn">
+      <div class="carousel-caption hidden-xs">
+        <h1 class="sldrfnt animated fadeInDown go">Grab The Best Offers On Fresh Vegetables & Fruits</h1>
+        <p><a href="product.html" class="btn btn-danger btn-lg shopnowbtn animated fadeInUp go">Shop Now</a></p>
+      </div>
+    </div>
+    <div class="item">
+       <img src="image/banner.jpg" alt="#" class="animated fadeIn">
+      <div class="carousel-caption hidden-xs">
+        <h1 class="sldrfnt animated fadeInDown go">Grab The Best Offers On Fresh Vegetables & Fruits</h1>
+        <p><a href="product.html" class="btn btn-danger btn-lg shopnowbtn animated fadeInUp go">Shop Now</a></p>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>  
+</div>
+
+  
+<div class="container">  
+	<!--<div class="row btm-pd">
+        <div class="col-sm-3 col-sm-offset-1"> <h4 class="dudtmechone">DO YOU DELIVER TO ME?</h4> </div>
+        <div class="input-group col-sm-7 dydtm">
+            <input type="text" class="earch-query form-control input-lg wqfcil" placeholder="Enter your postcode below to check your area" />
+            <span class="input-group-btn">
+                <button class="btn btn-danger clearfix" type="button" data-toggle="modal" data-target="#deliverarea">
+                    <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+                </button>
+            </span>
+        </div>
+	</div>-->
+    <div class="row">
+     <div class="col-sm-5 hidden-xs">
+     	<img src="image/special-offer-border.png" class="img-responsive"  / >
+     </div>
+     <div class="col-sm-2 text-center">
+     	<img src="image/special-offer.png" class="img-responsive special-offer"  / >
+     </div>
+     <div class="col-sm-5 hidden-xs">
+     	<img src="image/special-offer-border.png" class="img-responsive"  / >
+     </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			<!---<div class="options-cart-round">
+                     <a href="shopping-cart.html">
+        				<button class="btn btn-default bbdffsc" title="Add to cart">
+        					<span class="fa fa-shopping-cart"></span>
+        				</button>
+                     </a>
+        			</div>-->
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="#" /> </a>
+        		
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+                </div>
+        	</article>
+        </div>
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>
+
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>        
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>        
+        
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>        
+        <div class="col-sm-3">
+            <article class="col-item">
+            	<div class="photo">
+        			
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+        </div>        
+        <div class="col-sm-3">
+            <article class="col-item">
+            	
+            	<div class="photo">
+        			
+        			<a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+        		<div class="info">
+        			<div class="row">
+        				<div class="price-details col-md-6">
+        					<p class="details">
+        						Savoy Cabbage
+        					</p>
+        					<h1>Was <strike>$ 3.00</strike></h1>
+        					<span class="price-new">Now $ 2.00</span>
+        				</div>
+        			</div>
+        		</div>
+        		</div>
+        	</article>
+            
+        </div> 
+        
+        <div class="col-sm-12 text-center">
+         <a href="product.html" class="btn btn-primary bbpss">Start Shopping</a>
+        </div>       
+	</div>
+
+<!-------------- ------------------>
+
+	<div class="row bg-color-bd">
+     <div class="col-sm-2 big-discounttwo">
+     	<img src="image/big-discount.png" class="img-responsive big-discount"/>
+     </div>
+     <div class="col-sm-10 hidden-xs">
+     	<IMG src="image/border.png" class="img-responsive" />
+     </div>
+    </div>  
+   
+    
+    <div class="row">
+      <div id="adv_team_4_columns_carousel" class="carousel slide four_shows_one_move team_columns_carousel_wrapper" data-ride="carousel" data-interval="2000" data-pause="hover">
+         <!--========= Wrapper for slides =========-->
+         <div class="carousel-inner" role="listbox">
+            <!--========= 1st slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            10% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <!--<div class="options-cart-round">
+                            <button class="btn btn-default bbdffsc" title="Add to cart">
+                                <span class="fa fa-shopping-cart"></span>
+                            </button>
+                        </div>-->
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            10% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            10% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            10% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </article>
+               </div>
+            </div>
+            <!--========= 2nd slide =========-->
+            <div class="item active">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            10% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            20% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+            </div>
+            <!--========= 3rd slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+            </div>
+            <!--========= 4th slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+            </div>
+            <!--========= 5th Slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+            </div>
+            <!--========= 6th Slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+            </div>
+            <!--========= 7th Slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </article>
+               </div>
+               
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+            </div>
+            <!--========= 8th Slide =========-->
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
+                  <article class="col-item ci">
+                    <div class="shape">
+                        <div class="shape-text">
+                            30% OFF								
+                        </div>
+                    </div>
+                    <div class="photo">
+                        
+                        <a href="#"> <img src="image/savoy.png" class="img-responsive" alt="Product Image" /> </a>
+                    <div class="info">
+                        <div class="row">
+                            <div class="price-details col-md-6">
+                                <p class="details">
+                                    Savoy Cabbage
+                                </p>
+                                <h1>Was <strike>$ 3.00</strike></h1>
+                                <span class="price-new">Now $ 2.00</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </article>
+               </div>
+               
+            </div>
+         </div>
+         <!--======= Navigation Buttons =========-->
+         <!--======= Left Button =========-->
+         <a class="left carousel-control team_columns_carousel_control_left adv_left" href="#adv_team_4_columns_carousel" role="button" data-slide="prev">
+         <i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i>
+         <span class="sr-only">Previous</span>
+         </a>
+         <!--======= Right Button =========-->
+         <a class="right carousel-control team_columns_carousel_control_right adv_right" href="#adv_team_4_columns_carousel" role="button" data-slide="next">
+         <i class="fa fa-arrow-circle-o-right fa-2x" aria-hidden="true"></i>
+         <span class="sr-only">Next</span>
+         </a>
+      </div>
+   </div>
+   
+   
+   
+   <div class="row bg-color-bd">
+   	<div class="col-sm-12 text-center">
+     <a href="product.html" class="btn btn-primary bbpss">Start Shopping</a>
+    </div>
+   </div>
+   
+<!----------------------- --------------------------------------------->
+   
+   <div class="row">
+   	<div class="col-sm-12 text-center"><h2 class="uprcse">About Fruitastic</h2></div>
+    <div class="col-sm-3 heartdiv">
+     <img src="image/heart.png" class="img-responsive heartimg" />
+    </div>
+    <div class="col-sm-9">
+     <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+     </p>
+    </div>
+   
+   </div>
+   </div>
+   
+<!------------------------- ---------------------------------------->
+
+
+<section id="carousel">    				
+	<div class="container ">
+		<div class="row">
+			<div class="col-md-12 cntbg">
+                <h2 class="uprcse1 text-center">Happy Clients</h2>
+				<div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+				  <div class="carousel-inner">
+				    <div class="active item">
+                    	<blockquote>
+			    			<p class="tst"><i class="fa fa-quote-left" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.Impedit temporibus nisi accusamus.  <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                        </blockquote>
+                        <div class="profile-circle"><img src="image/client1.png" class="img-circle icimg" /></div>
+                        <h4 class="text-center dpj">DR. Prabankaran John</h4>
+                        <p class="text-center"><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i></p>
+				    </div>
+				    <div class="item">
+                    	<blockquote>
+			    			<p class="tst"><i class="fa fa-quote-left" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.Impedit temporibus nisi accusamus.  <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                        </blockquote>
+                        <div class="profile-circle"><img src="image/client1.png" class="img-circle icimg" /></div>
+                        <h4 class="text-center dpj">DR. Prabankaran John</h4>
+                        <p class="text-center"><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i><i class="fa fa-star ffcstar" aria-hidden="true"></i></p>
+				    </div>
+				  </div>
+				</div>
+             <!-- Left and right controls -->
+              <a class="left carousel-control" href="#fade-quote-carousel" data-slide="prev">
+                <i class="fa fa-angle-left fa-3x tstffcl" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#fade-quote-carousel" data-slide="next">
+                <i class="fa fa-angle-right fa-3x tstffcl" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+			</div>
+            </div>
+            </div>
+           </section>
+
+
+  
+    <!-- Modal -->
+   <div class="modal fade" id="login">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Login</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                  <div class="form-group">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#">
+                  </div>
+                  <div class="form-group">
+                    <label for="#">Password:</label>
+                    <input type="password" class="form-control" id="#">
+                  </div>
+                  <div class="form-group">
+                    <a href="#" data-toggle="modal" data-target="#forgot_password" data-dismiss="modal">Forgot password</a>
+                  </div>
+                 
+                  <div class="row">
+                  <div class="col-sm-6 login_div"><input type="submit" value="Login" class="btn btn-success login_btn btn-block" data-dismiss="modal"/></div>
+                  <div class="col-sm-6 login_div2"><a data-toggle="modal" href="#registration" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Sign up</a></div>
+                  </div>
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgot_password">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Forgot Password</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                  <div class="form-group">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter your email id">
+                  </div>
+                  <div class="form-group">
+                    <a data-toggle="modal" href="#forgot_message" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Submit</a></div>
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgot_message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body login_form text-center">
+                <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                <h4>Please check your email id!</h4>
+            </div>
+            <div class="modal-footer">	
+            	<a href="#" data-dismiss="modal" class="btn btn-default login_btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="registration">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Register Now</h3>
+            </div>
+            <div class="modal-body login_form">
+                <form>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label for="#">First Name:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter first name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Last Name:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter last name">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Email Id:</label>
+                    <input type="email" class="form-control" id="#" placeholder="enter email id">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Phone No:</label>
+                    <input type="text" class="form-control" id="#" placeholder="enter phone no">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Password:</label>
+                    <input type="password" class="form-control" id="#" placeholder="password">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="#">Confirm Password:</label>
+                    <input type="password" class="form-control" id="#" placeholder="confirm password">
+                  </div>
+                  <div class="form-group col-sm-12"><hr class="signup_hr"></div>
+                  <div class="form-group col-sm-6"><a data-toggle="modal" href="#message" class="btn btn-primary login_btn btn-block" data-dismiss="modal">Submit</a></div>
+                  <div class="col-sm-6 text-center"><p class="already_login_text">Already have an account? <a data-toggle="modal" href="#login" data-dismiss="modal">Sign in</a> Now.</p></div>
+                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title text-center">Success</h3>
+            </div> 
+            <div class="modal-body login_form text-center">
+                <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                <h4>You have successfully registered.</h4>
+            </div>
+            <div class="modal-footer">	
+            	<a href="#" data-dismiss="modal" class="btn btn-default login_btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DELIVER Area code Modal -->
+
+<div id="deliverarea" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">Post Code</h3>
+      </div>
+      <div class="modal-body text-center">
+        <h3>2233</h3>
+        <p>We currently don't have free delivery to your area, however, please click on live chat to discuss delivery fee and options, or send us an enquiry to find out delivery options.</p>
+        <div class="deliver_btn"><a href="contact-us.html" class="btn btn-primary">Click Here!</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+           
+            
+            
+ <footer class="container"> 
+ 	<div class="row">          
+            <div class="col-md-12 text-center">
+              <h3>Call us on 123-123456789</h3>
+              <p class="ftfntclr"><span>Monday - Friday: 8am - 8pm</span>  <span>AESTSaturday: 9:00am - 1:00pm AESTSunday: CLosed</span></p>
+              <p>
+               <a href="about-us.html" class="ftra">About Us </a>
+               <a href="contact-us.html" class="ftra">Contact Us </a>
+               <a href="privacy-policy.html" class="ftra">Privacy Policy </a>
+               <a href="terms-and-conditions.html" class="ftra">Terms & Conditions </a>
+               <a href="faqs.html" class="ftra2">FAQ</a>
+              </p>
+              <p class="socilp">
+              	<a href="#" class="sclicn1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              	<a href="#" class="sclicn2" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" class="sclicn3" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+              </p>
+            </div>
+		</div>
+        
+        <div class="row">
+         <div class="col-sm-4"><img src="image/bdrleft.png" class="img-responsive bdrleft" /></div>
+         <div class="col-sm-4">
+          <p class="ftfntclr2">
+           2017 <i class="fa fa-copyright" aria-hidden="true"></i> <a href="#"><span class="frts"> FRUITASTIC, </span></a> All Right Reserved
+            
+          </p>
+         </div>
+         <div class="col-sm-4 hidden-xs"><img src="image/bdrleft.png" class="img-responsive bdrright" /></div>
+        </div>
+
+</footer>
+
+
+
+
+
+</body>
+
+  <script type="text/javascript">
+    ! function($, n, e) {
+      var o = $();
+      $.fn.dropdownHover = function(e) {
+        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+          function t(e) {
+            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+          }
+          var r = $(this),
+            i = r.parent(),
+            d = {
+              delay: 100,
+              instantlyCloseOthers: !0
+            },
+            s = {
+              delay: $(this).data("delay"),
+              instantlyCloseOthers: $(this).data("close-others")
+            },
+            a = "show.bs.dropdown",
+            u = "hide.bs.dropdown",
+            h = $.extend(!0, {}, d, e, s),
+            c;
+          i.hover(function(n) {
+            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+          }, function() {
+            c = n.setTimeout(function() {
+              i.removeClass("open"), r.trigger(u)
+            }, h.delay)
+          }), r.hover(function(n) {
+            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+          }), i.find(".dropdown-submenu").each(function() {
+            var e = $(this),
+              o;
+            e.hover(function() {
+              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+            }, function() {
+              var t = e.children(".dropdown-menu");
+              o = n.setTimeout(function() {
+                t.hide()
+              }, h.delay)
+            })
+          })
+        }))
+      }, $(document).ready(function() {
+        $('[data-hover="dropdown"]').dropdownHover()
+      })
+    }(jQuery, this);
+</script>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<script>
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+	</script>
+
+
+<script>
+	window.onscroll = function() {myFunction()};
+	var navbar = document.getElementById("bottom_navbar");
+	var sticky = navbar.offsetTop;
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+		navbar.classList.add("sticky")
+	  } else {
+		navbar.classList.remove("sticky");
+	  }
+	}
+</script>
+
+<script>
+function openNavcart() {
+    document.getElementById("mycartSidenav").style.width = "438px";
+}
+
+function closeNavcart() {
+    document.getElementById("mycartSidenav").style.width = "0";
+}
+</script>
+
+ <script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script> 
+
+<script>
+function openNavcart() {
+    document.getElementById("mycartSidenav").style.width = "438px";
+}
+
+function closeNavcart() {
+    document.getElementById("mycartSidenav").style.width = "0";
+}
+</script>
+
+
+</html>
