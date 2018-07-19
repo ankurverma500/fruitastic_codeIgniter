@@ -41,7 +41,8 @@ define('base_url_assets', 'http://localhost/fruitastic_codeIgniter/assets/');
 define('fruitastic_image_url', 'http://localhost/devsachin/');*/
 $config['base_url'] = 'https://binaryfrog.co/fruitastic_codeIgniter/';
 define('base_url_assets', 'https://binaryfrog.co/fruitastic_codeIgniter/assets/');
-define('fruitastic_image_url', 'https://www.binaryfrog.co/dev/');
+define('fruitastic_image_url', 'https://binaryfrog.co/dev/');
+define('fruitastic_dashboard', 'https://binaryfrog.co/');
 /*
 |--------------------------------------------------------------------------
 | Index File

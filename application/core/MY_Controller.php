@@ -24,6 +24,7 @@ class MY_Controller extends CI_Controller
 	public $admin_email='sksr2050@gmail.com';
 	public $data;
 	public $customer_type='';
+	public $customer_type_id;
 	public function __construct()
 	{
 		parent::__construct();
@@ -54,6 +55,8 @@ class MY_Controller extends CI_Controller
 			$this->name=$ar['name'];
 			$this->payment_option=$ar['payment_option'];
 			$this->customer_type=$ar['customer_type'];
+			$this->customer_type_id=$ar['customer_type_id'];
+			$this->api_token=$ar['api_token'];
 			$this->admin_email='';
 		}
 		//echo $this->added_by;exit;
@@ -275,4 +278,5 @@ class MY_Controller extends CI_Controller
 			//====================================================================================//
 					
 	}
+	
 }

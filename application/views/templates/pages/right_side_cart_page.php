@@ -27,6 +27,7 @@
 		 {
 			 array_push($product_id,$item['id']);
 			 $p_dtail[$item['id']]=$item['qty'];
+			  $fff="remove_cart_ajax('".$item['rowid']."','".$item['id']."')";
 			 echo '<div class="row" id="table_cart_top_big_product_'.$item['id'].'">
 					<div class="col-sm-6 col-md-6">
 					  <p>'.$item['name'].'</p>
@@ -36,7 +37,7 @@
 					</div>
 					<div class="col-sm-4 col-md-4">
 					  <p class="text-right">$'.number_format($item['price'],2).' 
-					  <a href="#"><i class="fa fa-minus sidenav_i"></i></a>
+					  <a onclick="'.$fff.'"><i class="fa fa-minus sidenav_i"></i></a>
 					  </p>
 					</div>
 				  </div>';			
@@ -128,3 +129,44 @@
     </div>
   </div>
 
+<script>
+
+function remove_cart_ajax(rowid,tr_id)
+{
+	
+	var ddd=send_ajax_return_value('<?php echo base_url('cart/remove_cart_ajax/');?>'+rowid,{rowid:rowid});
+	console.log(ddd);
+	var dd=jQuery.parseJSON(ddd.responseText);
+	if(dd.res)
+	{
+		$("#product_right_small_cart_"+tr_id).remove();
+		$("#table_cart_top_big_product_"+tr_id).remove();
+		$("#product_"+tr_id).val('1');
+		$("#product_"+tr_id).attr('show','');
+		$("#Added_to_cart_td_"+tr_id).css('display','none');
+		$("#update_to_cart_td_"+tr_id).css('display','none');
+		$("#add_to_cart_td_"+tr_id).css('display','block');
+		show_on_cart(tr_id);
+		//add_to_cart_td_183
+		//Added_to_cart_td_183
+		//update_to_cart_td_183
+		//product_183
+	}
+	closeNavcart();
+}
+function closeNavcart() 
+{
+    document.getElementById("mySidenav").style.width = "0%";
+}
+function show_on_cart(obj)
+{
+	var ddd=send_ajax_return_value('<?php echo base_url('cart/get_cart_details');?>',{obj:obj});
+	console.log(ddd);
+	var cartd= jQuery.parseJSON(ddd.responseText);	
+	$("#product_right_small_cart_subtotal").html('$'+cartd.sub_total_amount);
+	$("#product_right_small_cart_shipping").html(cartd.shipment_amount);
+	$("#product_right_small_cart_total").html('$'+cartd.total_amount);
+	$("#cart_top_big_total_price").html('$'+cartd.total_amount);
+	$("#cart_top_big_total_item").html(cartd.total_item);
+}
+</script>

@@ -87,13 +87,13 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 order-bar">
       <ul>
-        <li  <?php   if($method=='your_detail' || $method=='delivery_day'||$method=='payment'||$method=='payment_status'){echo 'class="active"';}else{echo '';}?>>
+        <li  <?php   if($method=='your_detail' ){echo 'class="active"';}else{echo '';}?>>
           <a  href="<?php echo base_url('checkout/your_detail');?>" class="not-active">Your Details</a>  
         </li>
-        <li <?php   if($method=='delivery_day' ||$method=='payment'||$method=='payment_status'){echo 'class="active"';}else{echo '';}?>>
+        <li <?php   if($method=='delivery_day' ){echo 'class="active"';}else{echo '';}?>>
           <a  href="<?php echo base_url('checkout/delivery_day');?>" class="not-active">Delivery Day</a>
         </li>
-        <li <?php   if($method=='payment' ||$method=='payment_status'){echo 'class="active"';}else{echo '';}?>>
+        <li <?php   if($method=='payment'){echo 'class="active"';}else{echo '';}?>>
           <a  href="<?php echo base_url('checkout/payment');?>" class="not-active">Payment</a>
         </li>
         <li <?php   if($method=='payment_status'){echo 'class="active"';}else{echo '';}?>>

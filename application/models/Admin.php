@@ -84,7 +84,8 @@ class Admin extends MY_Model
 				'username'			=> $user->username,
 				'payment_option'	=> $user->payment_option,
 				'customer_type'	    => $user->customer_type,
-				'customer_type_id'	    => $user->customer_type_id,
+				'customer_type_id'	=> $user->customer_type_id,
+				'api_token'	    	=> $data['api_token'],
 				/*'profile_image'	=> $user->profile_image,*/
 				'loggedin_time'	=> time()
 				);	

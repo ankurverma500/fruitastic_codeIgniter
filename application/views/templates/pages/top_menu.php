@@ -22,7 +22,7 @@
 					</a> 
 					</li>
 					<li   >
-					<a href="<?php echo base_url('login/dashbord')?>" class="rgst" >Hi <?php echo $this->name?></a>
+					<a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" class="rgst" >My Account <?php //echo 'Hi'.$this->name?></a>
 					</li>
 			  <?php 
 					}
@@ -84,7 +84,7 @@
                   <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a>
                   </li>
                   <li class="hidden-lg hidden-md hidden-sm">
-                  <a href="<?php echo fruitastic_dashboard;?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
+                  <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
                   </li>
                   
                   <li class="hidden-lg hidden-md hidden-sm mobile-social-icon"> 
