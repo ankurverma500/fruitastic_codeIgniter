@@ -120,13 +120,27 @@
 		 if(!empty($cart_check)) { 
 	  ?><?php }?>
             <span class="login_part hidden-xs hidden-sm ">
-            <li>
-                <a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()"  style="" class="cartbtnaaaaa">
-                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                    <i class="crtnmbra" id="cart_top_big_total_item1 "><?php echo $this->cart->total_items()?></i>
-                    <span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>
-                </a>
-            </li>
+           <?php /*?> <ul _ngcontent-c3="" class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                            <!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><li _ngcontent-c3=""> 
+                              <a _ngcontent-c3="" class="n_cart hoverd-btn"> <span _ngcontent-c3="" class="glyphicon glyphicon-shopping-cart"></span> 
+                              <i _ngcontent-c3=""><strong _ngcontent-c3="">1</strong></i>
+                              <span _ngcontent-c3="" style="text-transform:lowercase; font-size: 13px;"> </span> <strong _ngcontent-c3="">($20.00)</strong></a> 
+                            </li>
+                            <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+                         </ul><?php */?>
+                     <ul  class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <li>
+                            <a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()"  style="" class="cartbtnaaaaa">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                <i class="crtnmbra" id="cart_top_big_total_item "><?php echo $this->cart->total_items()?></i>
+                                <span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>
+                            </a>
+                        </li>
+                </ul>
             </span> </div>
         </div>
         <div id="mySidenav" class="sidenav"> 

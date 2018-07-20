@@ -69,7 +69,8 @@
                 
                   <label class="col-md-3 col-sm-3 control-label">Customer Type <span class="text-danger">*</span></label>
                   <div class="col-md-3 col-sm-3">
-                     <select  class="form-control required " id="customer_type" name="customer_type" onchange="showhide_bussiness_name_div(this)">
+                  
+                     <select  class="form-control required " <?php if(!isset($row)){?>disabled="disabled" <?php }?>id="customer_type" name="customer_type" onchange="showhide_bussiness_name_div(this)">
                         <option  value="" >Select Customer Type</option>
                         <option <?php if($row->customer_type_id==1){echo 'selected="selected"';}?>  value="1" >Residential</option>
                         <option <?php if($row->customer_type_id==2){echo 'selected="selected"';}?> value="2" >School</option>
@@ -81,7 +82,7 @@
                   <div class="" id="bussiness_name_div" <?php if(isset($row) && $row->customer_type_id>1){echo 'style="display:block;"';}else{echo 'style="display:none;"';} ?>>
                    	  <label class="col-md-3 col-sm-3 control-label">Bussiness  Name</label>
                       <div class="col-md-3 col-sm-3">
-                         <input type="text" class="form-control" name="bussiness_name" id="bussiness_name" value="<?php echo set_value('bussiness_name', isset($row->primary_contact_name) ? $row->primary_contact_name : '')?>" placeholder="Bussiness  Name" autocomplete="off"  />
+                         <input type="text" <?php if(!isset($row)){?>disabled="disabled" <?php }?> class="form-control" name="bussiness_name" id="bussiness_name" value="<?php echo set_value('bussiness_name', isset($row->primary_contact_name) ? $row->primary_contact_name : '')?>" placeholder="Bussiness  Name" autocomplete="off"  />
                         <?php echo form_error('customer_type'); ?>
                   </div> 
                   </div>          
@@ -109,7 +110,7 @@
                   </div>
                   <label class="col-md-3 col-sm-3 control-label your_details_text_right">Email <span class="text-danger">*</span></label>
                   <div class="col-md-3 col-sm-3">
-                    <input type="text" <?php echo $desable_input_text;?>  class="form-control" required="required"  name="username"  id="email" value="<?php echo set_value('username', isset($row->email) ? $row->email : '')?>" placeholder="Enter a Email" autocomplete="off">
+                    <input type="text" <?php echo $desable_input_text;?>  class="form-control" required="required"  name="username"  id="username" value="<?php echo set_value('username', isset($row->email) ? $row->email : '')?>" placeholder="Enter a Email" autocomplete="off">
       <?php echo form_error('username'); ?>
                   </div>
                 </div>
@@ -234,7 +235,7 @@ function validate_this_form()
 	var name=$.trim($('#name').val());
 	var last_name=$.trim($('#last_name').val());
 	var contact=$.trim($('#contact').val());
-	var email=$.trim($('#email').val());
+	var email=$.trim($('#username').val());
 	
 	var new_password=$('#password').val();
 	var confirm_password=$('#confirm_password').val();
@@ -272,7 +273,7 @@ function validate_this_form()
 	if(email=='')
 	{	
 		remove_class_('contact');
-		$('#email').focus().addClass('formvalidetionred');
+		$('#username').focus().addClass('formvalidetionred');
 		simpal_notify("email is Required!" , "Please fill the email field. this is required field."  , "danger");
 		return false;
 	}

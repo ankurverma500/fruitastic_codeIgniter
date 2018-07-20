@@ -101,11 +101,13 @@
                                  <li><a href="cart.html"><i class="fa fa-shoping-cart">0</i></a></li>
                           	  </span>-->
                               <span class="login_part hidden-xs hidden-sm">
+                              <ul  class="nav navbar-nav navbar-right hidden-xs hidden-sm">
                                  <li><a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()"  style="" class="cartbtnaaaaa">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
                                     <i class="crtnmbra" id="cart_top_big_total_item"><?php echo $this->cart->total_items()?></i>
                                     <span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>
                                 </a></li>
+                                </ul>
                           	  </span>
                         </div>
                     </div>

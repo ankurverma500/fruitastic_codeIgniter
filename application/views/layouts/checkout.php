@@ -160,7 +160,27 @@ return $.ajax({
 		});	
 }
    </script>
+<script>
+jQuery(document).ready(function(){
+  jQuery(window).scroll(function(){
+    if (jQuery(this).scrollTop() > 150) {
+    jQuery('.bottom_header').addClass('fixed-header');
+    }
+    else {
+    jQuery('.bottom_header').removeClass('fixed-header');
+    }
+  });
+});
+</script>
 
+
+
+
+<script>
+  $('.carousel').carousel({
+   interval: 2000
+  });
+ </script> 
 
 </html>
 <?php exit;?>

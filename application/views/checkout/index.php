@@ -3,7 +3,7 @@
     <?php $this->load->view('checkout/index2',$this->data);?>
     <div class="col-sm-8">
       <div class="row">
-        <?php $this->load->view('payment/index');?>
+        <?php $this->load->view('payment/index2');?>
       </div>
     </div>
     <div class="col-sm-4">

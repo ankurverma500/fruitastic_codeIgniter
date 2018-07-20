@@ -19,20 +19,19 @@
         </div>
         </label>
       </div>
-      
-      <!--<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <label class="payment_tab">
-                <div class="row">
-                  <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 payment_radio">
-                    <input id='see-me' name='test' type='radio'  class="payment_type" dddd="paypal_account"/>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
-                    <div class="payment_tab_text">Add PayPal Account</div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"> <img src="<?php echo base_url('assets/image/payment-paypal@2x.png')?>" class="img-responsive payment_img" /> </div>
-                </div>
-                </label>
-              </div>-->
+      <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <label class="payment_tab">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 payment_radio">
+            <input id='see-me' name='test' type='radio'  class="payment_type" dddd="paypal_account"/>
+          </div>
+          <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+            <div class="payment_tab_text">Add PayPal Account</div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"> <img src="<?php echo base_url('assets/image/payment-paypal@2x.png')?>" class="img-responsive payment_img" /> </div>
+        </div>
+        </label>
+      </div>
       <?php if($this->payment_option!=''){?>
       <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <label class="payment_tab">
@@ -56,6 +55,34 @@
       <input type="submit" name="Eway" style="margin-left:10px;" class="btn btn-primary checkout-btn pull-right btn-lg" value="Submit"/>
     </form>
   </div>
+  <div id='paypal_account' class="row well payment_well" style="margin-left:0px; margin-right:0px;display:none;">
+          <div class="col-sm-12 col-md-6 pytHid">
+                <div class="payment_div text-center">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <img src="<?php echo base_url('assets/images/paypal-icon21.png')?>" class="img-responsive paypal_icon2 pull-left">
+                            <p class="payment_heading">Paypal</p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="text-center txt_payment">Pay Securely with</p>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <p class="text-center">
+                                <img src="<?php echo base_url('assets/images/paypal-main.png')?>" class="img-responsive">
+                            </p>
+                        </div>
+                    </div>
+                    <div id="paypal-button"></div>
+                    <div id="paypalpay">
+
+                                 </div>
+                </div>
+            </div>
+    <!--<form class="form-horizontal" method="post" action="<?php echo base_url('checkout/payment_other');//payment_eway_submit?>">
+      paypal_account
+      <input type="submit" name="paypal" style="margin-left:10px;" class="btn btn-primary checkout-btn pull-right btn-lg" value="Submit"/>
+    </form>-->
+  </div>
   <!--<div id='paypal_account' style='display:none;' class="payment_well">Paypal</div>-->
   <?php if($this->payment_option!=''){?>
   <div id='Other' style='display:none;' class="payment_well">
@@ -67,6 +94,7 @@
   <?php }?>
 </div>
 <script type="text/javascript">
+
 $('input[name=test]').click(function () {
     var dddd=$(this).attr('dddd');
 	$(".payment_well").hide('slow');
@@ -81,7 +109,7 @@ $('input[name=test]').click(function () {
 	*/
 });
 </script> 
-<script type="text/javascript">
+<!--<script type="text/javascript">
            $(document).ready(function(){
 
 moment.locale('tr');
@@ -137,17 +165,94 @@ if( !date_input.data('datepicker').picker.is(":visible"))
  
  
  });
- </script> 
-<!--<script src="js/data-picker.js"></script> 
-<script>
-  $(function() {
-$( "#datepicker" ).datepicker();
-});
-</script> --> 
+ </script> -->
+
 <script>
 
 /*Tooltip*/
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+ 
 </script>
+<script src="https://www.paypalobjects.com/api/checkout.js" ></script>
+ <script> 
+$(function () {
+	 var morderid = '<?php echo $this->session->userdata('total_order_array');?>';
+	 paypal.Button.render({
+		 env: "production",
+		 style: {
+			 label: "pay",
+			 size: "responsive",
+			 shape: "rect",
+			 color: "gold"
+		 },
+		 client: {
+			 production: "AbVLn8rsiLSmQPxIHdDcW_zSrkiT8tShjO66t-Nj6WNDSiQLEWkK6iIc46XWrdfi3JoevQI-2MF-sqAx"
+		 },
+		 commit: !0,
+		 payment: function(e, t) {
+			 return t.payment.create({
+				 payment: {
+					 transactions: [{
+						 amount: {
+							 total: '<?php echo $this->session->userdata('order_final_amount');?>',
+							 currency: "AUD"
+						 }
+					 }]
+				 }
+			 })
+		 },
+		 onAuthorize: function(e, t) {
+			 return t.payment.execute().then(function(e) {
+				 window.angularComponentRef.zone.run(function() {
+					 window.angularComponentRef.component.submitOrder(morderid, "paypal", e.state, e.id)
+				 })
+			 })
+		 },
+		 onCancel: function(e) {
+			 alert("The payment was cancelled!");
+			 //this.router.navigate(["/fail"]);
+		 }
+	 }, "#paypal-button"); 
+});
+	 </script>
+ <!--<script> 
+ var morderid = ' + d[0].order_id + ';
+ paypal.Button.render({
+     env: "production",
+     style: {
+         label: "pay",
+         size: "responsive",
+         shape: "rect",
+         color: "gold"
+     },
+     client: {
+         production: "AbVLn8rsiLSmQPxIHdDcW_zSrkiT8tShjO66t-Nj6WNDSiQLEWkK6iIc46XWrdfi3JoevQI-2MF-sqAx"
+     },
+     commit: !0,
+     payment: function(e, t) {
+         return t.payment.create({
+             payment: {
+                 transactions: [{
+                     amount: {
+                         total: ' + d[0].tot_amount.toFixed(2) + ',
+                         currency: "AUD"
+                     }
+                 }]
+             }
+         })
+     },
+     onAuthorize: function(e, t) {
+         return t.payment.execute().then(function(e) {
+             window.angularComponentRef.zone.run(function() {
+                 window.angularComponentRef.component.submitOrder(morderid, "paypal", e.state, e.id)
+             })
+         })
+     },
+     onCancel: function(e) {
+         alert("The payment was cancelled!");
+         this.router.navigate(["/fail"]);
+     }
+ }, "#paypal-button"); </script>-->

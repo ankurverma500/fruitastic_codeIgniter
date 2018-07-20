@@ -13,48 +13,13 @@ class Checkout extends MY_Controller
 	public function your_detail($id=null)
 	{
 	
-		$da=array('val'=>'*',
-				  'table'=>'tbl_customer',
-				  'where'=>array('status'=>'1','deleted'=>'0','id'=>$this->added_by)
-				  );
-		$row=$this->common->getdata($da);
 		
-		$da1=array('val'=>'*',
-				  'table'=>'tbl_customer_address',
-				  'where'=>array('deleted'=>'0','customer_id'=>$this->added_by)
-				  );
-		$customer=$this->common->getdata($da1);
-		
-		$this->data['row']='';
-		$this->data['customer']='';
-		
-		/*$sess 	= 	$this->session->userdata('admin_login');
-			$ar 	= 	unserialize($sess);	
-			echo $this->added_by;*/
 			
-		if($row['res'])
-		{
-			$id=$this->added_by;
-			$this->data['row']=$row['rows'][0];
-			$this->data['customer']=$customer['rows'][0];
-			
-			$customer_id=$row['rows'][0]->id;
-			$customer_address_id=$customer['rows'][0]->id;
-		}
-		if($this->session->userdata('admin_login') == true)
-		{
-			//redirect('admin/dashboard');
-			//redirect(base_url("checkout/delivery_day"),'refrash');		
-			//exit;
-		}	
 		if($this->input->post('loginForm')) 
 		{
 			
 			$this->step_1_login();
 		}
-		else if($this->input->post('save')) 
-		{/*print_r($_POST);
-			exit;*/
 			$this->form_validation->set_error_delimiters('<span style="color:red; position:absolute;">','<span>');
 			if(!$id)
 			{
@@ -70,7 +35,7 @@ class Checkout extends MY_Controller
 				{
 				   $is_unique =  '';
 				}//|xss_clean
-				$this->form_validation->set_rules('username','Email','trim|required|valid_email'.$is_unique);
+				$this->form_validation->set_rules('username',' Email','trim|required|valid_email'.$is_unique);
 				//$this->form_validation->set_rules('new_password','Password','trim|required');
 				//$this->form_validation->set_rules('confirm_password','Password','trim|required');
 				$this->form_validation->set_rules('password', 'Password', 'required');
@@ -88,17 +53,16 @@ class Checkout extends MY_Controller
             //$this->form_validation->set_rules('billing_apartment_no','Billing Apartment No','required');				
 			$this->form_validation->set_rules('billing_address','Billing Address','required');
 			}
+		
+		if($this->input->post('save') && $this->form_validation->run() != false) 
+		{
+			/*echo $id;
+			print_r($_POST);
+			exit;*/
+			
 		//print_r( 	$this->form_validation->error_array());
 		//echo validation_errors();
-			if($this->form_validation->run() == false)
-			{	
-			$this->data['content']=$this->load->view('checkout/your_detail',$this->data,true);
-			$this->load->view('layouts/pages',$this->data);
-			/*echo 'aaaaaaaaaa';
-			exit;*/
-			}
-			else 
-			{	
+			
 			
 			
 			/*SELECT `id`, `customer_id`, `customer_type`, `customer_type_id`, `name`, `last_name`, `email`, `username`, `password`, `primary_contact_name`, `contact`, `contact2`, `status`, `payment_gateway_status`, `payment_option`, `deleted`, `added_date`, `modify_date`, `added_by`, `modify_by`, `api_token`, `eway_custid`, `TokenCustomerID`, `TokenCustomerBillID`, `promo_discount` FROM `tbl_customer` WHERE 1*/
@@ -193,6 +157,8 @@ class Checkout extends MY_Controller
 																   'longitude'=>$data_c['longitude'],
 																   'latitude'=>$data_c['latitude']));	
 				$this->session->set_userdata('run_post_code',$data_c['zip_code']);
+				//print_r($data_c);
+				//exit;
 			if($id)
 			{
 				$this->db->where(array('id'=>$customer_address_id,'customer_id' => $id));
@@ -234,14 +200,42 @@ class Checkout extends MY_Controller
 				//redirect("product/index",'refresh');
 			}
 			
-			echo '<pre>';	
-			print_r($_POST);
-			exit;
-				
-			}
 		}
 		else
 		{
+			$da=array('val'=>'*',
+					  'table'=>'tbl_customer',
+					  'where'=>array('status'=>'1','deleted'=>'0','id'=>$this->added_by)
+					  );
+			$row=$this->common->getdata($da);
+			
+			$da1=array('val'=>'*',
+					  'table'=>'tbl_customer_address',
+					  'where'=>array('deleted'=>'0','customer_id'=>$this->added_by)
+					  );
+			$customer=$this->common->getdata($da1);
+			
+			$this->data['row']='';
+			$this->data['customer']='';
+			
+			/*$sess 	= 	$this->session->userdata('admin_login');
+				$ar 	= 	unserialize($sess);	
+				echo $this->added_by;*/
+				
+			if($row['res'])
+			{
+				$this->data['id']=$id=$this->added_by;
+				$this->data['row']=$row['rows'][0];
+				$this->session->set_userdata('customer_other_payment_option',$row['rows'][0]->payment_option);
+				$this->data['customer']=$customer['rows'][0];
+				
+				$customer_id=$row['rows'][0]->id;
+				$customer_address_id=$customer['rows'][0]->id;
+				
+				/*echo '<pre>';
+				print_r($row);
+				exit;*/
+			}
 			
 			$this->data['content']=$this->load->view('checkout/your_detail',$this->data,true);//
 			$this->load->view('layouts/pages',$this->data);
@@ -258,17 +252,27 @@ class Checkout extends MY_Controller
 		print_r($cart_check);
 		exit;*/
 		$this->login_check();
-		if($this->session->userdata('run_post_code') && (count($this->cart->contents())>0))
+		if($this->session->userdata('run_post_code') && ($this->cart->total_items()>0))
 		{
 			
 			$post_code=$this->session->userdata('run_post_code');
 			$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime(date('Y-m-d')))));
+			if(date('H')>='15:00')
+			{
+				//$this->db->where('trd.run_date>',date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date)))));
+				$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date))));
+			}
+			else
+			{
+				//echo 'sads';
+				//$this->db->where('trd.run_date >',$cur_date);
+			}
 			$comment1=array('table'=>'tbl_run_detail as trd',
 							'val'=>'*,trd.run_date,trd.id as run_detail_id
 							,(SELECT `name` FROM `tbl_working_shift` WHERE id=trd.shift) as shift_name 
 							',
 							//,	(SELECT count(*) FROM `tbl_recurring_order` WHERE `order_id`='.$order_id.' AND  `customer_id`='.$customer_id.' AND `run_detail_id`=trd.id ) as recorder_exists
-							'where'=>array('trd.deleted'=>'0','trd.status'=>'1','trz.zip_code'=>$post_code),
+							'where'=>array('trd.deleted'=>'0','trd.status'=>'1','trz.zip_code'=>$post_code,'trd.run_date>'=>$cur_date),
 							//,'trd.id'=>'76' ,'trd.run_date'=>'2018-01-01'
 							//'trz.max_deliveries < trz.total_deliveries'
 							'minvalue'=>'',
@@ -278,21 +282,15 @@ class Checkout extends MY_Controller
 							'orderby'=>'trd.run_date',
 							'orderas'=>'ASC');	
 					$multijoin1=array(
-						array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status=1','join_type'=>'left')           
+						array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status="1"','join_type'=>'left')           
 						);
 			
-			if(date('H')>='15:00')
-			{
-				$this->db->where('trd.run_date>',date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date)))));
-			}
-			else
-			{
-				$this->db->where('trd.run_date>',$cur_date);
-			}
-			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='5') ");
+			
+			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='$this->customer_type_id') ");
 			$all_run_day=$this->common->multijoin($comment1,$multijoin1);
-			//echo $this->db->last_query();
-			//exit;
+			/*print_r($all_run_day);
+			echo $this->db->last_query();
+			exit;*/
 			if($all_run_day['res'])
 			{
 				$da=array('val'=>'*',
@@ -354,6 +352,12 @@ class Checkout extends MY_Controller
 		if($this->session->userdata('run_post_code')&&$this->session->userdata('run_detail')&&(count($this->cart->contents())>0))
 		{	
 		
+			/*print_r( $this->session->userdata('run_detail'));
+			exit;*/
+			$run_detail=$this->session->userdata('run_detail');
+			$this->data['order_type']=$run_detail['run_type'];
+			$this->data['order_payment_option']=$this->session->userdata('customer_other_payment_option');
+					
 			$this->session->set_userdata('delivery_notes',$this->input->post('delivery_notes'));
 			$this->session->set_userdata('packing_notes',$this->input->post('packing_notes'));
 			$this->data['content']=$this->load->view('checkout/index',$this->data,true);
@@ -385,7 +389,7 @@ class Checkout extends MY_Controller
 	{		
 		if($this->session->userdata('run_post_code')&&$this->session->userdata('run_detail'))
 		{			
-			if($this->input->post('Other') || $this->input->post('Eway'))
+			if($this->input->post('Other') || $this->input->post('Eway') || $this->input->post('paypal'))
 			{				
 				$this->db->trans_off();
 				//$this->db->trans_start();
@@ -426,6 +430,8 @@ class Checkout extends MY_Controller
 					$qry_user_zip_code				=	$this->session->userdata('run_post_code');
 					$delivery_notes					=	$this->session->userdata('delivery_notes');
 					$packing_notes					=	$this->session->userdata('packing_notes');
+					$delivery_notes					=	$delivery_notes	!=''?$delivery_notes	:'';
+					$packing_notes					=	$packing_notes	!=''?$packing_notes	:'';
 					$total_price=0;
 					$run_detail=$this->session->userdata('run_detail');
 					$order_type=$run_detail['run_type'];
@@ -624,6 +630,7 @@ class Checkout extends MY_Controller
 					}
 					
 					$order_id='ORDIDA.'.$last_insert_order_id; 
+					$this->session->set_userdata('order_final_amount',$amount_total);
 					 $query_order_update="UPDATE `tbl_order` SET  ship_amount='$shipping_amount', 
 					`discount`='$dd_value', `discount_code`='$discode',
 					amount_total='$amount_total', amount='$total_order_price',
@@ -730,6 +737,12 @@ class Checkout extends MY_Controller
 						{
 							redirect(base_url("payment/eway/index/?order_id=".$last_insert_order_id),'refresh');
 						} 
+						else if( $this->input->post('paypal'))
+						{
+							//redirect(base_url("payment/paypal/index/?order_id=".$last_insert_order_id),'refresh');
+							//redirect(base_url("paypal/demos/express_checkout/index/?order_id=".$last_insert_order_id),'refresh');
+							redirect(base_url("paypal/demos/express_checkout/SetExpressCheckout/?order_id=".$last_insert_order_id),'refresh');
+						}
 						else if($this->input->post('Other'))
 						{
 							if($discount_value['res'])

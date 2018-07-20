@@ -108,7 +108,7 @@ $(function(){
 				 }]
 		  };*/
 
-var calendar = new Calendar("calendarContainer", "small", [ "Sunday", 3 ], [ "#e91e63", "#c2185b", "#ffffff", "#f8bbd0" ]);
+var calendar = new Calendar("calendarContainer", "small", [ "Sunday", 3 ],  [ "#e91e63", "#c2185b", "#ffffff", "#f8bbd0" ]);
 
 var organizer = new Organizer("organizerContainer", calendar, data);
 currentDay = calendar.date.getDate(); // used this in order to make anyday today depending on the current today

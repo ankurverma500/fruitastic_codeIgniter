@@ -38,11 +38,12 @@ defined('DS') ? null :  define('DS','\\'); //DIRECTORY_SEPARATOR);
 */
 /*$config['base_url'] = 'http://localhost/fruitastic_codeIgniter/';
 define('base_url_assets', 'http://localhost/fruitastic_codeIgniter/assets/');
-define('fruitastic_image_url', 'http://localhost/devsachin/');*/
+define('fruitastic_image_url', 'http://localhost/devsachin/');
+define('fruitastic_dashboard', 'http://localhost/frutastice_angular/dashboard/');*/
 $config['base_url'] = 'https://binaryfrog.co/fruitastic_codeIgniter/';
 define('base_url_assets', 'https://binaryfrog.co/fruitastic_codeIgniter/assets/');
 define('fruitastic_image_url', 'https://binaryfrog.co/dev/');
-define('fruitastic_dashboard', 'https://binaryfrog.co/');
+define('fruitastic_dashboard', 'https://binaryfrog.co/dashboard');
 /*
 |--------------------------------------------------------------------------
 | Index File

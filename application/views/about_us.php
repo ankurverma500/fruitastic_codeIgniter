@@ -470,3 +470,10 @@ Our produce looks and tastes as good as the photos displayed.
   </div>
 </div> 
            
+           <script>
+		
+		$(document).on('click','.youtube-popup > div',function(){
+				window.open($(this).parent().children('iframe').attr("src"));
+		});
+		
+	</script>

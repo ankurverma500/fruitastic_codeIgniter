@@ -36,7 +36,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div id='show-me' style=' <?php if($run_detail['run_type']==1){echo ' display:block;';}else{echo 'display:none;';}?> margin-left:0px;'>
-                  <?php $this->load->view('checkout/one_time');?>
+                  <?php $this->load->view('checkout/ng-one_time');?>
                     
                   </div>
                 </div>
