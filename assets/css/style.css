@@ -56,7 +56,7 @@ h3{font-family: 'Roboto', sans-serif;}
 .bottom_header .menu_sec {float: right; /*padding-top:36px;*/ padding-top: 14px; text-align: right;width: 100%;}
 .bottom_header .menu_sec .navbar-default {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;border: 0 none;display: inline-block;margin-bottom: 0;min-height: 1px;position: relative;vertical-align: middle;}
 .bottom_header .menu_sec .navbar-collapse {border: 0 none;height: auto; padding: 0;    }
-.bottom_header .menu_sec .navbar-nav li a {position: relative; background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: #fff !important;font-size: 14px; padding: 0 22px 10px;text-transform:uppercase;transition: all 0.5s ease 0s;  -moz-transition:all 0.5 ease 0s;-webkit-transition:all 0.5 ease 0s; font-weight:400;}
+.bottom_header .menu_sec .navbar-nav li a {position: relative; background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: #000 !important;font-size: 14px; padding: 0 22px 10px;text-transform:uppercase;transition: all 0.5s ease 0s;  -moz-transition:all 0.5 ease 0s;-webkit-transition:all 0.5 ease 0s; font-weight:400;}
 .bottom_header .menu_sec .navbar-nav li a::before, .menu_sec .navbar-nav li a::after {background: #ff4141;bottom: -2px;content: "";height: 2px;position: absolute;transition: all 0.2s ease 0s;width: 0;}
 .bottom_header .menu_sec .navbar-nav li a::before, .menu_sec .navbar-nav li a::after {background: #ff4141;bottom: -6px;content: "";height: 2px;position: absolute;transition: all 0.2s ease 0s;width: 0;}
 .bottom_header .menu_sec .navbar-nav li a::after {right: 50%;}
@@ -1578,8 +1578,8 @@ button.close {
     color: #fff;
 }
 .span_your_detail_login_butn {
-    border-radius: 100px!important;
-    height: 40px!important;
+    border-radius: 100px !important;
+    /*height: 40px !important;*/
 }
 /*.hoverd-btn {
     background: #ff4141;

@@ -241,7 +241,8 @@
                 </a>
                 </td>
                
-                <td  style="display:<?php if(!$show){echo 'none;';}else{echo 'block;';}?>" class="action added" id="Added_to_cart_td_<?php echo $result_products->id;?>">
+                <td  style="display:<?php if(!$show){echo 'none;';}else{echo 'block;';}?>float: right;
+   <?php /*?> margin: -135px 0 0 0;<?php */?>" class="action added" id="Added_to_cart_td_<?php echo $result_products->id;?>">
                     <a <?php /*?>onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','Added','<?php echo $product_gst?>')"<?php */?> 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-add">
                         <p>
@@ -251,7 +252,8 @@
                     </a>
                 </td>
                 
-                <td style="display:none;" class="action update" id="update_to_cart_td_<?php echo $result_products->id;?>">
+                <td style="display:none;float: right;
+  <?php /*?>  margin: -135px 0 0 0;<?php */?>" class="action update" id="update_to_cart_td_<?php echo $result_products->id;?>">
                         <a onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','update','<?php echo $product_gst?>')" 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-update class_pointer">                    
                             <p><i class="fa fa-upload fa-3x"></i></p>

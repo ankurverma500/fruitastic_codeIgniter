@@ -1396,9 +1396,12 @@
 	$.fn.datepicker.Constructor = Datepicker;
 	var dates = $.fn.datepicker.dates = {
 		en: {
-			days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			days:["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"],
+			daysShort:["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"],
+			daysMin:["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"],
+			/*days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
 			daysShort: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-			daysMin: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			daysMin: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],*/
 			months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 			monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 			today: "Today",
@@ -1710,7 +1713,7 @@ var dateFormat = function () {
 				d:    d,
 				dd:   pad(d),
 				ddd:  dF.i18n.dayNames[D],
-				dddd: dF.i18n.dayNames[D + 7],
+				dddd: dF.i18n.dayNames[D],//+ 7
 				m:    m + 1,
 				mm:   pad(m + 1),
 				mmm:  dF.i18n.monthNames[m],
@@ -1762,7 +1765,8 @@ dateFormat.masks = {
 dateFormat.i18n = {
 	dayNames: [
 		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
-		"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+		/*"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"*/
 	],
 	monthNames: [
 		"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",

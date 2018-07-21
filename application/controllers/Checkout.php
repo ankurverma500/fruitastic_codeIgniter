@@ -306,7 +306,7 @@ class Checkout extends MY_Controller
 				$customer=$this->common->getdata($da1);			
 				$this->data['row']='';
 				$this->data['customer']='';
-					
+				$this->data['all_run_day']=$all_run_day['rows'];
 				if($row['res'])
 				{
 					$id=$this->added_by;
@@ -348,16 +348,17 @@ class Checkout extends MY_Controller
 	public function payment()
 	{
 		
-		
+		/*print_r($_POST);
+		exit;*/
 		if($this->session->userdata('run_post_code')&&$this->session->userdata('run_detail')&&(count($this->cart->contents())>0))
 		{	
 		
-			/*print_r( $this->session->userdata('run_detail'));
-			exit;*/
+			
 			$run_detail=$this->session->userdata('run_detail');
 			$this->data['order_type']=$run_detail['run_type'];
 			$this->data['order_payment_option']=$this->session->userdata('customer_other_payment_option');
-					
+			/*print_r( $this->session->userdata('run_detail'));
+			exit;*/		
 			$this->session->set_userdata('delivery_notes',$this->input->post('delivery_notes'));
 			$this->session->set_userdata('packing_notes',$this->input->post('packing_notes'));
 			$this->data['content']=$this->load->view('checkout/index',$this->data,true);
@@ -486,7 +487,7 @@ class Checkout extends MY_Controller
 											 'added_date'=>$this->currentAddDate,
 											 'order_run_id'=>$run_detail_id,
 											 'approved_order'=>'0',
-											 'order_status'=>'1',
+											 'order_status'=>'0',
 											 'order_type'=>$order_type,
 											 'order_repeat_status'=>'0',
 											 'delivery_notes'=>$delivery_notes,	
@@ -538,12 +539,32 @@ class Checkout extends MY_Controller
 						 $data['val']['status']='1';
 						
 					}
-					
+					else 
+					if( $this->input->post('paypal'))
+					{
+						$order_id=$this->input->post('order_id');
+						$payment_mode=$this->input->post('payment_mode');
+						$payment_status=$this->input->post('payment_status');
+						$transection_id=$this->input->post('transection_id');
+						$paypal=$this->input->post('paypal');
+						
+							$data['val']['payment_mode']='2';
+							$data['val']['payment_type'] = $payment_mode; 
+							$data['val']['payment_status']='3'; 
+							$data['val']['TransactionID']=$transection_id;
+							$data['val']['sess_id']=$transection_id;
+							$data['val']['order_status']='1';
+							$data['val']['payment_date']=$this->currentAddDate;
+							$data['val']['status']='1';
+							$data['val']['deleted']='0';		
+					}
 					$last_insert_order_id=0;
 					
-					/*echo '<pre>';
+					/*
+					echo '<pre>';
 					print_r($data);	
-					exit;	*/
+					exit;
+					*/
 					
 					$log=$this->common->add_data($data);
 					$last_insert_order_id=$this->db->insert_id();
@@ -651,7 +672,8 @@ class Checkout extends MY_Controller
 					//echo array_search('Monday', array_column($run_detail2['run'], 'run_day_name'));
 					for($i=0;$i<count($run_detail2['run']);$i++)			
 					{
-						$run_detail_id = $run_detail2['run'][$i]['run_detail_id'];					
+						$run_detail_id = $run_detail2['run'][$i]['run_detail_id'];
+						$tbl_run_id=$run_detail2['run'][$i]['tbl_run_id'];					
 						$da=array('val'=>'*',
 								  'table'=>'tbl_run_detail',
 								  'where'=>array('id'=>$run_detail_id)
@@ -672,6 +694,7 @@ class Checkout extends MY_Controller
 													 'weekly'=>$run_detail['rows'][0]->run_day,
 													 'run_date'=>$run_detail['rows'][0]->run_date,
 													 'run_detail_id'=>$run_detail_id,
+													 'tbl_run_id'=>$tbl_run_id,
 													 'added_by'=>$customer_id,
 													 'add_date'=>$this->currentAddDate_time,
 													 'deleted'=>'0',
@@ -741,7 +764,19 @@ class Checkout extends MY_Controller
 						{
 							//redirect(base_url("payment/paypal/index/?order_id=".$last_insert_order_id),'refresh');
 							//redirect(base_url("paypal/demos/express_checkout/index/?order_id=".$last_insert_order_id),'refresh');
-							redirect(base_url("paypal/demos/express_checkout/SetExpressCheckout/?order_id=".$last_insert_order_id),'refresh');
+							//redirect(base_url("paypal/demos/express_checkout/SetExpressCheckout/?order_id=".$last_insert_order_id),'refresh');
+							$this->after_place_order_split_it($last_insert_order_id);
+							$not_data=array('note_to_tbl_name'=>'tbl_admin',
+											'note_to_id'=>'1',
+											'note_from_tbl_name'=>'tbl_customer',//tbl_order
+											'note_from_id'=>$customer_id, 
+											'note_titel'=>'New Order add',
+											'note_detail'=>'Order by fruitastic site(paypal), order id:- '.$last_insert_order_id,
+											'page_link'=>'admin/customer/edit_order/'.$customer_id.'/'.$last_insert_order_id,
+											'icon'=>'ORDER'
+											);
+							echo 'success';
+							
 						}
 						else if($this->input->post('Other'))
 						{
@@ -765,7 +800,7 @@ class Checkout extends MY_Controller
 											'note_from_tbl_name'=>'tbl_customer',//tbl_order
 											'note_from_id'=>$customer_id, 
 											'note_titel'=>'New Order add',
-											'note_detail'=>'Order by school site(Other), order id:- '.$last_insert_order_id,
+											'note_detail'=>'Order by fruitastic site(Eway), order id:- '.$last_insert_order_id,
 											'page_link'=>'admin/customer/edit_order/'.$customer_id.'/'.$last_insert_order_id,
 											'icon'=>'ORDER'
 											);

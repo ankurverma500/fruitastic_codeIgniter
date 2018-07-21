@@ -89,7 +89,21 @@
   -ms-user-select: none;
   user-select: none;
 }
-.datepicker td,
+.datepicker td/*,
+.datepicker th*/ {
+  text-align: center;
+  width: 14%;
+  height: 40px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: none;
+   background: #b1ffb4;
+
+    font-size: 16px;
+    font-weight: 300;
+}
+
 .datepicker th {
   text-align: center;
   width: 14%;
@@ -98,8 +112,6 @@
   -moz-border-radius: 0px;
   border-radius: 0px;
   border: none;
-   background: #f8f6f7;
-
     font-size: 16px;
     font-weight: 300;
 }
@@ -109,7 +121,7 @@
 }
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
-  background: #eeeeee;
+  background: #b1ffb4;
   cursor: pointer;
 }
 .datepicker table tr td.old,
@@ -501,17 +513,36 @@
         margin-bottom: 14px;
 		    margin-top: 14px;
 	}
-
-
-
-/* b-calendar */
-.calendar {
-	/*padding: 40px;*/
-	 
-}
+	/* b-calendar */
+	.calendar {
+		/*padding: 40px;*/	 
+	}
 	.calendar .datepicker {
 		width: 100%;
 	}
 		.calendar .datepicker table {
 			width: 100%;
 		}
+		
+@media   (max-width: 800px) {
+/* ADD YOUR CSS ADJUSTMENTS BELOW HERE */
+
+
+	.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+		background: 0 0;
+	}
+	.datepicker.datepicker-inline td, .datepicker.datepicker-inline th, .datepicker.dropdown-menu td, .datepicker.dropdown-menu th {
+	padding: 0px 0px;
+	}
+
+
+	.datepicker td, .datepicker th {
+		
+		width: 6%;
+	height: 28px;}
+
+	.calendar #calendar1 .table-condensed thead tr:nth-child(2) {
+		display:none;
+		background: red;
+	} 
+}

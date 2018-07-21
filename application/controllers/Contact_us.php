@@ -34,11 +34,15 @@ class Contact_us extends MY_Controller
 									   'message'=>$this->input->post('message'),
 									   'contact_no'=>$this->input->post('contact_no'),
 									   'email'=>$this->input->post('email'),
-									   'address'=>$this->input->post('address'),
+									   /*'address'=>$this->input->post('address'),*/
 									   'customer_type_from_id'=>'3'),
 					  'table'=>'tbl_enquiry',
 					  'where'=>array()
 					  );//Residential
+					 /* echo '<pre>';
+					  print_r($_POST);
+				print_r($da);
+				exit;*/
 				$result=$this->common->add_data($da);
 				//SELECT `id`, `name`, `email`, `contact_no`, `message`, `created` FROM `tbl_bulk_order` WHERE 1
 				if($result)

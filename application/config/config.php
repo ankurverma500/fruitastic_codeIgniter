@@ -43,7 +43,7 @@ define('fruitastic_dashboard', 'http://localhost/frutastice_angular/dashboard/')
 $config['base_url'] = 'https://binaryfrog.co/fruitastic_codeIgniter/';
 define('base_url_assets', 'https://binaryfrog.co/fruitastic_codeIgniter/assets/');
 define('fruitastic_image_url', 'https://binaryfrog.co/dev/');
-define('fruitastic_dashboard', 'https://binaryfrog.co/dashboard');
+define('fruitastic_dashboard', 'https://binaryfrog.co/');
 /*
 |--------------------------------------------------------------------------
 | Index File

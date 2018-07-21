@@ -232,8 +232,8 @@ class Cart extends MY_Controller
 			$run_detail_id=$this->input->post('run_detail_id');
 			$run_date=$this->input->post('run_date');
 			$run_day_name=$this->input->post('run_day_name');
-			
-			$run[]=array('run_detail_id'=>$run_detail_id,'run_date'=>$run_date,'run_day_name'=>$run_day_name);			
+			$tbl_run_id=$this->input->post('tbl_run_id');
+			$run[]=array('run_detail_id'=>$run_detail_id,'run_date'=>$run_date,'run_day_name'=>$run_day_name,'tbl_run_id'=>$tbl_run_id);			
 			$this->session->set_userdata('run_detail', array('run_type'=>'1','run'=>$run));
 			
 			/*$run_detail_id=$this->input->post('run_detail_id');

@@ -7,11 +7,11 @@
 </div>
 <script>
 
-function add_run_in_session(run_detail_id1,run_date1,run_day1)
+function add_run_in_session(run_detail_id1,run_date1,run_day1,tbl_run_id1)
 {
 	//alert(data);
 	var send_url="<?php echo base_url("cart/add_run_in_session/".$this->session->userdata('run_post_code'));?>";	
-	var data_array={run_detail_id:run_detail_id1,run_date:run_date1,run_day_name:run_day1}
+	var data_array={run_detail_id:run_detail_id1,run_date:run_date1,run_day_name:run_day1,tbl_run_id:tbl_run_id1}
 	//alert(send_url);
 	var data1=send_ajax_return_value(send_url,data_array);	
 	//console.log(data1);

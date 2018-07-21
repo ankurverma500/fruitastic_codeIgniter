@@ -956,7 +956,7 @@
 
     
     .product-list table tr{ position: relative}
-    .product-list table tr td{ float: left; border: 0; padding: 10px 5px!important;}
+    .product-list table tr td{ float: left; border: 0; /*padding: 10px 5px!important;*/}
     .product-list table tr td:first-child{ width: 100%; max-width: 100%;}
     .product-list table tr td.price{ width: 35%;}
     .product-list table tr td:nth-child(3){ width: 40%;}
@@ -1136,7 +1136,7 @@
 
 @media (min-width: 992px) {
 	.navbar-collapse.collapse { display: block !important;}
-	.login_part{ margin-right:40px;}
+	.login_part{ /*margin-right:40px;*/}
 	.navbar-header .navbar-toggle { margin-top:0px !important;}
 }
 
@@ -1294,4 +1294,8 @@
 
 @media (min-width: 480px) and (max-width: 666px){
 	.footer_payment_icon2{ /*margin-top:2px !important;*/}
+}
+
+@media   (max-width: 800px) {
+.order-bar ul{font-size:10px !important;}
 }

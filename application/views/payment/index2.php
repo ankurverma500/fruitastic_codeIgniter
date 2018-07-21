@@ -1,3 +1,6 @@
+<style>
+.customer-details{padding-bottom: 0px;    border: none;    padding-top: 0px;}
+</style>
 <div  class="row">
   <div  class="col-sm-12 col-md-6">
     <div  class="payment_div text-center ">
@@ -13,7 +16,7 @@
         </div>
       </div>
       <!--<div _ngcontent-c9="" id="ewaypay"><form ngnoform="" action="https://www.binaryfrog.co/dev//payment/eway" method="post"><input type="hidden" value="4952" name="order_id"><span class="hoverd-btn span_your_detail_login_butn"><input type="submit" value="PayNow" class="your_detail_login_butn"></span> </form></div>-->
-      <div  id="ewaypay" class="customer-details">
+      <div  id="ewaypay" class="customer-details" style="">
         <form class="form-horizontal" method="post" action="<?php echo base_url('checkout/payment_other')?>">
           <span class="hoverd-btn span_your_detail_login_butn">
           <input type="submit" name="Eway" value="PayNow" class="your_detail_login_butn">
@@ -23,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div  class="col-sm-12 col-md-6 pytHid" <?php if($order_type==1){echo 'style="display:none;"';}?> >
+  <div  class="col-sm-12 col-md-6 pytHid" <?php if($order_type==1){echo 'style="display:block;"';}?> >
     <div  class="payment_div text-center">
       <div  class="row">
         <div  class="col-sm-8 col-sm-offset-2"> <img  class="img-responsive paypal_icon2 pull-left" src="<?php echo base_url('assets/images/paypal-icon21.png')?>">
@@ -39,7 +42,7 @@
         </div>
       </div>
       
-      <div  id="paypal-button"></div>
+      <div  id="paypal-button" <?php /*?>onclick="if(confirm('sadasd')){return true;}else{return false;}"<?php */?>></div>
       <div  id="paypalpay"></div>
     </div>
   </div>
@@ -72,7 +75,7 @@
 <script> 
 
 $(function () {
-	 var morderid = '<?php echo $this->session->userdata('total_order_array');?>';
+	 var morderid = '<?php echo '3';//$this->session->userdata('total_order_array');?>';
 	 paypal.Button.render({
 		 //env: "sandbox",
 		 env: "production",
@@ -92,7 +95,7 @@ $(function () {
 				 payment: {
 					 transactions: [{
 						 amount: {
-							 total: '<?php echo $this->session->userdata('order_final_amount');?>',
+							 total: '<?php  echo $this->cart->total();//$this->session->userdata('order_final_amount');?>',
 							 currency: "AUD"
 						 }
 					 }]
@@ -114,11 +117,14 @@ $(function () {
 function submitOrder(order_id, payment_mode, payment_status, transection_id) 
 {
     console.log('helloSubmit');
-	var data_url='<?php echo base_url('paypal/return_url');?>';
-	var data_array={order_id:order_id,payment_mode:payment_mode,payment_status:payment_status,transection_id:transection_id};
+	//var data_url='<?php echo base_url('paypal/return_url');?>';
+	var data_url='<?php echo base_url('checkout/payment_other/');?>';
+	var data_array={order_id:order_id,payment_mode:payment_mode,payment_status:payment_status,transection_id:transection_id,paypal:'paypal'};
 	var ddd=send_ajax_return_value(data_url,data_array);
 	console.log(ddd);
-	var cartd= jQuery.parseJSON(ddd.responseText);
+	//location.reload();
+	window.location.assign("<?php echo base_url("checkout/complete");?>");
+	//var cartd= jQuery.parseJSON(ddd.responseText);
    /* var values = {
       "id": localStorage.getItem('user'),
       "token": localStorage.getItem('token'),

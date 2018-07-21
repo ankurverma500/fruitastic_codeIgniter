@@ -64,14 +64,6 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-12 text-right checkout_btn_div" <?php if((!$run_detail) ||($run_detail['run_type']=='')||(count($run_detail['run'])<1) ){echo 'style="display:none;"';}?>> 
-              <input type="submit" class="btn btn-primary checkout-btn btn-lg"  name="deliveryday" value="Continue Order >>">
-              <!--<a href="payment.html" class="btn btn-primary checkout-btn btn-lg" >Continue Order >></a> -->
-              </div>
-            </div>   
-          	
-            
             <div class="row" style="margin-top:20px;">
                   <div class="col-sm-12 col-md-12">
                         <div class="form-group">
@@ -91,7 +83,12 @@
                   </div>
                 </div>
             
-            
+            	<div class="row">
+                  <div class="col-sm-12 col-md-12 text-right checkout_btn_div" <?php if((!$run_detail) ||($run_detail['run_type']=='')||(count($run_detail['run'])<1) ){echo 'style="display:none;"';}?>> 
+                  <input type="submit" class="btn btn-primary checkout-btn btn-lg"  name="deliveryday" value="Continue Order >>">
+                  <!--<a href="payment.html" class="btn btn-primary checkout-btn btn-lg" >Continue Order >></a> -->
+                  </div>
+                </div>
         </div>
       </div>
       </form>

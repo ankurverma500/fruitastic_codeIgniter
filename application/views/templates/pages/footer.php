@@ -80,8 +80,8 @@
 </footer><!--footer end-->
  <?php }?>
 
-<script type="text/javascript" src="<?php echo base_url_assets;?>js/jquery-1.11.3.js"></script>
-<script type="text/javascript" src="<?php echo base_url_assets;?>js/bootstrap.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url_assets;?>js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="<?php echo base_url_assets;?>js/bootstrap.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url_assets;?>js/css3-animate-it.js"></script>
 
  

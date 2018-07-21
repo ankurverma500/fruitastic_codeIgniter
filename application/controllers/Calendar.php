@@ -69,7 +69,7 @@ class Calendar extends MY_Controller
 				$text='<span id="selected_run_'.$rn->run_detail_id.'" style="cursor:pointer;" onclick="'.$function.'">Click here to select your run id  :- '.$rn->run_counter_id.'_'.$rn->shift_name.'</span>';*/
 				
 				$sssss= $rn->shift_name=='AM'?'AM(8am - 12pm)':'PM(12pm - 4pm)';
-				$function="add_run_in_session('".$rn->run_detail_id."','".$rn->run_date."','".$rn->run_day."')";
+				$function="add_run_in_session('".$rn->run_detail_id."','".$rn->run_date."','".$rn->run_day."','".$rn->tbl_run_id."')";
 				$text='<span id="selected_run_'.$rn->run_detail_id.'" style="cursor:pointer;" onclick="'.$function.'"> '.$rn->shift_name.' '.$sssss.'</span>';
 				
 				$text='<div class="radio" style="border-right: none !important ">
@@ -142,6 +142,59 @@ class Calendar extends MY_Controller
 		print_r(json_encode($res3));
 	}
 	
+	public function get_ontime_run()
+	{
+		   $post_code=$this->session->userdata('run_post_code');
+			$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime(date('Y-m-d')))));
+			if(date('H')>='15:00')
+			{
+				//$this->db->where('trd.run_date>',date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date)))));
+				$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date))));
+			}
+			else
+			{
+				//echo 'sads';
+				//$this->db->where('trd.run_date >',$cur_date);
+			}
+			/*
+			$rows[$i]['run_detail_id']=$code['run_detail_id'];
+			$rows[$i]['run_id']=$code['tbl_run_id'];
+			$rows[$i]['shift_name']=$code['shift_name'];
+			$rows[$i]['run_day']=$code['run_day'];
+			$rows[$i]['run_date']=$code['run_date'];
+			*/
+			$comment1=array('table'=>'tbl_run_detail as trd',
+							'val'=>'trd.run_date,trd.run_day
+							,(SELECT `name` FROM `tbl_working_shift` WHERE id=trd.shift) as shift_name 
+							,trd.tbl_run_id,trd.id as run_detail_id
+							',
+							//,	(SELECT count(*) FROM `tbl_recurring_order` WHERE `order_id`='.$order_id.' AND  `customer_id`='.$customer_id.' AND `run_detail_id`=trd.id ) as recorder_exists
+							'where'=>array('trd.deleted'=>'0','trd.status'=>'1','trz.zip_code'=>$post_code,'trd.run_date>'=>$cur_date),
+							//,'trd.id'=>'76' ,'trd.run_date'=>'2018-01-01'
+							//'trz.max_deliveries < trz.total_deliveries'
+							'minvalue'=>'',
+							//'group_by'=>'trd.id',
+							'group_by'=>'trd.run_date,trd.shift',
+							'start'=>'',
+							'orderby'=>'trd.run_date',
+							'orderas'=>'ASC');	
+					$multijoin1=array(
+						array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status="1"','join_type'=>'left')           
+						);
+			
+			
+			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='$this->customer_type_id') ");
+			 $all_run_day=$this->common->multijoin($comment1,$multijoin1);
+			 print_r(json_encode($all_run_day));
+			/*if($all_run_day['res'])
+			{
+				print_r(json_encode($all_run_day['rows']));
+			}
+			else
+			{
+				print_r(json_encode($all_run_day));
+			}*/
+	}
 	
 	
 	public function check_post_code_with_address_popup()

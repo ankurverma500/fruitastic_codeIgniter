@@ -1,4 +1,4 @@
-
+<link type="text/css" rel="stylesheet" href="<?php echo base_url_assets;?>css/tymp.css">
 <div class="banner_container about-us">
     <div class="banner_details text-center">
       <div class="container">
@@ -7,8 +7,130 @@
     </div>
 </div>
 
-
-<section class="contact_us"> 
+<div class="contact_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 hidden-xs">
+                <div class="conatct_pic"><img src="<?php echo base_url('assets/images/contact_new.jpg');?>" alt="" class="img-responsive"></div>
+            </div>
+            <div class="col-md-6 col-sm-7 pull-right contact-form">
+                <h1>Get in touch</h1>
+                <p class="text-justify">Please feel free to contact us quickly and efficiently through our live chat, however if you don't have the time to chat now, feel free to fill in the details below and we will get back to you as soon as possible.  </p>
+				
+                                
+                <form action="" method="post" id="ContactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <!--<input class="form-control" type="text" placeholder="Name">-->
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" id="name" name="name" placeholder="Enter name" value="<?php echo set_value('name')?>">
+                <?php echo form_error('name'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                    
+                                </label>
+							</span>
+                        </div> 
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <textarea class="input__field input__field--minoru" placeholder="Address" name="address" id="address" rows="1"></textarea>
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="email" id="email" name="email" placeholder="Enter email id" value="<?php echo set_value('email')?>">
+                <?php echo form_error('email'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>
+                        </div> 
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" id="contact_no" name="contact_no" placeholder="Your phone no" value="<?php echo set_value('contact_no')?>">
+                <?php echo form_error('contact_no'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <span class="input input--minoru">
+                                <!--<input class="input__field input__field--minoru" type="text" id="input-13">-->
+                                <textarea class="input__field input__field--minoru" placeholder="Requirement" id="message" name="message" placeholder="Requirement"><?php echo set_value('message')?></textarea>
+                <?php echo form_error('message'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>
+                        </div> 
+                    </div>
+                    
+                    
+                    
+                                      
+                   <div class="row">
+                         <div class="col-md-5 col-sm-5">
+                            <span class="input input--minoru">
+                            	<label class="bulk-captcha-label">How much is 8+4 ? <em class="text-danger">*</em></label>
+							</span>
+                        </div> 
+                        <div class="col-md-7 col-sm-7">
+                            <span class="input input--minoru">
+                            	<input type="hidden" name="captcha_ans" id="captcha_ans" value="12">
+                                <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value">
+                                <label class="input__label input__label--minoru"></label>
+							</span>
+                        </div> 
+                    </div>
+                  
+				                     <div class="row">
+                        <div class="col-sm-offset-8 col-sm-4"> 
+                      <span class="input input--minoru hoverd-btn bulk-order-submit-btn"> <input type="submit" value="Submit" name="submit" class="btn btn-link btn-block bulk-order-submit-btn"></span>
+                     </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="map_sec">
+        <!--<img src="common/images/ma.jpg" alt="" class="img-responsive map">-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.892365672985!2d145.11569931532432!3d-38.00297097971853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66d22fb9d178f%3A0x3fff8b7afa3ba4dc!2s14+Endeavour+Way%2C+Braeside+VIC+3195%2C+Australia!5e0!3m2!1sen!2sin!4v1504667807433" width="100%" height="450" frameborder="0" style="border:0; margin-bottom: -6px;" allowfullscreen=""></iframe>
+        <div class="contact_info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-5 pull-right">
+                        <div class="greenbox">
+                            <h4>Contact info</h4>
+                            <p>Get in touch and we will help with any questions or queries you may have via:</p>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>14 Endeavour Way, Braeside, 3195, Victoria, Australia.</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <span>service@fruitastic.com.au</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <span>+ 1800 378 482</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-globe"></i>
+                                    <span>www.fruitastic.com.au</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php /*?><section class="contact_us"> 
   
 	<div class="container">  
       <div class="row">
@@ -115,5 +237,5 @@
             </div>
         </div>
     </div>
-</section>
+</section><?php */?>
    
