@@ -1,4 +1,4 @@
-
+<link type="text/css" rel="stylesheet" href="<?php echo base_url_assets;?>css/tymp.css">
 
 
 <div class="banner_container about-us">
@@ -22,8 +22,83 @@
 So we can tailor our service to your needs, we ask you please fill out the form below and one of our staff members will be in contact very shortly to discuss options available to you and possibly furnish you with a wholesale quote and have you onboard and enjoying our service in no time at all. </p>
                 
                                 
-                                
-             <form method="post">
+               <form action="" method="post" id="ContactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <!--<input class="form-control" type="text" placeholder="Name">-->
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" id="name" name="name" placeholder="Enter name" value="<?php echo set_value('name')?>">
+                <?php echo form_error('name'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                    
+                                </label>
+							</span>
+                        </div> 
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <textarea class="input__field input__field--minoru" placeholder="Address" name="address" id="address" rows="1"></textarea>
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="email" id="email" name="email" placeholder="Enter email id" value="<?php echo set_value('email')?>">
+                <?php echo form_error('email'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>
+                        </div> 
+                        <div class="col-md-6 col-sm-6">
+                            <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" id="contact_no" name="contact_no" placeholder="Your phone no" value="<?php echo set_value('contact_no')?>">
+                <?php echo form_error('contact_no'); ?>
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <span class="input input--minoru">
+                                <!--<input class="input__field input__field--minoru" type="text" id="input-13">-->
+                                <textarea class="input__field input__field--minoru" placeholder="Requirement" id="message" name="message" placeholder="Requirement"><?php echo set_value('message')?></textarea>
+                
+                                <label class="input__label input__label--minoru" for="input-13">
+                                </label>
+							</span>                           
+                        </div> 
+                         <?php echo form_error('message'); ?>
+                    </div>
+                    
+                    
+                    
+                                      
+                   <div class="row">
+                         <div class="col-md-5 col-sm-5">
+                            <span class="input input--minoru">
+                            	<label class="bulk-captcha-label">How much is 8+4 ? <em class="text-danger">*</em></label>
+							</span>
+                        </div> 
+                        <div class="col-md-7 col-sm-7">
+                            <span class="input input--minoru">
+                            	<input type="hidden" name="captcha_ans" id="captcha_ans" value="12">
+                                <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value" value="<?php echo set_value('captcha_value')?>">
+                                <label class="input__label input__label--minoru"></label>
+							</span>
+                            <?php echo form_error('captcha_value'); ?>
+                        </div> 
+                    </div>
+                  
+				                     <div class="row">
+                        <div class="col-sm-offset-8 col-sm-4"> 
+                      <span class="input input--minoru hoverd-btn bulk-order-submit-btn"> <input type="submit" value="Submit" name="submit" class="btn btn-link btn-block bulk-order-submit-btn"></span>
+                     </div>
+                    </div>
+                </form>                 
+             <?php /*?><form method="post">
               <div class="form-group">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="<?php echo set_value('name')?>">
                 <?php echo form_error('name'); ?>
@@ -45,7 +120,7 @@ So we can tailor our service to your needs, we ask you please fill out the form 
                 <?php echo form_error('message'); ?>
               </div>
               <input type="submit" name="submit" class="btn btn-default contact-us-btn" value="Send">
-            </form>
+            </form><?php */?>
             </div>
         </div>
     </div>

@@ -53,6 +53,14 @@ $route['default_controller'] = 'home';
 $route['about-us'] = 'about_us/index';
 $route['how-it-works'] = 'how_it_works/index';
 $route['bulk-order'] = 'bulk_order/index';
+
+$route['legel-notice'] = 'legel_notice/index';
+$route['terms-of-use'] = 'terms_of_use/index';
+$route['terms-of-sale'] = 'terms_of_sale/index';
+$route['our-mission'] = 'our_mission/index';
+$route['terms-of-service'] = 'terms_of_service/index';
+$route['privacy-policy'] = 'privacy_policy/index';
+
 $route['contact-us'] = 'contact_us/index';
 $route['privacy-policy'] = 'privacy_policy/index';
 $route['terms-and-conditions'] = 'terms_and_conditions/index';

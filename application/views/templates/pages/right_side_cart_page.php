@@ -12,7 +12,7 @@
     </div>
   </div>
   <hr class="cart_hr_bold">
-  <div class="row nav_cart_scroll">
+  <div class="row nav_cart_scroll" style="padding: 20px;overflow-y:  scroll;" >
     <div class="col-sm-12 col-md-12">
      <?php 
 	   //$this->cart->destroy();

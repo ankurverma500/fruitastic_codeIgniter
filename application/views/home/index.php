@@ -26,15 +26,18 @@ function chk_pincode()
 	console.log(ddd);
 	var dd=jQuery.parseJSON(ddd.responseText);
 	//var dd=(ddd.responseText);
+	$("#truemsg,#truemsg2").css('display','none');
 	if(dd.res)
 	{
 		$('#check_now .post_code_detail_display').removeClass('text-danger');
 		$('#check_now .post_code_detail_display').addClass('text-success');
+		$("#truemsg").css('display','block');
 	}
 	else
 	{
 		$('#check_now .post_code_detail_display').removeClass('text-success');
 		$('#check_now .post_code_detail_display').addClass('text-danger');
+		$("#truemsg2").css('display','block');
 	}
 	$('#check_now .post_code .post_code_display').html(pin_code);
 	$('#check_now .post_code .post_code_detail_display').html(dd.msg);
@@ -53,12 +56,21 @@ function chk_pincode()
       <div class="modal-body post_code">
         <h1 class="text-center"><i class="fa fa-map-marker post-code-icon" aria-hidden="true"></i> <span class="post_code_h_one">Post Code</span></h1>
         <h3 class="text-center post_code_h3"><span class="post_code_display"></span></h3>
-        <p class="text-center"><span class="post_code_detail_display"></span> <a href="<?php echo base_url('contact-us');?>">Click Here!</a></p>
+        <p class="text-center"><span class="post_code_detail_display"></span> 
+        </p>
         <!--<p class="text-center text-success post_code_congrats">Congrats!! We can deliver to your place FREE</p>
         <p class="text-center"><a href="#" class="post_code_shop_btn hoverd-btn">Shop Now <i class="fa fa-mail-forward"> </i></a></p>
         
         <p class="text-center post_code_apologies">Apologies - Currently we are not delivering in your area</p>-->
-        <p class="text-center"><a href="#" class="post_code_shop_btn hoverd-btn" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"> </i> Close</a></p>
+        <p  class="text-center" id="truemsg" style="display:none">
+        <a  class="post_code_shop_btn hoverd-btn"  href="<?php echo base_url('product');?>">Shop Now 
+        <i  class="fa fa-mail-forward"> </i></a>
+        </p>
+        <p class="text-center" id="truemsg2" style="display:none">
+            <a href="#" class="post_code_shop_btn hoverd-btn" data-dismiss="modal">
+            	<i class="fa fa-times" aria-hidden="true"> </i> Close
+            </a>
+        </p>
       </div>
     </div>
 
@@ -128,17 +140,18 @@ Our team, source, purchase, pack and deliver all goods in house. In other words,
         </div>
     </div>
 </section><!-- whoweare_sec end -->
- <?php 
-	$i=1;   
-	if( $discount_product['res'] ) 
-	{  
-	?>
+ 
 <section class="special_sec fw text-center animatedParent"><!-- special_sec start -->
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 special_cont">
                 <h1 class="common-title">Weekly Specials</h1>
                 <ul class="">
+                <?php 
+	$i=1;   
+	if( $discount_product['res'] ) 
+	{  
+	?>
                 <?php                
 				foreach( $discount_product['rows'] as $result_products)
 					{
@@ -172,73 +185,10 @@ Our team, source, purchase, pack and deliver all goods in house. In other words,
 					}
 					}
 					?>
+                    <?php
+					
+				}?>
                 </ul>
-                <?php /*?><ul class="">
-                        
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img1.png" alt="special_img1" class=""></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                        <!--<div class="overlay"><a href="#" class="hoverd-btn view-bbdbsm btn btn-danger">View</a></div>-->
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img2.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                        <!--<div class="overlay"><a href="#" class="hoverd-btn view-bbdbsm btn btn-danger">View</a></div>-->
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img3.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img4.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img5.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img6.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                   <!-- <hr class="block bounceIn animated af">-->
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img1.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img2.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img3.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img4.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img5.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                    <li class="block bounceIn animated af">
-                        <figure><img src="<?php echo base_url_assets;?>images/special_img6.png" alt="special_img1"></figure>
-                        <h3>blueberry</h3>
-                        <p><span>$700.00</span>$350.00</p>
-                    </li>
-                </ul><?php */?>
                 <p class="text-center animatedParent">
                 <a href="<?php echo base_url('product');?>" class="viewall hoverd-btn block bounceIn animated">Shop Now</a>
                 </p>
@@ -246,25 +196,22 @@ Our team, source, purchase, pack and deliver all goods in house. In other words,
         </div>
     </div>
 </section><!-- special_sec end -->
-<?php
-					
-	}?>
-    
+
 <section class="ualuebox_sec fw animatedParent"><!-- ualuebox_sec start -->
   <h1 class="common-title transparent"><span>Value box</span></h1>
    <div class="row">
     <div class="col-sm-10 col-sm-offset-1 value_box_row">
-    <img class="ualuebox_img block bounceInLeft animated img-responsive go" src="<?php echo base_url_assets;?>images/fruit-and-veg-box.jpg" alt="ualue_img">
+    <img class="ualuebox_img block bounceInLeft animated img-responsive go" src="<?php echo base_url('assets/images/fruit-and-veg-box.jpg')?>" alt="ualue_img">
     <div class="monthly_part block bounceInRight animated go pull-right">
         <h2 class="animated fadeInRight go">VALUE BOXES START AT JUST </h2>
         <span>$40.00</span>
         <p class="text-justify">Simply the best value of Fruit and Veg boxes available. Saving you hundreds of $$$ per year. We pack so much goodness, variety and most importantly plenty of fruit and veg into these boxes, the whole family will be thrilled. Menus change weekly.</p>
-        <p>
-        <a href="<?php echo base_url('product');?>" class="shop_btn hoverd-btn">Shop Now</a></p>
+        <p><a href="<?php echo base_url('product')?>" class="shop_btn hoverd-btn">Shop Now</a></p>
     </div>
    </div>
   </div>
-</section>
+</section>    
+
 
 
 

@@ -119,4 +119,17 @@ class Home extends MY_Controller
 		$this->data['content']=$this->load->view('home/index',$this->data,true);
 		$this->load->view('layouts/checkout',$this->data);
 	}
+	public function newslatter()
+	{
+		$email=$this->input->post('email');
+		$log=$this->db->query("INSERT INTO `tbl_newsletter` SET `email`='$email', `customer_type_from_id`='1'");
+		if($log)
+		{
+			echo 'success';
+		}
+		else
+		{
+			echo 'error';
+		}
+	}
 }

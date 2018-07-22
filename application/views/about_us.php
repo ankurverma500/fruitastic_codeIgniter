@@ -1,3 +1,11 @@
+<style>
+.img-circle
+{
+	max-width:266px;
+	max-height:266px;
+}
+</style>
+
 <div class="banner_container about-us">
     <div class="banner_details text-center">
       <div class="container">
@@ -221,7 +229,7 @@
       <div class="row aboutbox">
           <div class="col-md-12 col-sm-12 animatedParent">
             <h3 class="animated fadeInLeft">Our mission</h3>
-               <img src="<?php echo base_url('assets/images/kids-eating-watermelon.jpg')?>" alt="" class="img-responsive hidden-xs about-right-image animated fadeInRight">
+               <img src="<?php echo base_url('assets/images/kids-eating-watermelon.jpg')?>" alt="" class="img-responsive hidden-xs about-right-image animated fadeInRight img go img-circle">
                 <p class="animated fadeInLeft text-justify">With the use of the latest systems and technologies, along with our 15+ years experience as Melbourne's premier fruit and vegetable home delivery service to not only homes, but school and child care centres alike, our mission is to supply the best quality Australian produce to all Victorians, hassle free. Ensuring each and every man, woman and child has access to a time saving service that encourages healthy eating habits and promotes the 2 and 5 concept. ( 2 fruit and 5 veg per person, per day)</p>
 				<p class="animated fadeInLeft text-justify">We strive to ensure each and every piece will be enjoyed in its freshest possible state, packed with vitamins and flavour, without the hassle of going to farmers markets or fruit shops and supermarkets.</p>
 				<p class="animated fadeInLeft text-justify">It's a fact that most Australians don't achieve the 2 and 5, however we aim to change this through lower prices, greater service, fast home, school or office delivery and with influencers on our social media videos and blogs which are aimed at educating and promoting healthier eating habits and practices.</p>
@@ -232,7 +240,7 @@
 
           
           <div class="col-md-12 col-sm-12 about-us-padding animatedParent">
-              <img src="<?php echo base_url('assets/images/BREAKIE-FUN.jpg')?>" alt="" class="img-responsive about-left-image hidden-xs  animated fadeInLeft">
+              <img src="<?php echo base_url('assets/images/BREAKIE-FUN.jpg')?>" alt="" class="img-responsive about-left-image hidden-xs  animated fadeInLeft img go img-circle">
                 <h3 class="animated fadeInRight">Our Company</h3>
                 <p class="animated fadeInRight text-justify">VICTORIA'S NO. 1 PREMIUM FRUIT AND VEGETABLE DELIVERY SERVICE, CATERING TO HOMES, SCHOOLS AND CHILDCARE CENTRES AND CORPORATE CLIENTS.</p>
 				<p class="animated fadeInRight text-justify">Our service started way back in 1993. Its taken on many changes and a few faces and we are proud to be one of the Pioneers in Fruit and veg Home deliveries in Melbourne. In 2005 Fruitastic was formed and remains an Australian family owned and run business, setting the benchmark for fresh fruit and vegetable deliveries and changing the way consumers buy fresh produce.</p>
@@ -249,7 +257,7 @@
           
           <div class="col-md-12 col-sm-12 about-us-padding animatedParent">
              <h3 class="animated fadeInLeft go">What We do</h3>
-              <img src="<?php echo base_url('assets/images/FRUIT-SMOOTHY.jpg')?>" alt="" class="img-responsive hidden-xs about-right-image animated fadeInRight go">
+              <img src="<?php echo base_url('assets/images/FRUIT-SMOOTHY.jpg')?>" alt="" class="img-responsive hidden-xs about-right-image animated fadeInRight  img go img-circle">
                 <p class="animated fadeInLeft go">It's quite simple really. </p>
                 <p class="animated fadeInLeft text-justify go">We do our job the best we can, to ensure you have more spare time to do the things you love.</p> 
                 <p class="animated fadeInLeft text-justify go">Our business is built on trust and strong relationships. Relationships with our farmers and growers, and our customers. </p>

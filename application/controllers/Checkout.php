@@ -694,7 +694,7 @@ class Checkout extends MY_Controller
 													 'weekly'=>$run_detail['rows'][0]->run_day,
 													 'run_date'=>$run_detail['rows'][0]->run_date,
 													 'run_detail_id'=>$run_detail_id,
-													 'tbl_run_id'=>$tbl_run_id,
+													 /*'tbl_run_id'=>$tbl_run_id,*/
 													 'added_by'=>$customer_id,
 													 'add_date'=>$this->currentAddDate_time,
 													 'deleted'=>'0',
@@ -775,6 +775,7 @@ class Checkout extends MY_Controller
 											'page_link'=>'admin/customer/edit_order/'.$customer_id.'/'.$last_insert_order_id,
 											'icon'=>'ORDER'
 											);
+							$this->notification->set($not_data);
 							echo 'success';
 							
 						}
@@ -804,7 +805,7 @@ class Checkout extends MY_Controller
 											'page_link'=>'admin/customer/edit_order/'.$customer_id.'/'.$last_insert_order_id,
 											'icon'=>'ORDER'
 											);
-							//$this->notification->set($not_data);							
+							$this->notification->set($not_data);							
 							redirect(base_url("checkout/complete"),'refresh');
 						}
 						//echo 'order plasd';

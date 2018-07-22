@@ -25,6 +25,13 @@
 {
 	cursor:pointer;
 }
+/*.complete-order > table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td{     padding: 0px 0px !important; }
+.img-responsive{max-height: 81px;}
+.product-list table td {
+    padding: 15px 5px !Important;
+}*/
 /*.btn-default:hover {
     color: #333;
     background-color: #e6e6e6;
@@ -170,7 +177,8 @@
 				}
 				
 			?>
-              <tr>
+              <tr style="background-color: #FBFBFB;
+    border-bottom: 1px solid #DDDDDD;">
                 <td>
 				<?php 
                 if($result_products->product_image=='')
@@ -241,7 +249,7 @@
                 </a>
                 </td>
                
-                <td  style="display:<?php if(!$show){echo 'none;';}else{echo 'block;';}?>float: right;
+                <td  style="display:<?php if(!$show){echo 'none;';}else{echo 'block;';}?>
    <?php /*?> margin: -135px 0 0 0;<?php */?>" class="action added" id="Added_to_cart_td_<?php echo $result_products->id;?>">
                     <a <?php /*?>onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','Added','<?php echo $product_gst?>')"<?php */?> 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-add">
@@ -252,7 +260,7 @@
                     </a>
                 </td>
                 
-                <td style="display:none;float: right;
+                <td style="display:none;
   <?php /*?>  margin: -135px 0 0 0;<?php */?>" class="action update" id="update_to_cart_td_<?php echo $result_products->id;?>">
                         <a onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','update','<?php echo $product_gst?>')" 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-update class_pointer">                    
@@ -359,27 +367,38 @@
 </div>-->
 
 
-<div id="shopnow_popup" class="modal  fade" role="dialog" aria-labelledby="shopnow_popupLabel" aria-hidden="true">
+<div id="shopnow_popup" class="modal  fade" role="dialog" aria-labelledby="shopnow_popupLabel" aria-hidden="true" style="padding: 30px 10px 0 10px;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span  class="fa fa-close"></span>
+          <span  class="close_text">Close</span>  
+        </button>
+      </div>
+      <div class="modal-body">
         <h1  class="postcode_modalhead">
         <img src="assets/images/post_code_icon.png"> 
         <span  class="postcode_txt">Post code</span> 
         </h1>
-      </div>
-      <div class="modal-body">
+      
+      
+     
        <div id="clickMeId_post_code" class="text-center">
         <h5>Please enter your Address to check for </h5>
 		<h5>Free Delivery*</h5>
-        <div class="row">
+        <div  class="postcode_textbox">
+        
+        
+        <input  class="form-control post_code_text" id="post_code_with_address" name="post_code_with_address" onblur="this.placeholder = 'Enter Post Code'" onfocus="this.placeholder = ''" placeholder="Enter Post Code" type="text">
+        </div>
+       <?php /*?> <div class="row">
          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10 col-sm-offset-3 ">
           <!--<input type="text" id="post_code" name="post_code" class="form-control text-center popup_textbox" placeholder="enter post code" />-->
-          <input type="text" id="post_code_with_address" name="post_code_with_address" class="form-control popup_textbox" <?php /*?>placeholder="Enter your postcode" <?php */?>placeholder="Enter your postcode" />
+          <input type="text" id="post_code_with_address" name="post_code_with_address" class="form-control popup_textbox" placeholder="Enter your postcode" />
           <!--<textarea class="form-control" rows="1" id="post_code" name="post_code"></textarea>-->
          </div>
-        </div>
+        </div><?php */?>
         
         <button type="Submit" id="popup_postcode_button" class="btn btn-danger" <?php /*?>onclick="show('comment_post_code'); hide('clickMeId_post_code')"<?php */?>>Submit</button>
        
@@ -565,6 +584,7 @@ function add_to_cart(id,image,price,name,was_price,qty,action_type,product_gst)
 	var dd=jQuery.parseJSON(ddd.responseText);
 	//var dd=(ddd.responseText);
 	console.log(dd);
+	closeNavcart();
 	if(dd.res)
 	{
 		if(dd.action=='add')

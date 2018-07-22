@@ -2,10 +2,10 @@
 
 </style>
 
-<div class="table-responsive innnerbdr obox-2 order-box">
+<div class="  table-responsive innnerbdr obox-2 order-box ">
         <h2 class="yourorder clrwhite">Your Order</h2>
-        <div <?php /*?>style="    height: 250px;   overflow: scroll;"<?php */?>>
-        <table class="table" >
+        <div class="cart_scroll" <?php /*?>style="    height: 250px;   overflow: scroll;"<?php */?>>
+        <table class="table product_table" >
           <thead>
             <tr>
               <td class="clrwhite">PRODUCT</td>

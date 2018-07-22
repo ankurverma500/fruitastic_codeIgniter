@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
   <?php $this->load->view('templates/pages/meta');?>
-  
+  <style>
+  .bottom_header .menu_sec .navbar-nav li a
+  {
+	 /* color:#FFF !important;*/
+  }
+  .bounceInRight, .bounceInLeft, .bounceInUp, .bounceInDown {
+    opacity: 1;
+	}
+  </style>
 </head>
 <body>
   <?php $this->load->view('templates/pages/header');?>
@@ -28,7 +36,15 @@
 <?php $this->load->view('templates/pages/footer');?>
 <?php $this->load->view('notify/notify');?>  
 </body>
-
+<script type="text/javascript">
+window.__lc = window.__lc || {};
+window.__lc.license = 9056975;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+</script>
 <script>		
         /**** hide message notification ****/
         setTimeout(function(){ 

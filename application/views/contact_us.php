@@ -61,11 +61,13 @@
                             <span class="input input--minoru">
                                 <!--<input class="input__field input__field--minoru" type="text" id="input-13">-->
                                 <textarea class="input__field input__field--minoru" placeholder="Requirement" id="message" name="message" placeholder="Requirement"><?php echo set_value('message')?></textarea>
-                <?php echo form_error('message'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
+                            
                         </div> 
+                        <?php echo form_error('message'); ?>
                     </div>
                     
                     
@@ -80,10 +82,12 @@
                         <div class="col-md-7 col-sm-7">
                             <span class="input input--minoru">
                             	<input type="hidden" name="captcha_ans" id="captcha_ans" value="12">
-                                <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value">
+                                <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value" value="<?php echo set_value('captcha_value')?>">
                                 <label class="input__label input__label--minoru"></label>
-							</span>
+                               
+							</span>                            
                         </div> 
+                         <?php echo form_error('captcha_value'); ?>
                     </div>
                   
 				                     <div class="row">

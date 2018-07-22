@@ -105,7 +105,7 @@
                                  <li><a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()"  style="" class="cartbtnaaaaa">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
                                     <i class="crtnmbra" id="cart_top_big_total_item"><?php echo $this->cart->total_items()?></i>
-                                    <span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>
+                                    ($<span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>)
                                 </a></li>
                                 </ul>
                           	  </span>

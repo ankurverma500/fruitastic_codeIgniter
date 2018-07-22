@@ -4,7 +4,13 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="fa fa-close"></span>
+        </button>-->
+        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span  class="fa fa-close"></span>
+          <span  class="close_text">Close</span>  
+        </button>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -111,10 +117,18 @@ $(document).ready(function () {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>-->
+        <button  aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span  class="fa fa-close"></span>
+          <span  class="close_text">Close</span>  
+        </button>
       </div>
       <div class="modal-body white">
-          <h3>Sign Up to Fruitastic</h3>
+           <h1  class="text-center">
+           <img  src="<?php echo base_url('assets/images/register_icon.png');?>"> 
+           Sign Up
+           </h1>
+        	<p  class="signup_text">Let’s get you registered for ordering !</p>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="personel" style="padding: 20px;">
             
