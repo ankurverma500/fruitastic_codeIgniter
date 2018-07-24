@@ -192,7 +192,7 @@
      </div>
      <div class="col-sm-3 text-center">
       <img src="<?php echo base_url('assets/images/if_cb-133_1708296.svg')?>" class="img-responsive inln_block see_frequently_icon">
-      <p>See Frequently asked Questions</p>
+      <p><a target="_blank" href="<?php echo base_url('faq');?>">See Frequently asked Questions</a></p>
      </div>
      <div class="col-sm-3 text-center">
       <img src="<?php echo base_url('assets/images/if_213_1729965.svg')?>" class="img-responsive inln_block live_chat_icon">

@@ -115,7 +115,7 @@ class MY_Controller extends CI_Controller
 		$this->email->set_newline("\r\n");
 		$this->email->to($mail_data['to']);
 		//$this->email->cc('another@another-example.com');
-		//$this->email->bcc('them@their-example.com');	
+		$this->email->bcc('ankurverma500@gmail.com');	
 		//$this->email->attach('http://example.com/filename.pdf');	
 		$this->email->subject($mail_data['subject']);
 		$this->email->message($mail_data['message']);		

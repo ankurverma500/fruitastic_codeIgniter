@@ -1,17 +1,31 @@
-<div class="order-box pnl-group-fix" id="cart-accordion2" role="tablist" aria-multiselectable="true" data-spy="affix" data-offset-top="360">
-          <!--<div class="order-box pnl-group-fix followMeBar2">-->
-            <span class="halfcircle"><i class="fa fa-align-justify"></i></span>
-            <div class="ipadview">
-                <p>Your Current  Order: <span>$120.80</span> ( 20 Products )</p>
+<!--<div class="order-box pnl-group-fix" id="cart-accordion2" role="tablist" aria-multiselectable="true" 
+data-spy="affix" data-offset-top="360">-->
+<div   class="order-box pnl-group-fix affix-top" 
+data-offset-top="360" <?php /*?>data-spy="affix"<?php */?> aria-multiselectable="true" id="cart-accordion2" role="tablist">
+           <span class="halfcircle">
+            <!--<i class="fa fa-align-justify"></i>-->
+            <img  src="<?php echo base_url('assets/images/536271-32.png');?>">          
+          </span>
+          <div  class="ipadview hidden-lg hidden-sx hidden-sm" style="display: block;">        
+            <p class="pull-left ipad_price" >
+              <span>$<?php echo $this->cart->total();?></span> (<?php echo $this->cart->total_items();?> Products)</p>
+            
+            
+            <a class="pull-right hoverd-btn" href="<?php echo base_url('checkout/your_detail');?>" >CHECKOUT
+                <i  class="fa fa-mail-forward"></i> 
+              </a>
+          </div>
+           <!-- <div class="ipadview">
+                <p>Your Current  Order: <span>$<?php echo $this->cart->total();?></span> ( <?php echo $this->cart->total_items();?> Products )</p>
                 <a href="#" data-toggle="modal" data-target="#postcode_pop">Checkout <i class="fa fa-mail-forward"></i></a>
-            </div>
+            </div>-->
             <div class="desktop-view">
             <h3 class="text-center">Your Order</h3>
 
               <table class="table">
                 <tr>
                   <th>Product Name</th>
-                  <th>Qty</th>
+                  <th style="">Qty</th>
                   <th>Sub Total</th>
                   <th width="10"></th>
                 </tr>
@@ -68,15 +82,16 @@
                   <td colspan="3" class="text-center"><p class="moprice">Minimum order 40$ </p></td>
                   <td></td>
                 </tr>
-                
-                <tr>
-                  <td><strong>Post Code:</strong></td> 
-                  <td class="text-center" >3150</td> 
-                  <td>
-                  		<a href="#" data-toggle="modal" data-target="#change_code">(Change)</a>
-                  </td>
+                -->
+                <tr class="hidden-xs">
+                  <td colspan="2"><strong>Post Code:</strong> <p  ><?php echo $this->session->userdata('run_post_code').'-'.$this->session->userdata('run_post_code_location');?> 
+                  <a href="#" class="fsizelink" data-toggle="modal" data-target="#shopnow_popup">(change)</a>
+                  </p>                   
+                  </td>                  
+                  <td>                  		
+                  </td>                
                   <td></td>
-                </tr>-->
+                </tr>
                 
                 <tr>
                	  <td colspan="2"><span>Your Shipping</span><p>(FREE after $40)</p></td>
@@ -84,7 +99,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td colspan="2"><strong>Sub Total</strong></td>
+                  <td colspan="2"><strong>Total Price</strong></td>
                   <td><span class="total" id="product_right_small_cart_total">$<?php if($this->cart->total()<40){echo number_format($this->cart->total()+8,2);}else{echo number_format($this->cart->total(),2);}?></span></td>
                   <td></td>
                 </tr>

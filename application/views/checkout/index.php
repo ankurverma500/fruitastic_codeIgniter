@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <?php $this->load->view('checkout/order_summary');?>
+      <?php //$this->load->view('checkout/order_summary');?>
     </div>
   </div>
 </div>

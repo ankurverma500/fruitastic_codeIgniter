@@ -3,10 +3,33 @@
 <head>
   <?php $this->load->view('templates/pages/meta');?>
   <style>
+  .bottom_header .menu_sec .navbar-default .navbar-nav>.active>a, 
+  .menu_sec .navbar-nav li a:focus,
+  .bottom_header .menu_sec .navbar-nav li a:hover
+  {
+	  color:#FFF !important;
+	}
   .bottom_header .menu_sec .navbar-nav li a
   {
-	 /* color:#FFF !important;*/
+	  color:#FFF !important;
   }
+  .bottom_header.fw.fixed-header .menu_sec .navbar-default .navbar-nav>.active>a, 
+  .menu_sec .navbar-nav li a:focus,
+  .bottom_header.fw.fixed-header .menu_sec .navbar-nav li a:hover
+  {
+	  color:#000 !important;
+	}
+  .bottom_header.fw.fixed-header .menu_sec .navbar-nav li a
+  {
+	  color:#000 !important;
+  }
+  
+  
+  .bottom_header .menu_sec .login_part .navbar-default .navbar-nav>.active>a, 
+  .menu_sec .login_part .navbar-nav li a:focus,
+  .bottom_header  .menu_sec .login_part .navbar-nav li a:hover
+  {color:#fe0808 !important}
+  
   .bounceInRight, .bounceInLeft, .bounceInUp, .bounceInDown {
     opacity: 1;
 	}
@@ -36,7 +59,7 @@
 <?php $this->load->view('templates/pages/footer');?>
 <?php $this->load->view('notify/notify');?>  
 </body>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 window.__lc = window.__lc || {};
 window.__lc.license = 9056975;
 (function() {
@@ -44,7 +67,7 @@ window.__lc.license = 9056975;
   lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
 })();
-</script>
+</script>-->
 <script>		
         /**** hide message notification ****/
         setTimeout(function(){ 

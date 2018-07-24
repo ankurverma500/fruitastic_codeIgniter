@@ -27,7 +27,7 @@ class Product extends MY_Controller
 		//$this->load->view('welcome_message');
 		$this->data['search_products']='';
 		$comment1=array('table'=>'tbl_product as tp',
-						'val'=>'*,tp.product_id as product_id, tp.id as id, 
+						'val'=>'*,tp.product_id as product_id, tp.id as id, tp.product_desc,
 						 tp.product_name as product_name ,tp.cost_per_unit as cost_per_unit',
 						'where'=>array("tp.status"=>'1','tp.deleted'=>'0'),
 						//,'tcm.status'=>'1','tcm.deleted'=>'0','tcm.availability'=>'1'

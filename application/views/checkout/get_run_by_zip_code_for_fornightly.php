@@ -42,7 +42,8 @@ for($i=1;$i<$counter;$i++)
 				$multijoin1=array(
 							array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status=1','join_type'=>'right')           
 					); 
-			$this->db->where('trd.max_deliveries > trd.total_deliveries');        
+			$this->db->where('trd.max_deliveries > trd.total_deliveries');    
+			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='$this->customer_type_id') ");    
 			$all_run_day=$this->common->multijoin($comment1,$multijoin1);
 			/*echo '<pre>';
 			print_r($all_run_day);

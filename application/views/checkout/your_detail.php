@@ -1,37 +1,43 @@
-
+<style>
+@media (max-width: 767px)
+{
+.col-sm-12{    position: initial !important;}
+.container{width:100%;}
+}
+</style>
 <div class="container ">
-  <div class="col-sm-12 checkout-section">
-    
-      
-      <?php $this->load->view('checkout/index2',$this->data);?>
-      
-     <div class="col-sm-8 customer-details"> 
-      	<div class="row">
-        
-        <div class="col-sm-12 col-md-12">
+  <div class=" checkout-section">
+      <?php $this->load->view('checkout/index2',$this->data);?>       
+      	<div class="col-sm-12 col-md-8 col-lg-8 col-sx-12">        
 		<?php if(!$this->session->userdata('admin_login'))
             {?>
-          <div class="login-panel panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Your Details</h3>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-sx-12 ">
+              <h3 class="">Your Details</h3>
               
             </div>
-            <div class="panel-body">
+            <div class="col-sm-12 col-sx-12 customer-details">
               <form class="form-horizontal" name="login" id="login" autocomplete="off" action="<?php echo base_url('checkout/your_detail');?>" method="POST">
               <input type="hidden" name="from_url" value="<?php echo $con.'/'.$method;?>" >
-                <fieldset>
-                <div class="col-sm-12 col-md-12">
-                  <div class=" col-sm-6 col-md-6 form-group">
+                <fieldset> </fieldset>
+                <div class="col-sm-6 col-md-6 col-sx-12 ">
+                  <div class=" form-group">
                     <!--<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>-->
-                     <input class="form-control" name="username" type="text" placeholder="Username" autocomplete="off">
-                    <?php echo form_error('username1'); ?>
+                     <label class="col-md-4 col-lg-4 col-sx-12 control-label">Username Name:</label>
+                        <div class="col-md-8 col-lg-8 col-sx-12">
+                         <input class="form-control" name="username" type="text" placeholder="Username" autocomplete="off">
+                        <?php echo form_error('username1'); ?>
+                        </div>
                   </div>
                 </div>
-                <div class="col-sm-12 col-md-12">
-                  <div class=" col-sm-6 col-md-6 form-group">
-                    <!--<input class="form-control" placeholder="Password" name="password" type="password" value="">-->
-                    <input class="form-control" name="password" type="password" placeholder="Password" autocomplete="off">
-                <?php echo form_error('password'); ?>
+                <div class="col-sm-6 col-md-6 col-sx-12 ">
+                  <div class="  form-group">
+                   <label class="col-md-4 col-lg-4 col-sx-12 control-label">Password:</label>
+      				<div class="col-md-8 col-lg-8 col-sx-12">
+                        <!--<input class="form-control" placeholder="Password" name="password" type="password" value="">-->
+                        <input class="form-control" name="password" type="password" placeholder="Password" autocomplete="off">
+                    <?php echo form_error('password'); ?>
+                    </div>
                   </div>
                 
                   <!--<div class="checkbox">
@@ -39,14 +45,14 @@
                             <input name="remember" type="checkbox" value="Remember Me">Remember Me
                         </label>
                     </div>-->
-                    <div class=" col-sm-6 col-md-6 form-group">
+                    
+                 </div>
+               <div class=" col-sm-12 col-md-12 form-group">
                     <span  class="hoverd-btn span_your_detail_login_butn pull-right">
                       <input  class="pull-right your_detail_login_butn" type="submit" name="loginForm" value="Login">
                       </span>
                       <!--<input type="submit" class="btn btn-default checkout-btn pull-right"  name="loginForm" value="Login">-->
                       </div>
-                 </div>
-                </fieldset>
               </form>
             </div>
           </div>
@@ -58,13 +64,14 @@
 			echo form_open_multipart(base_url("checkout/your_detail/$row->id"), $parm);
           ?>
           <!--<form class="form-horizontal" onSubmit="return validate_this_form()">-->
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">New Customer</h3>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-sx-12">
+                <h3 class="">New Customer</h3>
               </div>
-              <div class="panel-body">
+              <div class="col-sm-12 col-sx-12 customer-details">
                 
-                
+                <?php if(!$this->session->userdata('admin_login'))
+            {?>
                 <div class="form-group">
                 
                   <label class="col-md-3 col-sm-3 control-label">Customer Type <span class="text-danger">*</span></label>
@@ -88,7 +95,7 @@
                   </div>          
                 </div>
                 
-                
+                <?php }?>
                 <div class="form-group">
                   <label class="col-md-3 col-sm-3 control-label">First Name <span class="text-danger">*</span></label>
                   <div class="col-md-3 col-sm-3">
@@ -133,7 +140,7 @@
                   <div class="col-md-9 col-sm-9">
                     <!--<textarea class="form-control" rows="1" id="address1"></textarea>-->
                     <input class="form-control" type="text" name="delivery_address_street_address" 
-	value="<?php echo set_value('delivery_address_street_address', isset($customer->delivery_address_street_address) ? $customer->delivery_address_street_address : '')?>" id="delivery_address_street_address" placeholder="Enter a Delivery street address"  size="50"  autocomplete="off">
+	value="<?php echo set_value('delivery_address_street_address', isset($customer->formated_address) ? $customer->formated_address : '')?>" id="delivery_address_street_address" placeholder="Enter a Delivery street address"  size="50"  autocomplete="off">
                     <?php echo form_error('delivery_address_street_address'); ?>
                    
                   </div>
@@ -205,11 +212,10 @@
               </div>              
             </div>           
           </form>
-        </div>
-      </div>
+       
       <!--<p class="pull-right"><input type="button" class="btn btn-danger btn-lg checkoutbtn" value="CHECKOUT"></p>--> 
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-sx-12">
     <?php $this->load->view('checkout/order_summary');?>
     
     </div>

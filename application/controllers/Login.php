@@ -52,6 +52,7 @@ class Login extends CI_Controller
 						delete_cookie("email_customer_cookie");
 						delete_cookie("password_customer_cookie");
 					}
+					//$this->session->set_flashdata('success', 'You are logged in successfully.');	
 					redirect("admin/dashboard");					
 				}
 				else
@@ -78,7 +79,7 @@ class Login extends CI_Controller
 		if($this->admin->loggedin()) 
 		{
 			$this->admin->logout();
-			$this->session->set_flashdata('success', 'user, You are succesfully logout ');
+			$this->session->set_flashdata('success', 'You are successfully logout ');
 			redirect($_SERVER['HTTP_REFERER']);
 			//$this->load->view('admin/logout');
 			//redirect("admin/login");

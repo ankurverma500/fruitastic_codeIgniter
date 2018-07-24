@@ -1,4 +1,4 @@
-
+</div>
 <?php if($con!='product'){?>
 <footer><!--footer start-->
     <div class="top_footer">

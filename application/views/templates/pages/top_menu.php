@@ -18,10 +18,11 @@
 					{?>
 					<li>
 					<a href="<?php echo base_url('login/logout')?>" >
-					<i class="fa fa-user" aria-hidden="true"></i> Logout /
+					<i  class="fa fa-sign-out"></i> Logout 
 					</a> 
 					</li>
 					<li   >
+                    <span  class="glyphicon glyphicon-user"></span>
 					<a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" class="rgst" >My Account <?php //echo 'Hi'.$this->name?></a>
 					</li>
 			  <?php 
@@ -35,6 +36,7 @@
 				</a> 
 				</li>
 				<li class="rgst" data-toggle="modal" data-target="#registration">
+                <span  class="glyphicon glyphicon-user"></span>
 				<a href="#" data-toggle="modal" data-target="#signupModal">Register</a>
 				</li>
 				<?php }//logout?>
@@ -72,20 +74,36 @@
                 <ul class="nav navbar-nav">
                 <?php //echo $con.'/'.$method;?>
                   <li <?php if($con=='' || $con=='home'){echo ' class="active"';}?>><a href="<?php echo base_url('home');?>">Home</a></li>
-                  <li <?php if($con=='product'){echo ' class="active"';}?>><a href="<?php echo base_url('product');?>">Shop</a></li>
+                  <li <?php if($con=='product'){echo ' class="active"';}?>><a href="<?php echo base_url('product');?>">Shop Now</a></li>
                   <li <?php if($con=='bulk_order'){echo ' class="active"';}?>> <a href="<?php echo base_url('bulk_order');?>">Bulk Order</a></li>
                   <li <?php if($con=='how-it-works'){echo ' class="active"';}?>><a href="<?php echo base_url('how-it-works');?>">How IT Works</a></li>
-                  <li <?php if($con=='about-us'){echo ' class="active"';}?>><a href="<?php echo base_url('about-us');?>">About</a></li>
-                  <li><a  href="https://blog.fruitastic.com.au/"  target="_blank">Blog</a></li>
-                  <li <?php if($con=='contact-us'){echo ' class="active"';}?>><a href="<?php echo base_url('contact-us');?>">Contact</a></li>
+                  <li <?php if($con=='about-us'){echo ' class="active"';}?>><a href="<?php echo base_url('about-us');?>">About Us</a></li>
+                  <li><a  href="https://fruitastic.com.au/blog/"  target="_blank">Blog</a></li>
+                  <li <?php if($con=='contact-us'){echo ' class="active"';}?>><a href="<?php echo base_url('contact-us');?>">Contact Us</a></li>
                   
-                  
-                  <li class="hidden-lg hidden-md hidden-sm">
-                  <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a>
-                  </li>
-                  <li class="hidden-lg hidden-md hidden-sm">
+                  <?php if($this->session->userdata('admin_login'))
+					{?>
+					<li  class="hidden-lg hidden-md hidden-sm">
+					<a href="<?php echo base_url('login/logout')?>" >
+					<i class="fa fa-user" aria-hidden="true"></i> Logout 
+					</a> 
+					</li>
+					<li class="hidden-lg hidden-md hidden-sm">
                   <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
                   </li>
+			  <?php 
+					}
+					else
+					{
+						?>
+						 <li class="hidden-lg hidden-md hidden-sm">
+                          <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a>
+                          </li>
+						<?php
+					}
+			  ?>    
+                 
+                  
                   
                   <li class="hidden-lg hidden-md hidden-sm mobile-social-icon"> 
                    <a href="https://www.facebook.com/FruitasticMelbourne/" target="_blank">
@@ -165,11 +183,14 @@ function openNavcart()
 	$('#mySidenav').html('');
 	$('#mySidenav').html(dd);
 	document.getElementById("mySidenav").style.width = "438px";	
+	$("#mySidenav").addClass('mySidenav_left_cart');
+	$('body').addClass('modal-open');;
 	console.log(dd);	
 }
 
 function closeNavcart() 
 {
+	//$("#mySidenav").remove('mySidenav_left_cart');
     document.getElementById("mySidenav").style.width = "0%";
 }
 </script>

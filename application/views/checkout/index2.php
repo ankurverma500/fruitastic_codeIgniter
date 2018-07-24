@@ -1,8 +1,8 @@
 <style>
-.bottom_header .menu_sec .navbar-nav li a ,.bottom_header .menu_sec .navbar-default .navbar-nav > .active > a, .menu_sec .navbar-nav li a:focus {
+/*.bottom_header .menu_sec .navbar-nav li a ,.bottom_header .menu_sec .navbar-default .navbar-nav > .active > a, .menu_sec .navbar-nav li a:focus {
     background: none;
     color: #000!important;
-}
+}*/
 .order-bar ul,.order-box form{
     display:inline-block;
     width:100%
@@ -11,8 +11,8 @@
     padding:0 8px
 }
 .order-bar{
-    margin-top:150px;
-    margin-bottom:40px
+        margin-top: 70px;
+    margin-bottom: 40px;
 }
 .order-bar ul{
     border-radius:25px;
@@ -73,6 +73,14 @@
 .not-active{
     cursor:default
 }
+@media (max-width: 767px) {
+
+	
+.order-bar {
+	 margin-top: 123px;
+    margin-bottom: 30px; 
+}
+}
 </style>
 <?php
  $con = $this->router->fetch_class();
@@ -83,24 +91,24 @@
  echo '</pre>';*/
 ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 order-bar">
+<div class="row">
+  	<div class="container">
+    	<div class="col-md-12  col-sm-12  col-lg-12 col-sx-12 order-bar">
       <ul>
         <li  <?php   if($method=='your_detail' ){echo 'class="active"';}else{echo '';}?>>
-          <a  href="<?php echo base_url('checkout/your_detail');?>" class="not-active">Your Details</a>  
+          <a <?php /*?> href="<?php echo base_url('checkout/your_detail');?>"<?php */?> class="not-active">Your Details</a>  
         </li>
         <li <?php   if($method=='delivery_day' ){echo 'class="active"';}else{echo '';}?>>
-          <a  href="<?php echo base_url('checkout/delivery_day');?>" class="not-active">Delivery Day</a>
+          <a  <?php /*?>href="<?php echo base_url('checkout/delivery_day');?>"<?php */?> class="not-active">Delivery Day</a>
         </li>
         <li <?php   if($method=='payment'){echo 'class="active"';}else{echo '';}?>>
-          <a  href="<?php echo base_url('checkout/payment');?>" class="not-active">Payment</a>
+          <a  <?php /*?>href="<?php echo base_url('checkout/payment');?>"<?php */?> class="not-active">Payment</a>
         </li>
         <li <?php   if($method=='payment_status'){echo 'class="active"';}else{echo '';}?>>
-          <a  href="<?php echo base_url('checkout/complete');?>" class="not-active">Complete</a>
+          <a <?php /*?> href="<?php echo base_url('checkout/complete');?>"<?php */?> class="not-active">Complete</a>
         </li>
       </ul>
     </div>
-</div>
+	</div>
 </div>
     

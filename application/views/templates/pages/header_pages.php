@@ -16,10 +16,11 @@
 								{?>
 								<li>
 								<a href="<?php echo base_url('login/logout')?>" >
-								<i class="fa fa-user" aria-hidden="true"></i> Logout /
+								<i  class="fa fa-sign-out"></i> Logout /
 								</a> 
 								</li>
 								<li   >
+                                <span  class="glyphicon glyphicon-user"></span>
 								<a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" target="_blank" class="rgst" >My Account <?php //echo 'Hi'.$this->name?></a>
 								</li>
 						  <?php 
@@ -33,6 +34,7 @@
 							</a> 
 							</li>
 							<li class="rgst" data-toggle="modal" data-target="#registration">
+                            <span  class="glyphicon glyphicon-user"></span>
 							<a href="#" data-toggle="modal" data-target="#signupModal">Register</a>
 							</li>
 							<?php }//logout?>
@@ -72,19 +74,42 @@
                                     <li><a href="about.html">ABOUT US</a></li>
                                     <li><a href="contact.html">CONTACT US</a></li>-->
 <li <?php if($con=='' || $con=='home'){echo ' class="active"';}?>><a href="<?php echo base_url('home');?>">Home</a></li>
-<li <?php if($con=='product'){echo ' class="active"';}?>><a href="<?php echo base_url('product');?>">Shop</a></li>
+<li <?php if($con=='product'){echo ' class="active"';}?>><a href="<?php echo base_url('product');?>">Shop Now</a></li>
 <li <?php if($con=='bulk_order'){echo ' class="active"';}?>> <a href="<?php echo base_url('bulk_order');?>">Bulk Order</a></li>
 <li <?php if($con=='how-it-works'){echo ' class="active"';}?>><a href="<?php echo base_url('how-it-works');?>">How IT Works</a></li>
-<li <?php if($con=='about-us'){echo ' class="active"';}?>><a href="<?php echo base_url('about-us');?>">About</a></li>
-<li><a  href="https://blog.fruitastic.com.au/"  target="_blank">Blog</a></li>
-<li <?php if($con=='contact-us'){echo ' class="active"';}?>><a href="<?php echo base_url('contact-us');?>">Contact</a></li>
+<li <?php if($con=='about-us'){echo ' class="active"';}?>><a href="<?php echo base_url('about-us');?>">About Us</a></li>
+<li><a  href="https://fruitastic.com.au/blog/"  target="_blank">Blog</a></li>
+<li <?php if($con=='contact-us'){echo ' class="active"';}?>><a href="<?php echo base_url('contact-us');?>">Contact Us</a></li>
                                     
-                                    <li class="hidden-lg hidden-md">
+                                    
+                                    <?php if($this->session->userdata('admin_login'))
+										{?>
+										<li  class="hidden-lg hidden-md hidden-sm">
+										<a href="<?php echo base_url('login/logout')?>" >
+										<i class="fa fa-user" aria-hidden="true"></i> Logout 
+										</a> 
+										</li>
+										<li class="hidden-lg hidden-md hidden-sm">
+									  <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
+									  </li>
+								  <?php 
+										}
+										else
+										{
+											?>
+											 <li class="hidden-lg hidden-md hidden-sm">
+											  <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a>
+											  </li>
+											<?php
+										}
+								  ?>    
+                                    
+                                   <!-- <li class="hidden-lg hidden-md">
                                     <a href="#" data-toggle="modal" data-target="#signinModal">
                                     <i class="fa fa-sign-in"> </i> Login</a></li>
                                     <li class="hidden-lg hidden-md">
                                     <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
-                                    
+                                    </li>-->
                                     <li class="hidden-lg  hidden-md mobile-social-icon">
                                     <a href="https://www.facebook.com/FruitasticMelbourne/" target="_blank">
                                     <i class="fa fa-facebook"></i></a>
@@ -111,7 +136,7 @@
                           	  </span>
                         </div>
                     </div>
-                   <div id="mySidenav" class="sidenav"> 
+                   <div id="mySidenav"  class="sidenav"  > 
 				  <?php //$this->load->view('templates/pages/right_side_cart_page');?>
                  </div>
                     
@@ -138,12 +163,17 @@ function openNavcart()
 	$('#mySidenav').html('');
 	$('#mySidenav').html(dd);
 	document.getElementById("mySidenav").style.width = "438px";	
-	console.log(dd);	
+	$("#mySidenav").addClass('mySidenav_left_cart');
+	$('body').addClass('modal-open');
+	//console.log(dd);
+		
 }
 
 function closeNavcart() 
 {
+	//$("#mySidenav").removeClass('mySidenav_left_cart');
     document.getElementById("mySidenav").style.width = "0";
+	$('body').removeClass('modal-open');
 }
 </script>
     

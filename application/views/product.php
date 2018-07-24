@@ -68,6 +68,7 @@
                   <a role="button" data-toggle="collapse" data-parent="#cart-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Products</a>
                 </h4>
               </div>
+        
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                   <ul class="nav nav-tabs" role="tablist">
@@ -119,11 +120,19 @@
 		 } */
 	  ?>
         <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-          <h1 class="cart-title">Products</h1>
-          
-         <!-- <div class="search_box">
+          <h1 class="cart-title hidden-xs">Products</h1>
+        <!--<div class="col-sm-9 col-md-9 pull-right " style="text-align:right;margin-top: 25px;">
+              <p>Your  address  is <b></b> Do you want to 
+              <span onclick="change_the_post_code()" style="cursor:pointer; color:#009;text-decoration: underline;">
+              change your address.
+              </span>
+              </p>
+            </div>
+         <div class="search_box">
             <input type="text"><input type="submit" value="Search">
           </div>-->
+          
+          
           
               <?php 
 		//print_r($result_product);
@@ -177,8 +186,8 @@
 				}
 				
 			?>
-              <tr style="background-color: #FBFBFB;
-    border-bottom: 1px solid #DDDDDD;">
+              <tr <?php /*?>style="background-color: #FBFBFB;
+    border-bottom: 1px solid #DDDDDD;"<?php */?>>
                 <td>
 				<?php 
                 if($result_products->product_image=='')
@@ -199,7 +208,9 @@
                 	<small class="green btn">10% off</small>
 				<?php } }?>
                   
-                  <h3><?php echo $result_products->product_name;?></h3>
+                  <h6 class="hidden-sm hidden-md hidden-lg"><?php echo $result_products->product_name;?>&nbsp;<?php if($cat_id=='7'){?><i class="fa fa-info-circle" style="font-size:20px;color:red" data-toggle="tooltip" data-placement="top" title="<?php  echo $result_products->product_desc; ?>"></i><?php }?></h6>
+                  <h3 class="hidden-xs"><?php echo $result_products->product_name;?>&nbsp;<?php if($cat_id=='7'){?><i class="fa fa-info-circle" style="font-size:20px;color:red" data-toggle="tooltip" data-placement="top" title="<?php  echo $result_products->product_desc; ?>"></i><?php }?></h3>
+                  
                   <span class="per"><?php echo $result_products->product_type;?></span>
                 </div>
                 </td>
@@ -242,10 +253,10 @@
                 <a onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','add','<?php echo $product_gst?>')" 
 							  <?php /*?>onclick="show('comment'); hide('clickMeId')"<?php */?> 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="cart-add class_pointer">
-                	<p>
-                		<i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
+                	<p class="productchange_icon">
+                		<i  class="fa fa-cart-plus fa-2x" aria-hidden="true"></i>
                     </p>
-                    <span>Add</span>
+                    <span class="au_font">Add</span>
                 </a>
                 </td>
                
@@ -253,10 +264,10 @@
    <?php /*?> margin: -135px 0 0 0;<?php */?>" class="action added" id="Added_to_cart_td_<?php echo $result_products->id;?>">
                     <a <?php /*?>onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','Added','<?php echo $product_gst?>')"<?php */?> 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-add">
-                        <p>
-                            <i class="fa fa-check-circle fa-3x"></i>
+                        <p class="productchange_icon">
+                            <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
                         </p> 
-                        <span>Added</span>
+                        <span class="au_font">Added</span>
                     </a>
                 </td>
                 
@@ -264,8 +275,8 @@
   <?php /*?>  margin: -135px 0 0 0;<?php */?>" class="action update" id="update_to_cart_td_<?php echo $result_products->id;?>">
                         <a onclick="add_to_cart('<?php echo $result_products->id;?>','<?php echo $product_image?>','<?php echo $prod_price?>','<?php echo $result_products->product_name;?>','<?php echo $was_price?>','1','update','<?php echo $product_gst?>')" 
                               id="add_to_cart_<?php echo $result_products->id;?>" class="check-update class_pointer">                    
-                            <p><i class="fa fa-upload fa-3x"></i></p>
-                            <span>Update</span>
+                            <p class="productchange_icon"><i class="fa fa-upload fa-2x" aria-hidden="true"></i></p>
+                            <span class="au_font">Update</span>
                         </a>
                     </td>
                     
@@ -282,7 +293,7 @@
 		}
 	?>    		
         </div>        
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 scrollspy">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 scrollspy">
           <!--<div class="order-box pnl-group-fix" role="tablist" aria-multiselectable="true" data-spy="affix" data-offset-top="360">-->
           
           <?php $this->load->view('order_summary')?>
@@ -297,74 +308,6 @@
     </div>
   </div>
   
- 
- <?php /*?>
-<!-- Modal -->
-<div id="change_code" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm text-center">
-    <div class="modal-content">
-     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
-      </div>
-      <div class="modal-body">
-        <h3>Enter new post code</h3>
-        <input type="text" class="form-control post_code_text"  />
-        <a href="#" class="post_code_btn hoverd-btn" data-dismiss="modal">Submit</a>
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-<div class="modal fade" id="postcodemodel" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <!--<div class="modal-content podecode_modalcontent">-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span class="fa fa-close"></span><span class="close_text">Close</span>
-        </button> 
-      </div>
-      <div class="modal-body postcode_modalbody">  
-        <h1 class="postcode_modalhead"><img src="assets/images/post_code_icon.png" /> <span class="postcode_txt">Post code</span></h1>
-        <p class="postcode_p">Please enter your Post Code to check for</p> 
-        <p class="postcode_p">Free Delivery*</p>
-        <div class="postcode_textbox">
-        <!--<input type="text" id="pin_code" class="form-control post_code_text" placeholder="Enter Post Code" onclick="if(this.value=='Enter Post Code'){this.value=''}" onblur="if(this.value==''){this.value='Enter Post Code'}" />-->
-        
-        <input type="text" id="pin_code" class="form-control post_code_text" onblur="this.placeholder = 'Enter Post Code'" onfocus="this.placeholder = ''" placeholder="Enter Post Code" />
-        </div>
-       <!-- <a href="#" (click)="changePin($event)" class="post_code_btn hoverd-btn" data-dismiss="modal">Submit</a>-->
-        <button (click)="changePin($event)" class="post_code_btn hoverd-btn" id="errormsg">Submit</button>         
-        <!--<div class="error text-center" style="display:none">
-            <p class="text-center" style="padding-left:5%; padding-right:5%">We currently don't have free delivery to your area, however, please click on live chat to discuss delivery fee and options, or send us an enquiry to find out delivery options. </p>
-             <a  href="#/contact" class="post_code_btn hoverd-btn" > Contact Us</a>  
-        </div>-->  
-        <p>* Free Delivery for orders above $40</p> 
-      </div>
-    </div>
-  </div>  
-</div><?php */?>
-
-<!--<div class="modal fade" id="postcode_pop" aria-labelledby="myModalLabel">
-    <div class="flexpop">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body text-center">
-              <h3><img src="common/images/map-mark.png" alt=""> Post Code</h3>
-              <p>Please enter your Post Code or Suburb for Delivery</p>
-              <p><input type="text"></p>
-              <p>Congrats !!   We can deliver to your place FREE</p>
-              <p><a href="#" class="btn">Shop Now <i class="fa fa-mail-forward"></i></a></p>
-              <p>Apologies - Currently we are not delivering in your area</p>
-              <p><a href="#" class="btn" data-dismiss="modal"><i class="fa fa-close"></i> Close</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>-->
 
 
 <div id="shopnow_popup" class="modal  fade" role="dialog" aria-labelledby="shopnow_popupLabel" aria-hidden="true" style="padding: 30px 10px 0 10px;">
@@ -378,7 +321,7 @@
       </div>
       <div class="modal-body">
         <h1  class="postcode_modalhead">
-        <img src="assets/images/post_code_icon.png"> 
+        <img src="<?php echo base_url('assets/images/post_code_icon.png');?>"> 
         <span  class="postcode_txt">Post code</span> 
         </h1>
       
@@ -422,12 +365,37 @@ if($this->session->userdata('run_post_code')=='')
 {?>
 <!-- Shop Now post code Popup -->
 <script type="text/javascript">
+function change_the_post_code()
+{
+	 $('#shopnow_popup').modal('show');
+}
+
+
     $(window).on('load',function(){
         $('#shopnow_popup').modal('show');
     });
 </script>
 <?php 
 }?>
+<script>
+jQuery(document).ready(function()
+{
+	if($( window ).width()>767)
+	{
+	  jQuery(window).scroll(function()
+	  {
+		if (jQuery(this).scrollTop() > 350) 
+		{
+			jQuery('#cart-accordion2').addClass('affix');
+		}
+		else 
+		{
+			jQuery('#cart-accordion2').removeClass('affix');
+		}
+	  });
+	}
+});
+</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvjYUNMayAdpHVsyYtzVlQhsyxQHlsQ5U&callback=initialize&libraries=places&region=au"
   type="text/javascript"></script> 
 <script type="text/javascript">
@@ -489,8 +457,28 @@ $(document).ready(function () {
 });
 </script>
 <script>
-//input[type="submit"]
+
+//input[type="submit"] 
 $(function (){
+$(".halfcircle").on('click',function(){
+	//alert($('.scrollspy').hasClass('onfullscreen'));
+	if($('.scrollspy').hasClass('onfullscreen'))
+	{
+		//alert('sadasd');
+		//$(".desktop-view").slideDown();
+		//$(".desktop-view").hide( "slow" );
+		$(".scrollspy").removeClass('onfullscreen');
+		$(".desktop-view").css({'transition':'0.1s','display':'none','padding':'0% 5% 0%'});
+		$(".ipadview").css({'transition':'0.1s','display':'block'});
+	}else{
+		$(".desktop-view").css({'transition':'0.1s','display':'block','padding':'0% 5% 0%'});
+		//$(".desktop-view").slideUp();
+		//$(".desktop-view").show( "slow" );
+		$(".scrollspy").addClass('onfullscreen');
+		$(".ipadview").css({'transition':'0.1s','display':'none'});
+		
+	}
+});
 	//$(".cart-quantity > .input-group-btn > input[type='button']").on('click',function(){
 	$(".product_cart_button").on('click',function(){
 		var pid=$(this).attr("pid");
@@ -503,7 +491,7 @@ $(function (){
 			$("#Added_to_cart_td_"+pid).css("display",'none');
 			$("#update_to_cart_td_"+pid).css("display",'block');			
 		}
-		$(".pid_total_price_"+pid).html("$"+(qty*pprice).toFixed(2));
+		$(".pid_total_price_"+pid).html((qty*pprice).toFixed(2));
 		//alert('click');
 	});
 	$(".cart-quantity input[type='text']").on('keyup',function(){
@@ -517,7 +505,7 @@ $(function (){
 			$("#Added_to_cart_td_"+pid).css("display",'none');
 			$("#update_to_cart_td_"+pid).css("display",'block');			
 		}
-		$(".pid_total_price_"+pid).html("$"+(qty*pprice).toFixed(2));
+		$(".pid_total_price_"+pid).html((qty*pprice).toFixed(2));
 		//alert('change');
 	});
 });
@@ -618,7 +606,7 @@ function add_to_cart(id,image,price,name,was_price,qty,action_type,product_gst)
 			var htmldd='<tr id="product_right_small_cart_'+id+'">';
 				htmldd+='<td>'+name+'</td>';
 				htmldd+='<td>'+qty2+'</td>';
-				htmldd+='<td>$'+(qty2*price)+'</td>';
+				htmldd+='<td>$'+(qty2*price).toFixed(2)+'</td>';
 				htmldd+='<td class="text-center"><a onclick="'+fff+'" class="class_pointer"><i class="fa fa-minus"></i></a></td>';
 				htmldd+='</tr>';
 				$("#table_product_right_small_cart tbody").append(htmldd);
@@ -636,17 +624,14 @@ function add_to_cart(id,image,price,name,was_price,qty,action_type,product_gst)
 		{
 				$("#add_to_cart_td_"+id).css("display",'none');
 				$("#Added_to_cart_td_"+id).css("display",'block');
-				$("#update_to_cart_td_"+id).css("display",'none');
-				
+				$("#update_to_cart_td_"+id).css("display",'none');				
 				var htmldd='<td>'+name+'</td>';
 					htmldd+='<td>'+qty2+'</td>';
-					htmldd+='<td>$'+(price*qty2)+'</td>';
+					htmldd+='<td>$'+(price*qty2).toFixed(2)+'</td>';
 					htmldd+='<td class="text-center"><a href="#"><i class="fa fa-minus"></i></a></td>';
 				$("#table_product_right_small_cart tbody #product_right_small_cart_"+id).html(htmldd);
-		}
-		
-		show_on_cart('asd');
-		
+		}		
+		show_on_cart('asd');		
 		//alert('done');
 	}
 	else
@@ -666,8 +651,9 @@ function show_on_cart(obj)
 	$("#product_right_small_cart_subtotal").html('$'+cartd.sub_total_amount);
 	$("#product_right_small_cart_shipping").html(cartd.shipment_amount);
 	$("#product_right_small_cart_total").html('$'+cartd.total_amount);
-	$("#cart_top_big_total_price").html('$'+cartd.total_amount);
+	$("#cart_top_big_total_price").html(cartd.total_amount);
 	$("#cart_top_big_total_item").html(cartd.total_item);
+	$(".ipadview  >.ipad_price").html('<span>$'+cartd.total_amount+'</span> ('+cartd.total_item+' Products)');
 }
 
 function add_to_cart_notify(id,image,price,name,was_price,qty,action_type)

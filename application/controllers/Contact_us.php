@@ -62,6 +62,14 @@ class Contact_us extends MY_Controller
 				$this->notification->set($not_data);
 				if($result)
 				{
+					$message='<table width="700" border="0" cellspacing="0" cellpadding="0">
+					 <tr><td>name</td><td><p>'.$da['val']['name'].'</p></td></tr>
+					 <tr><td>email</td><td><p>'.$da['val']['email'].'</p></td></tr>
+					 <tr><td>contact no</td><td><p>'.$da['val']['contact_no'].'</p></td></tr>
+					 <tr><td>message</td><td><p>'.$da['val']['message'].'</p></td></tr>
+				  </table>';
+					$send_mail_data=array('to'=>$this->admin_email,'subject'=>'Welcome to Fruitilious ','message'=>'Contact Us </br>'.$message);	
+					$this->send_email($send_mail_data);
 					$this->session->set_flashdata('success', ADD_MESSAGE);
 					redirect($_SERVER['HTTP_REFERER']);
 				}

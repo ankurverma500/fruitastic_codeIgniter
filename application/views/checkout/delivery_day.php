@@ -1,13 +1,19 @@
 
+<style>
+.radio_box {
+    border: 1px solid #eee;
+    padding: 10px 10px 10px 33px!important;
+    border-radius: 3px;
+}
+</style>
 <div class="container">
-  <div class="col-sm-12 checkout-section">
+  <div class=" checkout-section">
   
   	<?php $this->load->view('checkout/index2',$this->data);?>
     
-    <div class="col-sm-8">
-      
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-8 col-lg-8 col-sx-12" style="padding: 22px;
+    border: 1px solid #eee;
+    padding-top: 22px;">
           <form class="form-horizontal" action="<?php echo base_url('checkout/payment');?>" method="POST">  
           <?php
 		  $run_detail=$this->session->userdata('run_detail');
@@ -17,20 +23,26 @@
 		   ?>
             <div class="deliver_day_form">
               <div class="row delivery_day_tab_row">
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4 ">
+                	<div class="radio radio_box tooltips">
                   <label class="delivery_day_level" data-toggle="tooltip" data-placement="top" title="Click to choose your delivery day for this order only">
                     <input id='watch-me' class="delivery_day_radio" s_dive="show-me" <?php if($run_detail['run_type']==1){echo 'checked="checked"';}?>  name='one_time' type='radio' value="1" />
                     <span class="one_time_label_tab">One TIME</span></label>
+                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4 ">
+                	<div class="radio radio_box tooltips">
                   <label class="delivery_day_level" data-toggle="tooltip" data-placement="top" title="Click to set up as weekly recurring order. Please note prices fluctuate daily. Order can be stopped, paused, or altered using profile page top right of screen">
                     <input id='see-me' class="delivery_day_radio" s_dive="show-me-two" <?php if($run_detail['run_type']==2){echo 'checked="checked"';}?> name='recurring' type='radio' value="2" />
                     <span class="one_time_label_tab">WEEKLY</span></label>
+                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4 ">
+                	<div class="radio radio_box tooltips">
                   <label class="delivery_day_level" data-toggle="tooltip" data-placement="top" title="Click to set up as fortnightly recurring order. Order can be stopped, paused, or altered using profile page top right of screen">
                     <input id='look-me' class="delivery_day_radio"  s_dive="show-me-three" <?php if($run_detail['run_type']==3){echo 'checked="checked"';}?>  name='fortnightly' type='radio' value="3" />
                     <span class="one_time_label_tab">FORTNIGHTLY</span></label>
+                    </div>
                 </div>
               </div>
               <div class="row">
@@ -81,16 +93,13 @@
                           </div>
                         </div>
                   </div>
-                </div>
-            
-            	<div class="row">
-                  <div class="col-sm-12 col-md-12 text-right checkout_btn_div" <?php if((!$run_detail) ||($run_detail['run_type']=='')||(count($run_detail['run'])<1) ){echo 'style="display:none;"';}?>> 
-                  <input type="submit" class="btn btn-primary checkout-btn btn-lg"  name="deliveryday" value="Continue Order >>">
+                </div>            
+            <div class="row">
+                  <div class="col-sm-12 col-md-12 text-right checkout_btn_div customer-details" <?php if((!$run_detail) ||($run_detail['run_type']=='')||(count($run_detail['run'])<1) ){echo 'style="display:none;margin-top:20px;"';}?>> 
+                  <input type="submit" class="your_detail_login_butn pull-right"  name="deliveryday" value="Continue Order >>">
                   <!--<a href="payment.html" class="btn btn-primary checkout-btn btn-lg" >Continue Order >></a> -->
                   </div>
-                </div>
-        </div>
-      </div>
+                </div>        
       </form>
       <!--<p class="pull-right"><input type="button" class="btn btn-danger btn-lg checkoutbtn" value="CHECKOUT"></p>--> 
     </div>

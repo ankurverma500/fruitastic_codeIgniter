@@ -6,6 +6,14 @@
 .alert-info {
     z-index: 99999999 !important;
 }
+.bottom_header .menu_sec .login_part .navbar-default .navbar-nav>.active>a, 
+  .menu_sec .login_part .navbar-nav li a:focus,
+  .bottom_header  .menu_sec .login_part .navbar-nav li a:hover
+  {color:#fe0808 !important}
+   .menu_sec .login_part .navbar-nav li a:focus {
+    background: none;
+    color: #000!important;
+}
 </style>
 </head>
 <body>

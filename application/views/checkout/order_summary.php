@@ -3,17 +3,21 @@
 </style>
 
 <div class="  table-responsive innnerbdr obox-2 order-box ">
-        <h2 class="yourorder clrwhite">Your Order</h2>
-        <div class="cart_scroll" <?php /*?>style="    height: 250px;   overflow: scroll;"<?php */?>>
-        <table class="table product_table" >
-          <thead>
-            <tr>
-              <td class="clrwhite">PRODUCT</td>
-              <td class="clrwhite">QTY</td>
-              <td class="clrwhite">TOTAL</td>
-            </tr>
-          </thead>
-          <tbody>
+        <h2 class="yourorder clrwhite text-center" >Order Summary</h2>
+        <div class="cart_scroll1" <?php /*?>style="    height: 250px;   overflow: scroll;"<?php */?>>
+       <table class="table">
+                <tr>
+                  <th>Product Name</th>
+                  <th  style="text-align:right;">Qty</th>
+                  <th>Sub Total</th>
+                  <th width="10"></th>
+                </tr>
+               
+               <tr>
+                <td colspan="4">
+                 <div class="cart_scroll table-responsive">
+                  <table class="table product_table" id="table_product_right_small_cart">
+                  <tbody>
             <?php
 			$total_price=0;
 			$cart_check = $this->cart->contents();
@@ -21,22 +25,35 @@
 			$this->data['total_price_cart']=0;
 			foreach ($cart_check as $item)
 			 {
+				 array_push($product_id,$item['id']);
+				 $p_dtail[$item['id']]=$item['qty'];
+				 $fff="remove_cart_ajax('".$item['rowid']."','".$item['id']."')";
+				 echo ' <tr id="product_right_small_cart_'.$item['id'].'">
+							<td>'.$item['name'].'</td>
+							<td>'.$item['qty'].'</td>
+							<td>$'.number_format($item['price'],2).'</td>
+							<td class="text-center">
+							</td>
+						  </tr>';//<a onclick="'.$fff.'" class="class_pointer"><i class="fa fa-minus "></i></a>
 				 //array_push($this->data['product_id'],$item['id']);	
 				 //$this->data['total_price_cart']=($this->data['total_price_cart']+$item['price']);		
 			 
-		  ?>
+		  /*?>
             <tr>
               <td class="fsize"><?php echo $item['name'];?></td>
               <td class="fsize"><?php echo $item['qty'];?></td>
               <td class="fsize">$<?php echo ($item['price']*$item['qty']);?></td>
             </tr>
-            <?php 
+            <?php */
 			$total_price=$total_price+($item['price']*$item['qty']);
 			}			
 			?>
-            </tbody>
-            </table>
-            </div>
+             </tbody>
+                  </table>
+            	</div>
+            	</td>
+              </tr>
+         </table>
              <table class="table">
              <tbody>
             <tr>
@@ -44,14 +61,16 @@
               <td class="clrwhite">
 			  <?php $s_charge=0; if($total_price>40){echo 'Free';}else{ echo '$8';$s_charge=8;}?></td>
             </tr>
-            <!--
-            <tr>
+            
+            <!--<tr>
                 <td colspan="3" class="tdbdrnine clrwhite">Post code</td>
               </tr>
               <tr>
-                <td colspan="3" class="tdbdrnine clrwhite">3150 - Glen Waverley <a href="#" class="fsizelink" data-toggle="modal" data-target="#changepostcode">(change)</a></td>
-              </tr>
-              -->
+                <td colspan="3" class="tdbdrnine clrwhite"><?php echo $this->session->userdata('run_post_code').'-'.$this->session->userdata('run_post_code_location');?> 
+                <a href="#" class="fsizelink" data-toggle="modal" data-target="#shopnow_popup">(change)</a>
+                </td>
+              </tr>-->
+              
               <?php 
 			$ddiscount=0;
 			if($this->session->userdata('discount'))
@@ -97,6 +116,7 @@
             </tr>
           </tbody>
         </table>
+        
         <div class="row">
           <div class="col-sm-12" id="discount_div_id">
           <?php if(!$this->session->userdata('discount')){ ?>

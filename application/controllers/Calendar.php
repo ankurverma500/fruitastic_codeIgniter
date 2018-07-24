@@ -9,20 +9,31 @@ class Calendar extends MY_Controller
 			
 		$this->load->model('common');			
 	}
-	function get_post_code_of_run_helper_ajax($post_code,$order_id=null,$customer_id=null)
+	public function get_post_code_of_run_helper_ajax($post_code,$order_id=null,$customer_id=null)
 	{
-		$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime(date('Y-m-d')))));
+		$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime(date('Y-m-d')))));		
+		if(date('H')>='15:00')
+		{
+			//$this->db->where('trd.run_date>',date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date)))));
+			$cur_date=date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date))));
+		}
+		else
+		{
+			//echo 'sads';
+			//$this->db->where('trd.run_date >',$cur_date);
+		}
 		$comment1=array('table'=>'tbl_run_detail as trd',
 						'val'=>'*,trd.run_date,trd.id as run_detail_id
 						,(SELECT `name` FROM `tbl_working_shift` WHERE id=trd.shift) as shift_name 
 						',
 						//,	(SELECT count(*) FROM `tbl_recurring_order` WHERE `order_id`='.$order_id.' AND  `customer_id`='.$customer_id.' AND `run_detail_id`=trd.id ) as recorder_exists
-						'where'=>array('trd.deleted'=>'0','trd.status'=>'1','trz.zip_code'=>$post_code),
-						//,'trd.id'=>'76' ,'trd.run_date'=>'2018-01-01'
+						'where'=>array('trd.deleted'=>'0','trd.status'=>'1','trz.zip_code'=>$post_code,'trd.run_date'=>$cur_date),
+												//,'trd.id'=>'76' ,'trd.run_date'=>'2018-01-01'
 						//'trz.max_deliveries < trz.total_deliveries'
 						'minvalue'=>'',
 						//'group_by'=>'trd.id',
-						'group_by'=>'trd.run_date,trd.shift',
+						//'group_by'=>'trd.run_date,trd.shift',
+						'group_by'=>'trd.shift,trd.run_day,trd.run_date',
 						'start'=>'',
 						'orderby'=>'trd.run_date',
 						'orderas'=>'ASC');	
@@ -30,14 +41,9 @@ class Calendar extends MY_Controller
 					array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status=1','join_type'=>'left')           
 					);
 		
-		if(date('H')>='15:00')
-		{
-			$this->db->where('trd.run_date>',date('Y-m-d',date(strtotime("+1 day", strtotime($cur_date)))));
-		}
-		else
-		{
-			$this->db->where('trd.run_date>',$cur_date);
-		}
+		
+		$this->db->where('trd.max_deliveries > trd.total_deliveries');   
+			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='$this->customer_type_id') ");
 		$all_run_day=$this->common->multijoin($comment1,$multijoin1);
 		
 		/*echo '<pre>';
@@ -173,8 +179,9 @@ class Calendar extends MY_Controller
 							//,'trd.id'=>'76' ,'trd.run_date'=>'2018-01-01'
 							//'trz.max_deliveries < trz.total_deliveries'
 							'minvalue'=>'',
-							//'group_by'=>'trd.id',
-							'group_by'=>'trd.run_date,trd.shift',
+							'group_by'=>'trd.shift,trd.run_date',
+							//'group_by'=>'trd.run_date,trd.shift',
+							
 							'start'=>'',
 							'orderby'=>'trd.run_date',
 							'orderas'=>'ASC');	
@@ -182,7 +189,7 @@ class Calendar extends MY_Controller
 						array('table'=>'tbl_run_zip as trz','on'=>'trz.run_id=trd.tbl_run_id AND trz.status="1"','join_type'=>'left')           
 						);
 			
-			
+			$this->db->where('trd.max_deliveries > trd.total_deliveries'); 
 			$this->db->where("trd.tbl_run_id IN (SELECT `run_id` FROM `tbl_run_customer_type` WHERE `tbl_customer_type_id`='$this->customer_type_id') ");
 			 $all_run_day=$this->common->multijoin($comment1,$multijoin1);
 			 print_r(json_encode($all_run_day));
@@ -228,6 +235,7 @@ class Calendar extends MY_Controller
 				//echo 'Congrats!! We deliver to your area with Free Delivery! subject to minimum spend of $40.';				
 				//$this->session->set_userdata('run_post_code_with_address',$data_c['formated_address']);				
 				$this->session->set_userdata('run_post_code',$data_c['zip_code']);
+				$this->session->set_userdata('run_post_code_location',$all_run_day['rows'][0]->location);
 				$this->session->set_flashdata('success', 'Congrats!! We deliver to your area with Free Delivery! subject to minimum spend of $40.');	
 				echo 'success';
 			}

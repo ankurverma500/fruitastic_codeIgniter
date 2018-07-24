@@ -138,7 +138,8 @@ $(document).ready(function () {
                 <div class="form-group">
                   	<div class="row">
                       <div class="col-md-6 col-sm-6"> 
-                            <select  class="form-control" name="customer_type" id="customer_type">
+                      <label id="customer_type" class=" control-label">Customer Type</label>
+                            <select  class="form-control"  id="customer_type" name="customer_type"  onchange="showhide_bussiness_name_div(this)">
                                 <option  value="">Select Customer Type</option>
                                 <option  value="1">Residential</option>
                                 <option  value="2">School</option>
@@ -147,6 +148,13 @@ $(document).ready(function () {
                             </select>
                             <div id="customer_type_arror" style="color:red;"></div> 
                       </div>
+                      <div class="col-md-6 col-sm-6" id="bussiness_name_div" <?php if(isset($row) && $row->customer_type_id>1){echo 'style="display:block;"';}else{echo 'style="display:none;"';} ?>>
+                    
+                          <label for="bussiness_name" class=" control-label">Bussiness  Name</label>                          
+                             <input type="text"  class="form-control" name="bussiness_name" id="bussiness_name" value="<?php echo set_value('bussiness_name', isset($row->primary_contact_name) ? $row->primary_contact_name : '')?>" placeholder="Bussiness  Name" autocomplete="off"  />
+                            <?php echo form_error('customer_type'); ?>
+                       <div id="bussiness_name_arror" style="color:red;"></div> 
+                      </div>                      
                    </div>
                 </div>
                 
@@ -289,6 +297,18 @@ $("#popup_Register_Form").on("submit", function(e) {
     });*/
 ----->
 <script>
+function showhide_bussiness_name_div(obj)
+{
+	if($(obj).val()>1)
+	{
+		$("#bussiness_name_div").css('display','block');
+	}
+	else
+	{
+		$("#bussiness_name_div").css('display','none');
+	}
+}
+
 /* must apply only after HTML has loaded */
 $(document).ready(function () {
 	$("#username").on('change',function(){
@@ -380,13 +400,13 @@ $(document).ready(function () {
 						console.log(data);
 						if(data!='success')
 						{
-							/*var data =$.parseJSON(data);
+							var data =$.parseJSON(data);
 							
 							  $.each(data, function( index, value ) {
 								  //alert( index + ": " + value );
 								  console.log('index- '+index+'- value -'+value);
 								  $("#"+index+"_arror").html(document.createTextNode(value));
-								});*/
+								});
 							
 						}
 						else
@@ -437,19 +457,20 @@ $('.close').click( function () {
           <h3 class="text-center">Please enter your emial id </h3>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="personel">
-                <form>
+                 <form id="popup_Register_Form" class="form-horizontal"  method="post" autocomplete="off"  enctype="multipart/form-data" accept-charset="utf-8" action="<?php echo base_url('checkout/forgot_password');?>" >
                   <div class="row">
                       <div class="col-md-10 col-sm-10 col-sm-offset-1">
                       <p>&nbsp;</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="email id">
+                            <input type="text" class="form-control" name="forgot_password" id="forgot_password" placeholder="email id">
                         </div>
                       </div>
+                      <div id="forgot_password_arror" class="col-md-10 col-sm-10 col-sm-offset-1" style="color:red; margin-bottom:20px;"></div>
                   </div>
                   
                   <div class="form-group text-center">
                          <label>&nbsp;</label>
-                        <button type="submit" class="btn btn-default" onClick="$('#fogot_password').modal('hide');">Submit</button>
+                        <button type="submit" class="btn btn-default"  id="forgot_password_button">Submit</button>
                   </div>
                 </form>
             </div>
@@ -459,6 +480,58 @@ $('.close').click( function () {
   </div>
 </div>
 
+<script>
+$("#forgot_password_button").on("click", function(e) {
+		 e.preventDefault();
+		var email=$("#forgot_password").val();
+			
+			if(email=='')
+			{
+				return false;
+			}
+			else
+			{
+				//var postData = $(this).serializeArray();				
+				//console.log(postData);
+				var formURL = '<?php echo base_url('checkout/forgot_password');?>';
+			    $.ajax({
+					url: formURL,
+					type: "POST",
+					/*datatype:"JSON",
+					contentType: "application/json",*/
+					data: {email:email},
+					success: function(data, textStatus, jqXHR) {
+						//location.reload();
+						//jQuery.parseJSON(data)
+						//class="modal-open"
+						var data =$.parseJSON(data);
+						console.log(data);
+						if(!data.res)
+						{	 
+						  $("#forgot_password_arror").html(data.msg);
+						  return false								
+						}
+						else
+						{							
+							//$("#message").modal('show');
+							location.reload();
+							return false;
+							//$('#register .modal-header .modal-title').html();
+							//$('#register .modal-body').html('<pre>'+data+'</pre>');
+						}
+					   // $("#submitForm").remove();
+					},
+					error: function(jqXHR, status, error) {
+						//location.reload();
+						return false;
+						console.log(status + ": " + error);
+					}
+				});
+			}		
+		//jQuery.parseJSON(data.responseText)
+       
+    });
+</script>
 <!------------------------ Sign Out --------------------------------------->
 
 <div id="signout" class="modal fade" role="dialog">
