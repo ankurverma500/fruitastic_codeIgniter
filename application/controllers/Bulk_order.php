@@ -13,7 +13,7 @@ class Bulk_order extends MY_Controller
 	{
 		if($this->input->post('submit'))
 		{
-			$this->form_validation->set_error_delimiters('<span style="color:red; position:absolute;" >','<span>');
+			$this->form_validation->set_error_delimiters('<span style="color:red;" >','<span>');
 			
 			$this->form_validation->set_rules('name','Name','trim|required');
 			$this->form_validation->set_rules('email','Email','trim|required|valid_email');

@@ -1,124 +1,104 @@
 <!--<div class="order-box pnl-group-fix" id="cart-accordion2" role="tablist" aria-multiselectable="true" 
 data-spy="affix" data-offset-top="360">-->
+
 <div   class="order-box pnl-group-fix affix-top" 
-data-offset-top="360" <?php /*?>data-spy="affix"<?php */?> aria-multiselectable="true" id="cart-accordion2" role="tablist">
-           <span class="halfcircle">
-            <!--<i class="fa fa-align-justify"></i>-->
-            <img  src="<?php echo base_url('assets/images/536271-32.png');?>">          
-          </span>
-          <div  class="ipadview hidden-lg hidden-sx hidden-sm" style="display: block;">        
-            <p class="pull-left ipad_price" >
-              <span>$<?php echo $this->cart->total();?></span> (<?php echo $this->cart->total_items();?> Products)</p>
-            
-            
-            <a class="pull-right hoverd-btn" href="<?php echo base_url('checkout/your_detail');?>" >CHECKOUT
-                <i  class="fa fa-mail-forward"></i> 
-              </a>
-          </div>
-           <!-- <div class="ipadview">
+data-offset-top="360" <?php /*?>data-spy="affix"<?php */?> aria-multiselectable="true" id="cart-accordion2" role="tablist"> <span class="halfcircle"> 
+  <!--<i class="fa fa-align-justify"></i>--> 
+  <img  src="<?php echo base_url('assets/images/536271-32.png');?>"> </span>
+  <div  class="ipadview hidden-lg hidden-sx hidden-sm" style="display: block;">
+    <p class="pull-left ipad_price" > <span>$<?php echo $this->cart->total();?></span> (<?php echo $this->cart->total_items();?> Products)</p>
+    <a class="pull-right hoverd-btn" href="<?php echo base_url('checkout/your_detail');?>" >CHECKOUT <i  class="fa fa-mail-forward"></i> </a> </div>
+  <!-- <div class="ipadview">
                 <p>Your Current  Order: <span>$<?php echo $this->cart->total();?></span> ( <?php echo $this->cart->total_items();?> Products )</p>
                 <a href="#" data-toggle="modal" data-target="#postcode_pop">Checkout <i class="fa fa-mail-forward"></i></a>
             </div>-->
-            <div class="desktop-view">
-            <h3 class="text-center">Your Order</h3>
-
-              <table class="table">
-                <tr>
-                  <th>Product Name</th>
-                  <th style="">Qty</th>
-                  <th>Sub Total</th>
-                  <th width="10"></th>
-                </tr>
-               
-               <tr>
-                <td colspan="4">
-                 <div class="cart_scroll table-responsive">
-                  <table class="table product_table" id="table_product_right_small_cart">
-                  <tbody>
-                   <?php 
-				   //$this->cart->destroy();
-					//echo $this->cart->total_items();
-					//echo $this->cart->total();
-					 $cart_check = $this->cart->contents();
-					 $product_id=array();
-					 /*echo '<pre>';
-					 print_r($cart_check );
-					 echo '</pre>';*/
-					 //echo count($cart_check['8f14e45fceea167a5a36dedd4bea2543']['id']['7']);
-					 foreach ($cart_check as $item)
-					 {
-						 array_push($product_id,$item['id']);
-						 $p_dtail[$item['id']]=$item['qty'];
-						 $fff="remove_cart_ajax('".$item['rowid']."','".$item['id']."')";
-						 echo ' <tr id="product_right_small_cart_'.$item['id'].'">
-									<td>'.$item['name'].'</td>
-									<td>'.$item['qty'].'</td>
-									<td>$'.number_format($item['price'],2).'</td>
-									<td class="text-center">
-									<a onclick="'.$fff.'" class="class_pointer">
-                                    <i class="fa fa-minus "></i></a></td>
-								  </tr>';
-					 }					 
-				  ?>
-                    </tbody>
-                  </table>
-                  <!--<tr>
-                      	<td>Organic pineapple</td>
-                		<td>20</td>
-                		<td>$250.00</td>
-                		<td class="text-center"><a href="#"><i class="fa fa-minus"></i></a></td>
-                      </tr> --> 
-                 </div>
-                </td>
-              </tr>
-               
-               
-                <tr>
-                  <td colspan="2"><span>Item Subtotal</span></td>
-                  <td id="product_right_small_cart_subtotal">$<?php echo number_format($this->cart->total(),2);?></td>
-                  <td></td>
-                </tr>
-                <!--<tr>
+  <div class="desktop-view">
+    <h3 class="text-center">Your Order</h3>
+    <table class="table">
+      <tr>
+        <th>Product Name</th>
+        <th style="">Qty</th>
+        <th>Sub Total</th>
+        <th width="10"></th>
+      </tr>
+      <tr>
+        <td colspan="4">
+        <div class="cart_scroll table-responsive">
+        <table class="table product_table" id="table_product_right_small_cart">
+        <tbody>
+		<?php 
+           //$this->cart->destroy();
+            //echo $this->cart->total_items();
+            //echo $this->cart->total();
+             $cart_check = $this->cart->contents();
+             $product_id=array();
+             /*echo '<pre>';
+             print_r($cart_check );
+             echo '</pre>';*/
+             //echo count($cart_check['8f14e45fceea167a5a36dedd4bea2543']['id']['7']);
+             foreach ($cart_check as $item)
+             {
+                 array_push($product_id,$item['id']);
+                 $p_dtail[$item['id']]=$item['qty'];
+                 $fff="remove_cart_ajax('".$item['rowid']."','".$item['id']."')";
+                 echo ' <tr id="product_right_small_cart_'.$item['id'].'">
+                            <td>'.$item['name'].'</td>
+                            <td>'.$item['qty'].'</td>
+                            <td>$'.number_format($item['price'],2).'</td>
+                            <td class="text-center">
+                            <a onclick="'.$fff.'" class="class_pointer">
+                            <i class="fa fa-minus "></i></a></td>
+                          </tr>';
+             }					 
+          ?>
+        </tbody>
+        </table>        
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><span>Item Subtotal</span></td>
+        <td id="product_right_small_cart_subtotal">$<?php echo number_format($this->cart->total(),2);?></td>
+        <td></td>
+      </tr>
+      <!--<tr>
                   <td colspan="3" class="text-center"><p class="moprice">Minimum order 40$ </p></td>
                   <td></td>
                 </tr>
                 -->
-                <tr class="hidden-xs">
-                  <td colspan="2"><strong>Post Code:</strong> <p  ><?php echo $this->session->userdata('run_post_code').'-'.$this->session->userdata('run_post_code_location');?> 
-                  <a href="#" class="fsizelink" data-toggle="modal" data-target="#shopnow_popup">(change)</a>
-                  </p>                   
-                  </td>                  
-                  <td>                  		
-                  </td>                
-                  <td></td>
-                </tr>
-                
-                <tr>
-               	  <td colspan="2"><span>Your Shipping</span><p>(FREE after $40)</p></td>
-                  <td id="product_right_small_cart_shipping"><?php if($this->cart->total()<40 &&$this->cart->total()>0){echo '$8.00';}else{echo 'Free';}?></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="2"><strong>Total Price</strong></td>
-                  <td><span class="total" id="product_right_small_cart_total">$<?php if($this->cart->total()<40){echo number_format($this->cart->total()+8,2);}else{echo number_format($this->cart->total(),2);}?></span></td>
-                  <td></td>
-                </tr>
-              </table>
-              <div id="comment2" style="display:none; margin-right:12px; margin-top:-5px;">
-                <table class="table">
-                      <tr>
-                          <td><span>Discount Amount:</span></td>
-                          <td class="text-right"><!--<p class="discount_total">$23.00</p>--><span>$23.00</span></td>
-                      </tr>
-                      <tr>
-                          <td><span class="total_saving">Total:</span></td>
-                          <td class="text-right"><span class="total_saving">$452.00</span></td>
-                      </tr>
-                 </table>
-             </div>
-              
-               
-    		<?php /*if(!$this->session->userdata('discount')){ ?>
+      <tr class="hidden-xs">
+        <td colspan="2"><strong>Post Code:</strong>
+          <p  ><?php echo $this->session->userdata('run_post_code').'-'.$this->session->userdata('run_post_code_location');?> <a href="#" class="fsizelink" data-toggle="modal" data-target="#shopnow_popup">(change)</a> </p></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2"><span>Your Shipping</span>
+          <p>(FREE after $40)</p></td>
+        <td id="product_right_small_cart_shipping"><?php if($this->cart->total()<40 &&$this->cart->total()>0){echo '$8.00';}else{echo 'Free';}?></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong>Total Price</strong></td>
+        <td><span class="total" id="product_right_small_cart_total">$
+          <?php if($this->cart->total()<40){echo number_format($this->cart->total()+8,2);}else{echo number_format($this->cart->total(),2);}?>
+          </span></td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="comment2" style="display:none; margin-right:12px; margin-top:-5px;">
+      <table class="table">
+        <tr>
+          <td><span>Discount Amount:</span></td>
+          <td class="text-right"><!--<p class="discount_total">$23.00</p>--><span>$23.00</span></td>
+        </tr>
+        <tr>
+          <td><span class="total_saving">Total:</span></td>
+          <td class="text-right"><span class="total_saving">$452.00</span></td>
+        </tr>
+      </table>
+    </div>
+    <?php /*if(!$this->session->userdata('discount')){ ?>
               <div class="col-sm-12">ENTER VOUCHER CODE IF YOU HAVE ONE.</div>
               <!--<form method="post" action="<?php echo base_url('cart/apply_coupon_code/');?>">-->              
               <div class="form-group col-sm-8" style="margin-top: 6px;">
@@ -196,9 +176,8 @@ data-offset-top="360" <?php /*?>data-spy="affix"<?php */?> aria-multiselectable=
                 </form>
                 </div>
                 <?php */?>
-                <div class="text-center">
-                   <!-- <a href="#" class="checkout-btn hoverd-btn keepshop"><i class="fa fa-mail-reply"></i> Keep Shoping</a>-->
-                    <a href="<?php echo base_url('checkout/your_detail')?>" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a>
-                </div>
-            </div>
-          </div>
+    <div class="text-center"> 
+      <!-- <a href="#" class="checkout-btn hoverd-btn keepshop"><i class="fa fa-mail-reply"></i> Keep Shoping</a>--> 
+      <a href="<?php echo base_url('checkout/your_detail')?>" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a> </div>
+  </div>
+</div>

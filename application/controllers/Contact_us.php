@@ -11,14 +11,14 @@ class Contact_us extends MY_Controller
 	{
 		if($this->input->post('submit'))
 		{
-			$this->form_validation->set_error_delimiters('<span style="color:red; position:absolute;" >','<span>');
+			$this->form_validation->set_error_delimiters('<span style="color:red;" >','<span>');
 			
 			$this->form_validation->set_rules('name','Name','trim|required');
 			$this->form_validation->set_rules('email','Email','trim|required|valid_email');
            // $this->form_validation->set_rules('last_name','Last Name','trim|required');			
 			//$this->form_validation->set_rules('primary_contact_name','Primary Contact Number','required');			
 			$this->form_validation->set_rules('contact_no','Contact','trim|required');	
-			//$this->form_validation->set_rules('delivery_address_Apartment','Delivery Apartment No','trim|required');				
+			$this->form_validation->set_rules('address','Address','trim|required');				
 			$this->form_validation->set_rules('message','Message ','trim|required');
 			$this->form_validation->set_rules('captcha_value','Captcha value ','trim|required|numeric');//|min_length[2]|max_length[2]
 			//print_r( 	$this->form_validation->error_array());

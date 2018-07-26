@@ -3,6 +3,7 @@
 </style>
 <div  class="row">
     <div class="col-sm-12">
+    
   		<div  class="col-sm-12 col-md-6">
             <div  class="payment_div text-center ">
               <div  class="row">
@@ -27,7 +28,9 @@
               </div>
             </div>
           </div>
-          <?php /*?><div  class="col-sm-12 col-md-6 pytHid" <?php if($order_type==1){echo 'style="display:block;"';}?> >
+          
+          
+          <div  class="col-sm-12 col-md-6 pytHid" <?php if($order_type==1){echo 'style="display:block;"';}?> >
             <div  class="payment_div text-center">
               <div  class="row">
                 <div  class="col-sm-8 col-sm-offset-2"> <img  class="img-responsive paypal_icon2 pull-left" src="<?php echo base_url('assets/images/paypal-icon21.png')?>">
@@ -46,7 +49,9 @@
               <div  id="paypal-button" ></div>
               <div  id="paypalpay"></div>
             </div>
-          </div><?php */?>
+          </div>
+          
+          
           <div  class="col-sm-12 col-md-6" <?php if($order_payment_option==''){echo 'style="display:none;"';}?>>
             <div  class="payment_div text-center">
               <div  class="row">
@@ -70,7 +75,9 @@
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
+          
+            
     </div>  
 </div>
 <script src="https://www.paypalobjects.com/api/checkout.js" ></script> 
@@ -79,8 +86,7 @@
 $(function () {
 	 var morderid = '<?php echo '3';//$this->session->userdata('total_order_array');?>';
 	 paypal.Button.render({
-		 //env: "sandbox",
-		 env: "production",
+		 env: 'sandbox', // sandbox | production		
 		 style: {
 			 label: "pay",
 			 size: "responsive",
@@ -88,16 +94,16 @@ $(function () {
 			 color: "gold"
 		 },
 		 client: {
-			 //sandbox: "AVvwyeHnTHvUdXy4uPD8R0sFTrScud4eixD28NaECwZzMCMAfGuBMn01SnC5P9eZMseBEBuc9yJJeleI"
-			 production:"AbVLn8rsiLSmQPxIHdDcW_zSrkiT8tShjO66t-Nj6WNDSiQLEWkK6iIc46XWrdfi3JoevQI-2MF-sqAx"
+			 sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',              
+			 production: "AbVLn8rsiLSmQPxIHdDcW_zSrkiT8tShjO66t-Nj6WNDSiQLEWkK6iIc46XWrdfi3JoevQI-2MF-sqAx"
 		 },
-		 commit: !0,
+		 commit: true,
 		 payment: function(e, t) {
 			 return t.payment.create({
 				 payment: {
 					 transactions: [{
 						 amount: {
-							 total: '<?php  echo $this->cart->total();//$this->session->userdata('order_final_amount');?>',
+							 total: '<?php  echo number_format($this->cart->total(),2);?>',
 							 currency: "AUD"
 						 }
 					 }]
@@ -105,6 +111,10 @@ $(function () {
 			 })
 		 },
 		 onAuthorize: function(e, t) {
+			 /*return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+					 submitOrder(morderid, "paypal", e.state, e.id)
+                });*/
 			 return t.payment.execute().then(function(e) {
 					 submitOrder(morderid, "paypal", e.state, e.id)
 				
@@ -113,9 +123,11 @@ $(function () {
 		 onCancel: function(e) {
 			 alert("The payment was cancelled!");
 			 //this.router.navigate(["/fail"]);
+			 window.location.assign("<?php echo base_url("checkout/payment_status/?status=fail");?>");
 		 }
 	 }, "#paypal-button"); 
 });
+
 function submitOrder(order_id, payment_mode, payment_status, transection_id) 
 {
     console.log('helloSubmit');
@@ -125,7 +137,7 @@ function submitOrder(order_id, payment_mode, payment_status, transection_id)
 	var ddd=send_ajax_return_value(data_url,data_array);
 	console.log(ddd);
 	//location.reload();
-	window.location.assign("<?php echo base_url("checkout/complete");?>");
+	window.location.assign("<?php echo base_url("checkout/payment_status/?status=success");?>");
 	//var cartd= jQuery.parseJSON(ddd.responseText);
    /* var values = {
       "id": localStorage.getItem('user'),

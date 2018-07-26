@@ -374,8 +374,9 @@
     border: 1px solid #cecece;
     font-weight: 300;
     border: none;
+	 background: #F8F6F7;
     /* font-weight: 700; */
-    /* background: #fff; */
+    /* */
     /* text-align: left; */
 }
 .datepicker thead tr:first-child th:hover,

@@ -3,6 +3,11 @@
 <head>
   <?php $this->load->view('templates/pages/meta');?>
   <style>
+.alert {
+    z-index: 99999999999999 !important;
+    position: fixed;
+}      
+      
   .bottom_header .menu_sec .navbar-default .navbar-nav>.active>a, 
   .menu_sec .navbar-nav li a:focus,
   .bottom_header .menu_sec .navbar-nav li a:hover
@@ -36,8 +41,7 @@
   </style>
 </head>
 <body>
-  <?php $this->load->view('templates/pages/header');?>
-   <?php if($this->session->flashdata('error')) { ?>
+    <?php if($this->session->flashdata('error')) { ?>
     <div class="alert alert-danger">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
         <div class="alert-danger-massage"><?php echo $this->session->flashdata('error') ;?></div>
@@ -55,6 +59,10 @@
         <div class="alert-info-massage"><?php echo $this->session->flashdata('info') ;?></div>
     </div>
 <?php } ?>
+    
+    
+  <?php $this->load->view('templates/pages/header');?>
+   
   <?php echo isset($content)?$content:'&nbsp;'?>
 <?php $this->load->view('templates/pages/footer');?>
 <?php $this->load->view('notify/notify');?>  

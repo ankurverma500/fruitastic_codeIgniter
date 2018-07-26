@@ -30,7 +30,7 @@ for($i=1;$i<$counter;$i++)
 		continue;
 	}
 	// date('Y-m-d', strtotime("next ".$row->run_day, strtotime($newdate)));
-	echo ','.$current_day_name=date('l',strtotime( $newdate ));
+	$current_day_name=date('l',strtotime( $newdate ));
 	
 			$checked='';
 			if(in_array($current_day_name,$run_day))

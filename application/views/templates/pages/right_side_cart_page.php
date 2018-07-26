@@ -8,10 +8,10 @@
       </div>
     </div>
 </div>-->
-        <a href="javascript:void(0)" class="closebtn sidenav_a text-center" onClick="closeNavcart()">
-        Your Order 
-        <span class="pull-right">&times;</span> 
-        </a>    
+    <a href="javascript:void(0)" class="closebtn sidenav_a text-center" onClick="closeNavcart()">
+    Your Order 
+    <span class="pull-right">&times;</span> 
+    </a>    
     
     <div class="row sidenav_header">
       <div class="col-sm-6 col-md-6">
@@ -50,10 +50,10 @@
 					</div>
 					<div class="col-sm-4 col-md-4">
 					  <p class="text-right">$'.number_format($item['price'],2).' 
-					  
+					  <a onclick="'.$fff.'"><i class="fa fa-minus sidenav_i"></i></a>
 					  </p>
 					</div>
-				  </div>';//<a onclick="'.$fff.'"><i class="fa fa-minus sidenav_i"></i></a>			
+				  </div>';//			
 		 }					 
 	  ?>
         
@@ -70,6 +70,7 @@
       </div>--> 
       </div>
     </div>
+      <hr class="cart_hr_bold">
     <!--<hr class="cart_hr" />
         <hr class="cart_hr" />
         -->
@@ -166,7 +167,7 @@ function remove_cart_ajax(rowid,tr_id)
 		//update_to_cart_td_183
 		//product_183
 	}
-	closeNavcart();
+	//closeNavcart();
 }
 function closeNavcart() 
 {

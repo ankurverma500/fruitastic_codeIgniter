@@ -28,11 +28,12 @@ So we can tailor our service to your needs, we ask you please fill out the form 
                             <!--<input class="form-control" type="text" placeholder="Name">-->
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="text" id="name" name="name" placeholder="Enter name" value="<?php echo set_value('name')?>">
-                <?php echo form_error('name'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                     
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('name'); ?></div>
                         </div> 
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
@@ -40,24 +41,27 @@ So we can tailor our service to your needs, we ask you please fill out the form 
                                 <label class="input__label input__label--minoru" for="#">
                                 </label>
 							</span>
+                             <div class="col-md-12 col-sm-12"><?php echo form_error('address'); ?></div>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="email" id="email" name="email" placeholder="Enter email id" value="<?php echo set_value('email')?>">
-                <?php echo form_error('email'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('email'); ?></div>
                         </div> 
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="text" id="contact_no" name="contact_no" placeholder="Your phone no" value="<?php echo set_value('contact_no')?>">
-                <?php echo form_error('contact_no'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('contact_no'); ?></div>
                         </div> 
                     </div>
                     <div class="row">
@@ -68,9 +72,10 @@ So we can tailor our service to your needs, we ask you please fill out the form 
                 
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
-							</span>                           
+							</span>   
+                             <div class="col-md-12 col-sm-12"><?php echo form_error('message'); ?></div>                        
                         </div> 
-                         <?php echo form_error('message'); ?>
+                         
                     </div>
                     
                     
@@ -87,9 +92,9 @@ So we can tailor our service to your needs, we ask you please fill out the form 
                             	<input type="hidden" name="captcha_ans" id="captcha_ans" value="12">
                                 <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value" value="<?php echo set_value('captcha_value')?>">
                                 <label class="input__label input__label--minoru"></label>
-							</span>
-                            <?php echo form_error('captcha_value'); ?>
+							</span>                   
                         </div> 
+                        <div class="col-md-12 col-sm-12"><?php echo form_error('captcha_value'); ?></div>
                     </div>
                   
 				                     <div class="row">

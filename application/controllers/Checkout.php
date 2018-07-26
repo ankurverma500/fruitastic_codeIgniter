@@ -12,9 +12,13 @@ class Checkout extends MY_Controller
 	//step 1
 	public function your_detail($id=null)
 	{	
+	/*echo date("H:i:s",'1532516094');
+	echo '<br>'.date("H:i:s A",'1532530800');
+	exit;*/
+			//$id=$this->added_by;	
 			$da=array('val'=>'*',
 					  'table'=>'tbl_customer',
-					  'where'=>array('status'=>'1','deleted'=>'0','id'=>$this->added_by)
+					  'where'=>array('id'=>$this->added_by)//'status'=>'1','deleted'=>'0',
 					  );
 			$row=$this->common->getdata($da);
 			
@@ -29,10 +33,22 @@ class Checkout extends MY_Controller
 			
 			/*$sess 	= 	$this->session->userdata('admin_login');
 				$ar 	= 	unserialize($sess);	
-				echo $this->added_by;*/
+				echo $this->added_by;
 				
+			print_r($row);
+				exit;*/
 			if($row['res'])
 			{
+				if($row['rows'][0]->status='0')
+				{
+					
+				}
+				if($row['rows'][0]->deleted=='1')
+				{
+					$this->session->set_flashdata('error', "Sorry You don't have permission to access it Please contact admin");
+					redirect(base_url("product"),'refresh');
+				}
+				
 				$this->data['id']=$id=$this->added_by;
 				$this->data['row']=$row['rows'][0];
 				$this->session->set_userdata('customer_other_payment_option',$row['rows'][0]->payment_option);
@@ -81,7 +97,7 @@ class Checkout extends MY_Controller
 			$this->form_validation->set_rules('name','Name','trim|required');
             $this->form_validation->set_rules('last_name','Last Name','trim|required');			
 			//$this->form_validation->set_rules('primary_contact_name','Primary Contact Number','required');			
-			$this->form_validation->set_rules('contact','Contact','trim|required');	
+			$this->form_validation->set_rules('contact','Contact','trim|required|numeric');	
 			//$this->form_validation->set_rules('delivery_address_Apartment','Delivery Apartment No','trim|required');				
 			$this->form_validation->set_rules('delivery_address_street_address','Delivery Address','trim|required');
 			if(!$this->input->post('deliveryaddress'))
@@ -779,6 +795,7 @@ class Checkout extends MY_Controller
 											'icon'=>'ORDER'
 											);
 							$this->notification->set($not_data);
+							$this->after_place_order_split_it($last_insert_order_id);
 							echo 'success';
 							
 						}
@@ -1034,7 +1051,7 @@ class Checkout extends MY_Controller
 			$this->form_validation->set_rules('first_name_pop','Name','trim|required');
             $this->form_validation->set_rules('last_name_pop','Last Name','trim|required');			
 			//$this->form_validation->set_rules('primary_contact_name','Primary Contact Number','required');			
-			$this->form_validation->set_rules('contact_pop','Contact','trim|required');	
+			$this->form_validation->set_rules('contact_pop','Contact','trim|required|numeric');	
 			//$this->form_validation->set_rules('delivery_address_Apartment','Delivery Apartment No','trim|required');				
 			//$this->form_validation->set_rules('delivery_address_street_address','Delivery Address','trim|required');
             //$this->form_validation->set_rules('billing_apartment_no','Billing Apartment No','required');				

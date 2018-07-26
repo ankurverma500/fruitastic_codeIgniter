@@ -24,11 +24,12 @@
                             <!--<input class="form-control" type="text" placeholder="Name">-->
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="text" id="name" name="name" placeholder="Enter name" value="<?php echo set_value('name')?>">
-                <?php echo form_error('name'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                     
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('name'); ?></div>
                         </div> 
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
@@ -36,24 +37,28 @@
                                 <label class="input__label input__label--minoru" for="#">
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('address'); ?></div>
                         </div> 
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="email" id="email" name="email" placeholder="Enter email id" value="<?php echo set_value('email')?>">
-                <?php echo form_error('email'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
+                             <div class="col-md-12 col-sm-12"><?php echo form_error('email'); ?></div>
                         </div> 
                         <div class="col-md-6 col-sm-6">
                             <span class="input input--minoru">
                                 <input class="input__field input__field--minoru" type="text" id="contact_no" name="contact_no" placeholder="Your phone no" value="<?php echo set_value('contact_no')?>">
-                <?php echo form_error('contact_no'); ?>
+                
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('contact_no'); ?></div>
                         </div> 
                     </div>
                     <div class="row">
@@ -65,9 +70,8 @@
                                 <label class="input__label input__label--minoru" for="input-13">
                                 </label>
 							</span>
-                            
+                            <div class="col-md-12 col-sm-12"><?php echo form_error('message'); ?></div>
                         </div> 
-                        <?php echo form_error('message'); ?>
                     </div>
                     
                     

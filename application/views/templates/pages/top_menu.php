@@ -1,5 +1,4 @@
 
-
 <header class="header"><!--header start-->
   <div class="top_header  hidden-xs hidden-sm">
     <div class="container">
@@ -14,40 +13,27 @@
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <ul class="login_part">
-          	<?php if($this->session->userdata('admin_login'))
+            <?php if($this->session->userdata('admin_login'))
 					{?>
-					<li>
-					<a href="<?php echo base_url('login/logout')?>" >
-					<i  class="fa fa-sign-out"></i> Logout 
-					</a> 
-					</li>
-					<li   >
-                    <span  class="glyphicon glyphicon-user"></span>
-					<a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" class="rgst" >My Account <?php //echo 'Hi'.$this->name?></a>
-					</li>
-			  <?php 
+            <li> <a href="<?php echo base_url('login/logout')?>" > <i  class="fa fa-sign-out"></i> Logout </a> </li>
+            <li   > <span  class="glyphicon glyphicon-user"></span> <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" class="rgst" >My Account
+              <?php //echo 'Hi'.$this->name?>
+              </a> </li>
+            <?php 
 					}
 					else
 					{
-			  ?>      
-				<li>
-				<a href="#" data-toggle="modal" data-target="#signinModal">
-				<i class="fa fa-lock" aria-hidden="true"></i> Login /
-				</a> 
-				</li>
-				<li class="rgst" data-toggle="modal" data-target="#registration">
-                <span  class="glyphicon glyphicon-user"></span>
-				<a href="#" data-toggle="modal" data-target="#signupModal">Register</a>
-				</li>
-				<?php }//logout?>
+			  ?>
+            <li> <a href="#" data-toggle="modal" data-target="#signinModal"> <i class="fa fa-lock" aria-hidden="true"></i> Login / </a> </li>
+            <li class="rgst" data-toggle="modal" data-target="#registration"> <span  class="glyphicon glyphicon-user"></span> <a href="#" data-toggle="modal" data-target="#signupModal">Register</a> </li>
+            <?php }//logout?>
             <!--<li><a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"></i>Login</a></li>
             <li>|</li>
-            <li><a href="dashboard.html"><span class="glyphicon glyphicon-user"> </span> My Account</a></li>-->
+            <li><a href="dashboard.html"><span class="glyphicon glyphicon-user"> </span> My Account</a></li>--> 
             <!-- 
                             <li><a href="#" data-toggle="modal" data-target="#signout"><i class="fa fa-sign-in"></i>Logout</a></li>
                             <li>|</li>
                             <li class="cart_menu"><a href="#" class="cart_menu_a"><span class="#" onclick="openNav()"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</span></a></li>-->
-           
             
           </ul>
         </div>
@@ -59,11 +45,7 @@
       <div class="row">
         <div class="col-md-2 col-xs-12 col-sm-3"> 
           <!--<a href="index.html" class="logo"><img src="<?php echo base_url_assets;?>images/logo.png" alt="logo" class="img-responsive"></a>--> 
-          <a href="<?php echo base_url('home');?>" class="logo"> 
-          <img src="<?php echo base_url_assets;?>images/Logo-red.png" alt="logo" class="img-responsive img1 hidden-xs hidden-sm"> 
-          <img src="<?php echo base_url_assets;?>images/Logo-red.png" alt="logo" class="img-responsive img2"> 
-          </a> 
-          </div>
+          <a href="<?php echo base_url('home');?>" class="logo"> <img src="<?php echo base_url_assets;?>images/Logo-red.png" alt="logo" class="img-responsive img1 hidden-xs hidden-sm"> <img src="<?php echo base_url_assets;?>images/Logo-red.png" alt="logo" class="img-responsive img2"> </a> </div>
         <div class="col-md-10 col-sm-9 col-xs-12 pull-right">
           <div class="menu_sec">
             <nav class="navbar navbar-default">
@@ -72,7 +54,7 @@
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                <?php //echo $con.'/'.$method;?>
+                  <?php //echo $con.'/'.$method;?>
                   <li <?php if($con=='' || $con=='home'){echo ' class="active"';}?>><a href="<?php echo base_url('home');?>">Home</a></li>
                   <li <?php if($con=='product'){echo ' class="active"';}?>><a href="<?php echo base_url('product');?>">Shop Now</a></li>
                   <li <?php if($con=='bulk_order'){echo ' class="active"';}?>> <a href="<?php echo base_url('bulk_order');?>">Bulk Order</a></li>
@@ -80,53 +62,26 @@
                   <li <?php if($con=='about-us'){echo ' class="active"';}?>><a href="<?php echo base_url('about-us');?>">About Us</a></li>
                   <li><a  href="https://fruitastic.com.au/blog/"  target="_blank">Blog</a></li>
                   <li <?php if($con=='contact-us'){echo ' class="active"';}?>><a href="<?php echo base_url('contact-us');?>">Contact Us</a></li>
-                  
                   <?php if($this->session->userdata('admin_login'))
 					{?>
-					<li  class="hidden-lg hidden-md hidden-sm">
-					<a href="<?php echo base_url('login/logout')?>" >
-					<i class="fa fa-user" aria-hidden="true"></i> Logout 
-					</a> 
-					</li>
-					<li class="hidden-lg hidden-md hidden-sm">
-                  <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a>
-                  </li>
-			  <?php 
+                  <li  class="hidden-lg hidden-md hidden-sm"> <a href="<?php echo base_url('login/logout')?>" > <i class="fa fa-user" aria-hidden="true"></i> Logout </a> </li>
+                  <li class="hidden-lg hidden-md hidden-sm"> <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"><span class="glyphicon glyphicon-user"> </span> My Account</a> </li>
+                  <?php 
 					}
 					else
 					{
 						?>
-						 <li class="hidden-lg hidden-md hidden-sm">
-                          <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a>
-                          </li>
-						<?php
+                  <li class="hidden-lg hidden-md hidden-sm"> <a href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"> </i> Login</a> </li>
+                  <li class="hidden-lg hidden-md hidden-sm" > <a href="#" data-toggle="modal" data-target="#signupModal"> <span  class="glyphicon glyphicon-user"></span>Register </a> </li>
+                  <?php
 					}
-			  ?>    
-                 
-                  
-                  
-                  <li class="hidden-lg hidden-md hidden-sm mobile-social-icon"> 
-                   <a href="https://www.facebook.com/FruitasticMelbourne/" target="_blank">
-                   <i class="fa fa-facebook"></i>
-                   </a> 
-                   <a href="https://www.instagram.com/fruitasticofficial/" target="_blank">
-                   <i class="fa fa-instagram" aria-hidden="true"></i>
-                   </a> 
-                   <a href="https://www.youtube.com/channel/UCqiih4I1gVnIihQmB5ixWUw" target="_blank">
-                   <i class="fa fa-youtube"></i>
-                   </a> 
-                   <a href="https://twitter.com/FruitasticAus" target="_blank">
-                   <i class="fa fa-twitter"></i>
-                   </a> 
-                </li>
+			  ?>
+                  <li class="hidden-lg hidden-md hidden-sm mobile-social-icon"> <a href="https://www.facebook.com/FruitasticMelbourne/" target="_blank"> <i class="fa fa-facebook"></i> </a> <a href="https://www.instagram.com/fruitasticofficial/" target="_blank"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> <a href="https://www.youtube.com/channel/UCqiih4I1gVnIihQmB5ixWUw" target="_blank"> <i class="fa fa-youtube"></i> </a> <a href="https://twitter.com/FruitasticAus" target="_blank"> <i class="fa fa-twitter"></i> </a> </li>
                   <!--<li><a href="#" class="cart_menu_a"><span class="#" onClick="openNav()"><span class="glyphicon glyphicon-shopping-cart"> </span> $1204.00</span></a></li>-->
                 </ul>
               </div>
-            </nav>
-            <!--<span class="login_part hidden-xs hidden-sm">
-                   <li><a href="cart.html"><i>0</i></a></li>
-              </span>--> 
-                <?php 
+            </nav>            
+            <?php 
 		  $cart_check = $this->cart->contents();
 		  /*$product_id=array();
 		  $total_price_cart=0;
@@ -136,35 +91,17 @@
 				 $total_price_cart=($total_price_cart+($item['price']*$item['qty']));
 			 }*/
 		 if(!empty($cart_check)) { 
-	  ?><?php }?>
-            <span class="login_part hidden-xs hidden-sm ">
-           <?php /*?> <ul _ngcontent-c3="" class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                            <!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><li _ngcontent-c3=""> 
-                              <a _ngcontent-c3="" class="n_cart hoverd-btn"> <span _ngcontent-c3="" class="glyphicon glyphicon-shopping-cart"></span> 
-                              <i _ngcontent-c3=""><strong _ngcontent-c3="">1</strong></i>
-                              <span _ngcontent-c3="" style="text-transform:lowercase; font-size: 13px;"> </span> <strong _ngcontent-c3="">($20.00)</strong></a> 
-                            </li>
-                            <!--bindings={
-  "ng-reflect-ng-if": "false"
-}-->
-                         </ul><?php */?>
-                     <ul  class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                        <li>
-                            <a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()"  style="" class="cartbtnaaaaa">
-                                <span class="glyphicon glyphicon-shopping-cart"></span>
-                                <i class="crtnmbra" id="cart_top_big_total_item "><?php echo $this->cart->total_items()?></i>
-                                ($<span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>)
-                            </a>
-                        </li>
-                </ul>
+	  			?>
+            <?php }?>
+            <span class="login_part hidden-xs hidden-sm ">            
+            <ul  class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+              <li> <a  <?php /*?> onClick="openNav()"<?php */?> onClick="openNavcart()" class="cartbtnaaaaa"> <span class="glyphicon glyphicon-shopping-cart"></span> <i class="crtnmbra" id="cart_top_big_total_item "><?php echo $this->cart->total_items()?></i> ($<span id="cart_top_big_total_price"><?php echo $this->cart->total(); ?></span>) </a> </li>
+            </ul>
             </span> </div>
         </div>
-        <div id="mySidenav" class="sidenav"> 
+        <div id="mySidenav" class="sidenav">
           <?php //$this->load->view('templates/pages/right_side_cart_page');?>
-         </div>
-        
+        </div>
       </div>
     </div>
   </div>
@@ -193,7 +130,7 @@ function closeNavcart()
 	//$("#mySidenav").remove('mySidenav_left_cart');
     document.getElementById("mySidenav").style.width = "0%";
 }
-</script>
+</script> 
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "400px";    

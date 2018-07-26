@@ -166,13 +166,13 @@ Our team, source, purchase, pack and deliver all goods in house. In other words,
 					if($result_products->product_image=='')
 					{ 
 					$product_image=fruitastic_image_url.'uploads/noimage/no-image.jpg';?>                    
-                    <img src="<?php echo fruitastic_image_url.'uploads/noimage/no-image.jpg';?>" class="img-responsive" alt="Product Image"  />
+                    <img src="<?php echo fruitastic_image_url.'uploads/noimage/no-image.jpg';?>" class=" img img-responsive" alt="Product Image"  />
                     <?php 
                     } 
                     else 
                     {  
                     $product_image=fruitastic_image_url."uploads/thumbs/$result_products->product_image";?>
-                    <img src="<?php echo fruitastic_image_url."uploads/thumbs/$result_products->product_image";?>" class="img-responsive" alt="Product Image" />
+                    <img src="<?php echo fruitastic_image_url."uploads/thumbs/$result_products->product_image";?>" class="img img-responsive" alt="Product Image" />
                     <?php } ?>
                         <!--<img src="<?php echo base_url_assets;?>images/special_img1.png" alt="special_img1" class="">-->
                         </figure>

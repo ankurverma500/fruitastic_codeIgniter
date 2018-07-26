@@ -25,6 +25,7 @@
 {
 	cursor:pointer;
 }
+
 /*.complete-order > table > thead > tr > td, 
 .table > tbody > tr > td, 
 .table > tfoot > tr > td{     padding: 0px 0px !important; }
