@@ -89,8 +89,16 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 /******* Site constant ***********/
 define('SITE_TITLE','Fruitastic');
 define("INVALID_LOGIN","Invalid username and password.");
+define("VALID_LOGIN","Invalid Usename or Password, Please try again.");
+define("LOGOUT",'You have successfully logged out.');
+define("INVALID_registered","Your are registered unsuccessfully, Please try again.!");
+define("VALID_registered","Your are registered successfully!.");
+define("EMAIL_EXIST","Please use different email!");
+//define("EMAIL_EXIST","Email already in use, Please try new email address!");
+define("INVALID_EMAIL","Invalid Email Address!");
+define("ACCOUNT_DELETED","Sorry You don't have permission to access it Please contact admin");
 define("WELCOME","WELCOME .");
-define('DELETE_MESSAGE', 'Record(s) has been deleted successfully.');
+define('DELETE_MESSAGE', 'Record has been deleted successfully.');
 define('ADD_MESSAGE', 'Record has been saved successfully.');
 define('ADD_MESSAGE_ERROR', 'Opps sorry !. Record has been not saved successfully. Please try again');
 define('UPDATE_MESSAGE', 'Record has been updated successfully.');
@@ -101,12 +109,16 @@ define('COMPLETED_ANSWER_BACKGROUND_COLOR','#ffffcc');
 define('UNCOMPLETED_ANSWER_BACKGROUND_COLOR','#ffcccc');	
 define('UPLOAD_DIR',FCPATH."uploads/");
 define("dont_permission_to_access_it","Opps sorry !. You don't have permission  to access it.");
-define("CART_EMPTY","Oops Sorry!. you have not select any product.");
+define("CART_EMPTY","Please Check Your Qty.");
+//define("CART_EMPTY","Oops Sorry!. you have not select any product.");
 define("UNAUTHORISED_ACCESS","Opps sorry !. Unauthorised access.");
-define("POST_CODE_EMPTY","Oops Sorry!. you have not select any post code please select post code first.");
-define("DELIVERY_RUN_EMPTY","Oops Sorry!. you have not select any Run please select Run");
-define("ORDER_PLACED","Congratulation your order has been generated successfully , we delivered your product as soon as 
-possible, ");
+define("POST_CODE_EMPTY","Please insert your postcode.");
+//define("POST_CODE_EMPTY","Oops Sorry!. you have not select any post code please select post code first.");
+define("DELIVERY_RUN_EMPTY","We don't have free delivery to your area, Get in touch");
+//define("DELIVERY_RUN_EMPTY","Oops Sorry!. you have not select any Run please select Run");
+/*define("ORDER_PLACED","Congratulation your order has been generated successfully , we delivered your product as soon as 
+possible, ");*/
+define("ORDER_PLACED","Your order has been placed successfully! ");
 /******* fro notificetion constant ***********/
 define('USER','<div class="icon bg-info"> <i class="mdi mdi-account"></i> </div>',true);
 define('MESSAGE','<div class="icon bg-danger"> <i class="mdi mdi-comment"></i> </div>',true);

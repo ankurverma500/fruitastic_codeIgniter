@@ -1476,6 +1476,14 @@
 
 
 @media (max-width: 767px) {
+	.product-list table .item_details {
+    float: left;
+    width: calc(100% - 84px);
+}
+.table-responsive > .table {
+ 
+    margin-bottom: 40px !important;
+}
 .order-box table th:nth-child(2),
 .order-box table td:nth-child(2),
 .order-box table td[colspan="2"]+td {

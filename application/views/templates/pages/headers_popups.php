@@ -454,24 +454,26 @@ $('.close').click( function () {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
       </div>
       <div class="modal-body white">
-          <h3 class="text-center">Please enter your emial id </h3>
+          <h3 class="text-center">Forgot Password</h3>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="personel">
+            <div role="tabpanel" class="tab-pane active" id="personel" >
                  <form id="popup_Register_Form" class="form-horizontal"  method="post" autocomplete="off"  enctype="multipart/form-data" accept-charset="utf-8" action="<?php echo base_url('checkout/forgot_password');?>" >
                   <div class="row">
                       <div class="col-md-10 col-sm-10 col-sm-offset-1">
                       <p>&nbsp;</p>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="forgot_password" id="forgot_password" placeholder="email id">
+                        	<label>Please Enter Your Email address</label>
+                            <input type="text" class="form-control" name="forgot_password" id="forgot_password" placeholder="Email">
                         </div>
                       </div>
                       <div id="forgot_password_arror" class="col-md-10 col-sm-10 col-sm-offset-1" style="color:red; margin-bottom:20px;"></div>
                   </div>
-                  
-                  <div class="form-group text-center">
-                         <label>&nbsp;</label>
-                        <button type="submit" class="btn btn-default"  id="forgot_password_button">Submit</button>
-                  </div>
+                  <!--<div  class="col-md-6 col-sm-6 col-sm-offset-3 col-md-offset-3"> </div>-->
+                      <div class="form-group text-center">
+                             <label>&nbsp;</label>
+                            <button type="submit" class="btn btn-default"  id="forgot_password_button">Submit</button>
+                      </div>
+                 
                 </form>
             </div>
          </div>

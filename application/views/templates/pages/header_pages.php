@@ -23,7 +23,7 @@
 								else
 								{
 						  ?>
-            <li> <a href="#" data-toggle="modal" data-target="#signinModal"> <i class="fa fa-lock" aria-hidden="true"></i> Login </a> </li>
+            <li> <a href="#" data-toggle="modal" data-target="#signinModal"> <i class="fa fa-lock" aria-hidden="true"></i> Login / </a> </li>
             <li> <a href="#" data-toggle="modal" data-target="#signupModal"><span  class="glyphicon glyphicon-user"></span>Register</a> </li>
             <!--<li class="rgst" data-toggle="modal" data-target="#registration">
                             <span  class="glyphicon glyphicon-user"></span>

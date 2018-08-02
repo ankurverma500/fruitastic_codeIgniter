@@ -5229,6 +5229,7 @@ button.close {
     border: none;
     font-weight: 500;
     display: inline-block;
+	width: 80%;
 }
 
 #fogot_password .form-control {
@@ -5845,8 +5846,9 @@ button.close {
     transition: 0.5s ease;
     margin-top: 5px;
 }*/
-button.close {
-    position: absolute;
+button.close
+{
+	position: absolute;
     opacity: 1;
     z-index: 9;
     width: 90px;
@@ -5862,7 +5864,43 @@ button.close {
     text-shadow: none;
     font-weight: 400;
 }
+.alert button.close,
+.alert button.close,
+.alert button.close
+ {
+ 
+	position: absolute;
+    opacity: 1;
+    z-index: 9;
+    width: 26px;
+    height: 17px;
+    line-height: 28px;
+    border-top-right-radius: 6px;
+    border: 0px solid #fff;
+    font-size: 21px;
+    top: 9px;
+    right: 0px;
+    text-shadow: none;
+    /* font-weight: 800; */
+    text-align: center;
+}
 
+.alert.alert-success button.close
+ {
+    background: #DFF0D8 !important;
+    color: #000 !important;
+}
+.alert.alert-info button.close
+ {
+    background: #D9EDF7 !important;
+    color: #000 !important;
+}
+
+.alert.alert-danger button.close
+ {
+    background: #f2dede !important;
+    color: #000 !important;
+}
 #signupModal .modal-body {
     padding: 20px 36px;
 }
@@ -5912,12 +5950,15 @@ button.close {
     color: #000;
     padding: 5px;
     box-shadow: 0 0 40px rgba(0,0,0,.8);
+	z-index:9999999999999999999999999999999999999999999 !important;
 }
 
 .tooltip.in {
 	opacity:1;
+	z-index:9999999999999999999999999999999999999999999 !important;
 }
 
 .tooltip.top .tooltip-arrow {
     border-top-color: #fff;
+	z-index:9999999999999999999999999999999999999999999 !important;
 }

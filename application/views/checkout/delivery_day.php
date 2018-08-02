@@ -92,7 +92,7 @@
              	 </div>
               </div>
             </div>
-            <div class="row" style="margin-top:100px;">
+            <div class="row" style="margin-top:50px;">
                  
                         <div class="form-group">
                           <label class="col-md-2 col-sm-2 control-label your_details_text_right">Delivery notes </label>

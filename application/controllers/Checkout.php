@@ -45,7 +45,7 @@ class Checkout extends MY_Controller
 				}
 				if($row['rows'][0]->deleted=='1')
 				{
-					$this->session->set_flashdata('error', "Sorry You don't have permission to access it Please contact admin");
+					$this->session->set_flashdata('error', ACCOUNT_DELETED);
 					redirect(base_url("product"),'refresh');
 				}
 				
@@ -137,6 +137,32 @@ class Checkout extends MY_Controller
 			}
 			else
 			{
+				$customer_type=$this->input->post('customer_type');
+				if($customer_type=='1'){
+					$customer_type ='Residential';
+					$ctn=4;
+				}
+				elseif($customer_type=='2')
+				{
+					$customer_type ='School';
+					$ctn=1;
+				}
+				elseif($customer_type=='3')
+				{
+					$customer_type ='Childcare';
+					$ctn=2;
+				}
+				elseif($customer_type=='4')
+				{
+					$customer_type ='Corporate';
+					$ctn=3;
+				}
+				
+				if($customer_type =='')
+				{
+					$customer_type ='Residential';
+					$ctn=4;
+				}
 				$da=array('val'=>array('name'=>$this->input->post('name'),
 									   'last_name'=>$this->input->post('last_name'),
 									   'primary_contact_name'=>$this->input->post('bussiness_name'),
@@ -145,8 +171,8 @@ class Checkout extends MY_Controller
 									   'email'=>$this->input->post('username'),
 									   'contact'=>$this->input->post('contact'),
 									   'added_date'=>$this->currentAddDate_time,
-									   'customer_type'=>'Fruitastic Site',
-									   'customer_type_id'=>$this->input->post('customer_type'),
+									   'customer_type'=>$customer_type,
+									   'customer_type_id'=>$ctn,
 									   'customer_type_from_id'=>'1',									   
 									   'added_by'=>'0',
 									   'added_date'=>$this->currentAddDate_time,
@@ -247,7 +273,7 @@ class Checkout extends MY_Controller
 			}
 			else
 			{				
-				$this->session->set_flashdata('success', ADD_MESSAGE);
+				$this->session->set_flashdata('success', VALID_registered);
 				$this->step_1_login();
 				//redirect("product/index",'refresh');
 			}
@@ -554,6 +580,7 @@ class Checkout extends MY_Controller
 						 $data['val']['tbl_customer_payment_options_day']=$payment_day;
 						 $data['val']['tbl_customer_payment_options_no_day']=$days;
 						 $data['val']['tbl_customer_payment_options_date']=$payment_date;
+						 $data['val']['order_status']='1';
 						 $data['val']['deleted']='0';
 						 $data['val']['status']='1';
 						
@@ -948,7 +975,7 @@ class Checkout extends MY_Controller
 					$sess 	= 	$this->session->userdata('admin_login');
 					$ar 	= 	unserialize($sess);		
 					$this->name=$ar['name'];
-					$this->session->set_flashdata('success', 'Hi '.$this->name.'. You are logged in successfully.');
+					$this->session->set_flashdata('success', 'Hi '.$this->name.'. You are login successfully continue with your cart!');
 					//redirect(base_url("checkout/index"),'refresh');
 					//redirect(base_url("'".$from_url."'"),'refrash');
 					//redirect(base_url($from_url),'refrash');
@@ -957,7 +984,7 @@ class Checkout extends MY_Controller
 				else
 				{
 					//$this->session->set_flashdata('error', INVALID_LOGIN);	
-					$this->session->set_flashdata('error', 'Invalid username and password.');				
+					$this->session->set_flashdata('error', INVALID_LOGIN);				
 					//redirect(base_url("checkout/index"),'refresh');
 					//redirect(base_url("'".$from_url."'"),'refrash');	
 					//redirect(base_url($from_url),'refrash');
@@ -1014,7 +1041,7 @@ class Checkout extends MY_Controller
 				else
 				{
 					//$this->session->set_flashdata('error', INVALID_LOGIN);	
-					$this->session->set_flashdata('error', 'Invalid username and password.');				
+					$this->session->set_flashdata('error',INVALID_LOGIN);				
 					//redirect(base_url("checkout/index"),'refresh');
 					//redirect(base_url("'".$from_url."'"),'refrash');	
 					//redirect(base_url($from_url),'refrash');
@@ -1075,16 +1102,42 @@ class Checkout extends MY_Controller
 				$this->db->trans_off();
 				//$this->db->trans_start();
 				$this->db->trans_begin();
-			
+			$customer_type=$this->input->post('customer_type');
+				if($customer_type=='1'){
+					$customer_type ='Residential';
+					$ctn=4;
+				}
+				elseif($customer_type=='2')
+				{
+					$customer_type ='School';
+					$ctn=1;
+				}
+				elseif($customer_type=='3')
+				{
+					$customer_type ='Childcare';
+					$ctn=2;
+				}
+				elseif($customer_type=='4')
+				{
+					$customer_type ='Corporate';
+					$ctn=3;
+				}
+				
+				if($customer_type =='')
+				{
+					$customer_type ='Residential';
+					$ctn=4;
+				}
 				$da=array('val'=>array('name'=>$this->input->post('first_name_pop'),
 									   'last_name'=>$this->input->post('last_name_pop'),
+									   'primary_contact_name'=>$this->input->post('bussiness_name'),
 									   'username'=>$this->input->post('username'),
 									   'password'=>md5($this->input->post('password')),
 									   'email'=>$this->input->post('username'),
 									   'contact'=>$this->input->post('contact_pop'),
 									   'added_date'=>$this->currentAddDate_time,
-									   'customer_type'=>'Fruitastic Site',
-									   'customer_type_id'=>$this->input->post('customer_type'),
+									   'customer_type'=>$customer_type,
+									   'customer_type_id'=>$ctn,
 									   'customer_type_from_id'=>'1',
 									   'added_by'=>'0',
 									   'added_date'=>$this->currentAddDate_time,
@@ -1150,7 +1203,7 @@ class Checkout extends MY_Controller
 						delete_cookie("email_customer_cookie");
 						delete_cookie("password_customer_cookie");
 					}
-					$this->session->set_flashdata('success', 'WELCOME user, Your Acount are succesfully created ');
+					$this->session->set_flashdata('success', VALID_registered);
 					//redirect(base_url("checkout/index"),'refresh');
 					//redirect(base_url("'".$from_url."'"),'refrash');
 					//redirect(base_url($from_url),'refrash');
@@ -1214,14 +1267,14 @@ class Checkout extends MY_Controller
 					  </table>';
 			$send_mail_data=array('to'=>$email,'subject'=>'Welcome to Fruitastic ','message'=>'Fruitastic Password</br>'.$message);	
 					$this->send_email($send_mail_data);
-				$this->session->set_flashdata('success', 'Password send to regestered email');
+				$this->session->set_flashdata('success', 'Your New password has been send successfully to your Registered Email Address.');
 					//redirect($_SERVER['HTTP_REFERER']);
-				print_r(json_encode(array('res'=>true,'msg'=>"Password send to regestered email")));
+				print_r(json_encode(array('res'=>true,'msg'=>"Your New password has been send successfully to your Registered Email Address.")));
 			}
 		}
 		else
 		{
-			print_r(json_encode(array('res'=>false,'msg'=>"Oops!!!. Email is Does't Exist Create a New Account. ")));
+			print_r(json_encode(array('res'=>false,'msg'=>"Email Address doesn't exist, Please create a new Account.")));
 		}
 		
 	}

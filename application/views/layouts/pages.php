@@ -3,9 +3,13 @@
 <head>
   <?php $this->load->view('templates/pages/meta');?>
 <style>
-.alert {
+.alert.alert-danger,
+.alert.alert-success,
+.alert.alert-info {
     z-index: 99999999 !important;
     position: fixed;
+	text-align:center !important;
+	margin-top: 15px;
 }
 .bottom_header .menu_sec .login_part .navbar-default .navbar-nav>.active>a, 
   .menu_sec .login_part .navbar-nav li a:focus,
@@ -20,7 +24,8 @@
 <body>
      <?php if($this->session->flashdata('error')) { ?>
     <div class="alert alert-danger">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+        <button class="close" data-dismiss="alert">×</button>
         <div class="alert-danger-massage"><?php echo $this->session->flashdata('error') ;?></div>
     </div>
     <?php } 
@@ -32,7 +37,8 @@
     <?php } 
     if($this->session->flashdata('info')) { ?>
     <div class="alert alert-info">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+        <button class="close" data-dismiss="alert">×</button>
         <div class="alert-info-massage"><?php echo $this->session->flashdata('info') ;?></div>
     </div>
 <?php } ?>

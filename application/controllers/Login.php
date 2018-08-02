@@ -79,7 +79,7 @@ class Login extends CI_Controller
 		if($this->admin->loggedin()) 
 		{
 			$this->admin->logout();
-			$this->session->set_flashdata('success', 'You are successfully logout ');
+			$this->session->set_flashdata('success', LOGOUT);
 			redirect($_SERVER['HTTP_REFERER']);
 			//$this->load->view('admin/logout');
 			//redirect("admin/login");

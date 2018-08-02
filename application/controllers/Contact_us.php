@@ -70,7 +70,7 @@ class Contact_us extends MY_Controller
 				  </table>';
 					$send_mail_data=array('to'=>$this->admin_email,'subject'=>'Welcome to Fruitilious ','message'=>'Contact Us </br>'.$message);	
 					$this->send_email($send_mail_data);
-					$this->session->set_flashdata('success', ADD_MESSAGE);
+					$this->session->set_flashdata('success', 'Thank you! We appreciate you contacting us about getting in touch.');
 					redirect($_SERVER['HTTP_REFERER']);
 				}
 				else

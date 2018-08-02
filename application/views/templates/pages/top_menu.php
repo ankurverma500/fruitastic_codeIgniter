@@ -15,8 +15,8 @@
           <ul class="login_part">
             <?php if($this->session->userdata('admin_login'))
 					{?>
-            <li> <a href="<?php echo base_url('login/logout')?>" > <i  class="fa fa-sign-out"></i> Logout </a> </li>
-            <li   > <span  class="glyphicon glyphicon-user"></span> <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>" class="rgst" >My Account
+            <li> <a href="<?php echo base_url('login/logout')?>" > <i  class="fa fa-sign-out"></i> Logout /</a> </li>
+            <li   > <span  class="glyphicon glyphicon-user"></span> <a href="<?php echo fruitastic_dashboard.'dashboard/index.php?id='.$this->added_by.'&token='.$this->api_token?>"  target="_blank" class="rgst" >My Account
               <?php //echo 'Hi'.$this->name?>
               </a> </li>
             <?php 
